@@ -1,0 +1,10 @@
+2020-08-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.1
+
+	* inst/include/spdlog/*: Using spdlog version 1.7
+	* inst/examples/*: Four simple usage examples
+
+	* .travis.yml: Added though no real tests present
+
+

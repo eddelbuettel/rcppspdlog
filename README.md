@@ -1,5 +1,5 @@
 
-## RcppSpdlog: Bundling of spdlog for use from R and Rcpp
+## RcppSpdlog: Bundling of spdlog for use from R 
 
 
 ### About
