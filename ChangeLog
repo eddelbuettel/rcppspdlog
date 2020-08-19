@@ -7,4 +7,13 @@
 
 	* .travis.yml: Added though no real tests present
 
+	* src/exampleFour.cpp (exampleFour): Simple wrapper around simple
+	Rcpp logger class which still triggers R warnings
+	* man/exampleFour.Rd: Basic help page
+	* src/RcppExports.cpp: Generated
+	* src/Makevars: Added
+	* R/RcppExports.R: Idem
+	* NAMESPACE: Added
+	* DESCRIPTION: Added Imports: and LinkingTo: for Rcpp
+
 

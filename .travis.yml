@@ -15,8 +15,8 @@ before_install:
   - curl -OLs https://eddelbuettel.github.io/r-travis/run.sh && chmod 0755 run.sh
   - ./run.sh bootstrap
 
-#install:
-#  - ./run.sh install_aptget 
+install:
+  - ./run.sh install_aptget r-cran-rcpp
   
 script:
   - ./run.sh run_tests
