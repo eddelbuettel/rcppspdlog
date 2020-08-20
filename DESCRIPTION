@@ -1,16 +1,15 @@
 Package: RcppSpdlog
 Type: Package
 Title: 'spdlog' C++ Header Library for Logging
-Version: 0.0.1.1
+Version: 0.0.1
 Date: 2020-08-18
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: 'spdlog' is a mature and widely-used C++ library for logging with many
  desirable features that was written by Gabi Melman, and released under a MIT license.
- 'Spdlog' itself includes the 'fmt' library by Victor Zverovich which is also released
+ 'spdlog' itself includes the 'fmt' library by Victor Zverovich which is also released
  under a MIT license. This package bundles these header files for easy use by R packages
- via a simple 'LinkingTo:' inclusion. Note that you may not want to include 'spdlog' in a
- (release-ready) package as running checks it will reveal use of 'stdout' and 'stderr'. 
+ via a simple 'LinkingTo:' inclusion. 
 License: GPL (>= 2)
 LinkingTo: Rcpp
 Imports: Rcpp
