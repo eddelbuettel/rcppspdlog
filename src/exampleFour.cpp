@@ -1,11 +1,10 @@
 
-//#include "spdlog/spdlog.h"
-//#include "spdlog/sinks/stdout_color_sinks.h"
-#include <spdlog/details/synchronous_factory.h>
+#define SPDLOG_DISABLE_DEFAULT_LOGGER 1
+
 #include "spdlog/sinks/base_sink.h"
 #include "spdlog/details/null_mutex.h"
+#include "spdlog/details/synchronous_factory.h"
 
-//#include "spdlog/sinks/basic_file_sink.h"
 #include <mutex>
 
 #include <Rcpp.h>
@@ -56,11 +55,13 @@ inline std::shared_ptr<logger> my_sink_st(const std::string &logger_name) {
 //'
 //' A simple example invoking a derived Rcpp logger.
 //'
-//' Note that this still triggers R warnings, so consider it work in progress.
+//' Note that this no longer triggers R warnings thanks to excellent help by
+//' Gabi Melman.
 //' @return None
+//' @examples
+//' exampleFour()
 // [[Rcpp::export]]
 void exampleFour() {
-  //auto mysink = spdlog::basic_logger_mt("file_logger", "/tmp/demosink.txt", false);
   auto mysink = spdlog::my_sink_mt("rcpp_logger");
 
   // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
@@ -78,7 +79,3 @@ void exampleFour() {
   mysink->info("{:<30}", "left aligned");
 
 }
-
-/*** R
-exampleFour()
-*/

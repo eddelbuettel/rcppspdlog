@@ -13,5 +13,9 @@ None
 A simple example invoking a derived Rcpp logger.
 }
 \details{
-Note that this still triggers R warnings, so consider it work in progress.
+Note that this no longer triggers R warnings thanks to excellent help by
+Gabi Melman.
+}
+\examples{
+exampleFour()
 }
