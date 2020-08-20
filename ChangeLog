@@ -1,3 +1,13 @@
+2020-08-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/exampleFour.cpp: Rewritten and now R CMD check clean
+	* inst/examples/examplesFour.cpp: Now in src/
+
+	* README.md: Edited, added two badged
+
+	* cleanup: Added
+	* .editorconfig: Idem
+
 2020-08-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.1

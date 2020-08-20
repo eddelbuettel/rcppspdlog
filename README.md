@@ -1,14 +1,16 @@
 
 ## RcppSpdlog: Bundling of spdlog for use from R 
 
+[![Build Status](https://travis-ci.org/eddelbuettel/rcppspdlog.png)](https://travis-ci.org/eddelbuettel/rcppspdlog) 
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 
 ### About
 
-The [spdlog](https://github.com/gabime/spdlog) library is a widely-used and
-very capable header-only C++ library for logging.  This package includes it
-as an R package to permit other R package use via a simple `LinkingTo:
-RcppSpdlog` as described in [Section 1.1.3 of
+The [spdlog](https://github.com/gabime/spdlog) library is a widely-used and very capable header-only
+C++ library for logging.  This package includes it as an R package to permit other R package use via
+a simple `LinkingTo: RcppSpdlog` as described in [Section 1.1.3 of
 WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies).
+
 
 ### Example
 
@@ -29,10 +31,9 @@ R> exampleOne()
 edd@rob:~$ 
 ```
 
-This logs the hour, minute, second, microsecond followed by a one-char code
-for info, error, warning or critical followed by the thread id and the actual
-loggable message. The code, apart from the included headers and more, is
-simply
+This logs the hour, minute, second, microsecond followed by a one-char code for info, error, warning
+or critical followed by the thread id and the actual loggable message. The code, apart from the
+included headers and more, is simply
 
 ```c++
 // [[Rcpp::export]]
@@ -61,17 +62,21 @@ void exampleOne() {
 }
 ```
 
-Many other customizations are possible, see the [spdlog wiki](https://github.com/gabime/spdlog/wiki).
+Many other customizations are possible, see the [spdlog
+wiki](https://github.com/gabime/spdlog/wiki).  Also see the included example function which uses a
+derived class to pass logging output explicitly to the R input/output stream as per the R coding
+requirements, see [Section 1.3.1 (and others) of
+WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages).
 
 ### Use in R Packages and Warnings
 
-Both [spdlog](https://github.com/gabime/spdlog) and the embedded
-[fmt](https://github.com/fmtlib/fmt) use `stdout` and `stderr` in ways that
-make it non-trivial to replace them with R input/output as required by
-[Section 1.3.1 (and others) of
-WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages). Hence,
-this library is best used _during debugging_ but not in released code as CRAN
-may reject packages containing it due to these warnings.
+As shipped, both [spdlog](https://github.com/gabime/spdlog) and the embedded
+[fmt](https://github.com/fmtlib/fmt) use `stdout` and `stderr` in ways that may make it non-trivial
+to replace them with R input/output as required by [Section 1.3.1 (and others) of
+WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages). However, and
+thanks to some excellent help from upstream we have defined a specific sink for R, corrected on
+`stderr` use and added one `#define`. That now passes, and we are hopeful to make additional package
+features generally useable from R packages.
 
 ### Author
 
