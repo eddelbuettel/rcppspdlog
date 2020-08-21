@@ -5,6 +5,8 @@
 	* src/RcppExports.cpp: Updated
 	* R/RcppExports.R: Idem
 
+	* README.md: Some more edits
+
 2020-08-20  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/RcppSpdlog: Easy wrapper for spdlog and R sink
