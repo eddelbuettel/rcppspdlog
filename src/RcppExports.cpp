@@ -5,18 +5,18 @@
 
 using namespace Rcpp;
 
-// exampleFour
-void exampleFour();
-RcppExport SEXP _RcppSpdlog_exampleFour() {
+// exampleRsink
+void exampleRsink();
+RcppExport SEXP _RcppSpdlog_exampleRsink() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
-    exampleFour();
+    exampleRsink();
     return R_NilValue;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_RcppSpdlog_exampleFour", (DL_FUNC) &_RcppSpdlog_exampleFour, 0},
+    {"_RcppSpdlog_exampleRsink", (DL_FUNC) &_RcppSpdlog_exampleRsink, 0},
     {NULL, NULL, 0}
 };
 

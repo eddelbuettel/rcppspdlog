@@ -1,9 +1,6 @@
 //                                               Emacs make this -*- mode: C++; -*-
 // RcppSpdlog -- wrapping spdlog for use with R
 
-// this define is important to not include another logger pulling in stdout
-#define SPDLOG_DISABLE_DEFAULT_LOGGER 1
-
 #include "spdlog/spdlog.h"      // spdlog
 
 #include "rcpp_sink.h"          // a custom R sink using Rcpp::Rcout
