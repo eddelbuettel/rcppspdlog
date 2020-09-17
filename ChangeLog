@@ -5,6 +5,8 @@
 
 	* .travis.yml: Use BSPM, turn os macOS
 
+	* src/exampleRsink.cpp (exampleRsink): Add 'stopwatch' demo
+
 2020-09-08  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Version 0.0.1

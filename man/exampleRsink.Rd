@@ -10,7 +10,8 @@ exampleRsink()
 None
 }
 \description{
-A simple example invoking a derived R/Rcpp logger.
+A simple example invoking a derived R/Rcpp logger. Also demonstrates the
+stopwatch feature. For more features see the 'spdlog' documnetation.
 }
 \details{
 Note that this no longer triggers R warnings thanks to excellent help by
