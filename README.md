@@ -1,8 +1,13 @@
 
 ## RcppSpdlog: Bundling of spdlog for use from R and Rcpp
 
-[![Build Status](https://travis-ci.org/eddelbuettel/rcppspdlog.png)](https://travis-ci.org/eddelbuettel/rcppspdlog) 
-[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
+[![Build Status](https://travis-ci.org/eddelbuettel/rcppspdlog.png)](https://travis-ci.org/eddelbuettel/rcppspdlog)
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![CRAN](https://www.r-pkg.org/badges/version/RcppSpdlog)](https://cran.r-project.org/package=RcppSpdlog)
+[![Dependencies](https://tinyverse.netlify.com/badge/RcppSpdlog)](https://cran.r-project.org/package=RcppSpdlog)
+[![Downloads](https://cranlogs.r-pkg.org/badges/RcppSpdlog?color=brightgreen)](https://www.r-pkg.org/pkg/RcppSpdlog)
+[![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppspdlog)](https://github.com/eddelbuettel/rcppspdlog)
+
 
 ### About
 
@@ -26,9 +31,9 @@ R> exampleOne()
 [07:45:57.168710] [C] [thread 1500593] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
 [07:45:57.168728] [I] [thread 1500593] Support for floats 1.23
 [07:45:57.168731] [I] [thread 1500593] Positional args are supported too..
-[07:45:57.168734] [I] [thread 1500593] left aligned                  
+[07:45:57.168734] [I] [thread 1500593] left aligned
 [07:45:57.168737] [D] [thread 1500593] This message should be displayed..
-edd@rob:~$ 
+edd@rob:~$
 ```
 
 This logs the hour, minute, second, microsecond followed by a one-char code for info, error, warning
@@ -77,7 +82,7 @@ WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packa
 As shipped, both [spdlog](https://github.com/gabime/spdlog) and the embedded
 [fmt](https://github.com/fmtlib/fmt) use `stdout` and `stderr` in ways that may make it non-trivial
 to fully replace them with R input/output as required by [Section 1.3.1 (and others) of
-WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages). 
+WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages).
 
 However, based on some initial trials and some excellent help from upstream we have defined a
 specific sink for R in the header
@@ -127,7 +132,7 @@ void exampleRsink() {
 ```
 
 Note that it is deliberately similar in use to the example above.  A new instance of the logger is
-instantiated as a shared pointer `sp` to a `spdlog` object. 
+instantiated as a shared pointer `sp` to a `spdlog` object.
 
 We may make additional package features available in the future.
 
