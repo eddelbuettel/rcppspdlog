@@ -6,18 +6,25 @@ dist: bionic
 
 jobs:
   include:
-    #- name: r-3.5
-    #  env: R_VERSION="3.5"
-    - name: r-4.0
-      env: R_VERSION="4.0"
+    - name: linux
+      os: linux
+    - name: macOS
+      os: osx
+
+## Two core settings: BSPM for binary installation where possible, and no
+## installation of 'Suggests:' to keep things lighter
+env:
+  global:
+    - _R_CHECK_FORCE_SUGGESTS_="false"
+      USE_BSPM="true"
 
 before_install:
   - curl -OLs https://eddelbuettel.github.io/r-travis/run.sh && chmod 0755 run.sh
   - ./run.sh bootstrap
 
 install:
-  - ./run.sh install_aptget r-cran-rcpp
-  
+  - ./run.sh install_deps
+
 script:
   - ./run.sh run_tests
 
@@ -26,10 +33,8 @@ after_failure:
 
 #after_success:
 #  - ./run.sh coverage
-   
+
 notifications:
   email:
     on_success: change
     on_failure: change
-        
-    
