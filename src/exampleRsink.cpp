@@ -1,7 +1,4 @@
 
-// this define is important to not include another logger pulling in stdout
-#define SPDLOG_DISABLE_DEFAULT_LOGGER 1
-
 // this portmanteau include also defines the r_sink we use below, and which
 // diverts all logging to R via the Rcpp::Rcout replacement for std::cout
 #include <RcppSpdlog>
