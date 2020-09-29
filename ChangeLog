@@ -1,3 +1,12 @@
+2020-09-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/spdlog/logger-inl.h: Synchronised with our PR #1685
+	switching to REprintf() if R_R_H and USING_R defined
+
+	* inst/include/RcppSpdlog: Include R.h so that R_R_H and USING_R
+	defined, define SPDLOG_DISABLE_DEFAULT_LOGGER here
+	* src/exampleRsink.cpp: Removed SPDLOG_DISABLE_DEFAULT_LOGGER def.
+
 2020-09-17  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Version 0.0.2
