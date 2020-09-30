@@ -14,9 +14,20 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// setLogLevel
+void setLogLevel(const std::string& name);
+RcppExport SEXP _RcppSpdlog_setLogLevel(SEXP nameSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type name(nameSEXP);
+    setLogLevel(name);
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppSpdlog_exampleRsink", (DL_FUNC) &_RcppSpdlog_exampleRsink, 0},
+    {"_RcppSpdlog_setLogLevel", (DL_FUNC) &_RcppSpdlog_setLogLevel, 1},
     {NULL, NULL, 0}
 };
 
