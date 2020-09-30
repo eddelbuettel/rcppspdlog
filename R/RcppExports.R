@@ -15,3 +15,17 @@ exampleRsink <- function() {
     invisible(.Call(`_RcppSpdlog_exampleRsink`))
 }
 
+#' spdlog Logging Lever Setter
+#'
+#' A helper function to turn a logging level given as string
+#' into the current logging level
+#'
+#' @param name A string with the logging level. Value understood are,
+#' in decreasing verbosity \sQuote{trace}, \sQuote{debug}, \sQuote{info},
+#' \sQuote{warning}, \sQuote{error}, \sQuote{critical}, and \sQuote{off}.
+#' Unrecognised names are equivalent to \sQuote{off}.
+#' @return Nothing is returned.
+setLogLevel <- function(name) {
+    invisible(.Call(`_RcppSpdlog_setLogLevel`, name))
+}
+

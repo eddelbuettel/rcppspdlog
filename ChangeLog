@@ -1,3 +1,13 @@
+2020-09-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/exampleRsink.cpp (exampleRsink): Use default logger instance
+
+2020-09-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/exampleRsink.cpp (setLogLevel): New function
+	* R/RcppExports.R (exampleRsink): R accessor
+	* man/setLogLevel.Rd: Documentation
+
 2020-09-28  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/spdlog/logger-inl.h: Synchronised with our PR #1685
