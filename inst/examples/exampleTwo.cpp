@@ -74,6 +74,12 @@ void exampleTwo() {
         return;
     }
 
+    // added to this example file allow multiple runs of function
+    spdlog::drop("console");
+    spdlog::drop("file_logger");
+    spdlog::drop("some_logger_name");
+    spdlog::drop("daily_logger");
+    spdlog::drop("async_file_logger");
 }
 
 

@@ -24,6 +24,11 @@ void exampleThree() {
   spdlog::info("Support for floats {:03.2f}", 1.23456);
   spdlog::info("Positional args are {1} {0}..", "too", "supported");
   spdlog::info("{:<30}", "left aligned");
+
+
+  // added to this example file allow multiple runs of different package functions
+  spdlog::drop("console");
+
 }
 
 /*** R

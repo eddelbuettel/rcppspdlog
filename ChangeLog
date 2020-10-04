@@ -1,3 +1,9 @@
+2020-10-04  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/exampleTwo.cpp (exampleTwo): Added cleanup at end
+	with logger removal to permit multiple calls to example function
+	* inst/examples/exampleThree.cpp (exampleThree): Idem
+
 2020-10-01  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/spdlog/*: Upgraded to upstream release 1.8.1

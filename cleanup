@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -f src/*.o src/*.so src/symbols.rds
+rm -fr src/*.o src/*.so src/symbols.rds RcppSpdlog.Rcheck/
 
 #rm -rf vignettes/auto/ vignettes/*.log vignettes/*.aux vignettes/*.out vignettes/*.tex
 
