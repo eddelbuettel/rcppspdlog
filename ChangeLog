@@ -1,5 +1,10 @@
 2020-10-04  Dirk Eddelbuettel  <edd@debian.org>
 
+	* vignettes/introduction.Rmd (vignette): New (draft) vignette
+
+	* DESCRIPTION (VignetteBuilder): Add knitr
+	(Suggests): Add knitr, rmarkdown, minidown
+
 	* inst/examples/exampleTwo.cpp (exampleTwo): Added cleanup at end
 	with logger removal to permit multiple calls to example function
 	* inst/examples/exampleThree.cpp (exampleThree): Idem
