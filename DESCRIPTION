@@ -13,4 +13,6 @@ Description: The mature and widely-used C++ logging library 'spdlog' provides ma
 License: GPL (>= 2)
 LinkingTo: Rcpp
 Imports: Rcpp
+Suggests: knitr, rmarkdown, minidown
+VignetteBuilder: knitr
 RoxygenNote: 6.0.1
