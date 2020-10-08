@@ -5,12 +5,6 @@ date: "Initial version dated October 2020"
 output:
   minidown::mini_document:
     framework: water
-    code_folding:
-      source: show
-      output: show
-      message: hide
-      warning: hide
-      error: hide
 vignette: >
   %\VignetteIndexEntry{RcppSpdlog Introduction}
   %\VignetteEngine{knitr::rmarkdown}
@@ -545,7 +539,7 @@ R>
 
 By requestion level 'error', message of level 'info', 'warning' or 'debug' are suppressed but messages levels 'error' or 'critical' as shown as desired.
 
-## Fifth Examples: Initialization
+## Fifth Example: Initialization
 
 Package desiring to use [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog) can initialize its facilities during startup.
 
@@ -577,9 +571,54 @@ We can then call this function during startup:
 }
 ```
 
+## Sixth Example: Compile-time Selection
+
+Of course, [spdlog](https://github.com/gabime/spdlog) also supports a common
+usage paradigm with loggers in which the decision of whether to log or not is
+_compile-time_ rather than run time.  As this is typically implemented via
+macros, usage is via upper-case macros as well.
+
+The following example shows a function with three different logging-level
+statements as well as a `#define` set such one and only one is
+shown. Similarly, code can contain debug or trace or info or ... statements
+which would _not_ appear in the actually loaded "production code" (or CRAN
+version) if the compile-time logging level define is set high enough.
+
+```c++
+// this portmanteau include also defines the r_sink we use below, and which
+// diverts all logging to R via the Rcpp::Rcout replacement for std::cout
+#include <RcppSpdlog>
+
+// A define such as this could also be set in src/Makevars via a -D flag
+#define SPDLOG_LOG_LEVEL  SPDLOG_LEVEL_CRITICAL
+
+// [[Rcpp::export]]
+void demoInvisible() {
+    Rcpp::Rcout << "Hello from demoInvisible, just to show we're being called...\n";
+
+    // trace message via default logger
+    SPDLOG_TRACE("Some trace message.. {} ,{}", 1, 3.23);
+    // debug message via default logger
+    SPDLOG_DEBUG("Some debug message.. {} ,{}", 1, 3.23);
+    // debug message via default logger
+    SPDLOG_CRITICAL("Some critical message.. {} ,{}", 1, 3.23);
+}
+```
+
+When a piece of code with such compile-time defines is used, we see the
+expected outcome. The following example uses default logger, and as the
+preceding section showed this can be set up to be the custom R sink:
+
+```r
+R> Rcpp::sourceCpp("/tmp/rcppspdlog.cpp")  # plus a '// [[Rcpp:depends("RcppSpdlog")'
+R> demoInvisible()
+Hello from demoInvisible, just to show we're being called...
+[08:44:48.198075] [fromR] [C] [thread 2453030] Some critical message.. 1 ,3.23
+R>
+```
 
 ## Conclusion
 
-[spdlog](https://github.com/gabime/spdlog) and the included [fmt]((https://github.com/fmtlib/fmt) are two very powerful, and widely used C++ libraries.
+[spdlog](https://github.com/gabime/spdlog) and the included [fmt](https://github.com/fmtlib/fmt) are two very powerful and widely used C++ libraries.
 The [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog) package adds to them to the set of packages R users can deploy.
 It is our hope that the examples shown here are of interest to R users who are looking for effortless, performant and flexible logging solutions for their compiled R extension packages.

@@ -1,3 +1,7 @@
+2020-10-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/introduction.Rmd (vignette): Compile-time example added
+
 2020-10-04  Dirk Eddelbuettel  <edd@debian.org>
 
 	* vignettes/introduction.Rmd (vignette): New (draft) vignette
