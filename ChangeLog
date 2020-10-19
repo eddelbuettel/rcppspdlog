@@ -1,3 +1,7 @@
+2020-10-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Updated examples
+
 2020-10-08  Dirk Eddelbuettel  <edd@debian.org>
 
 	* vignettes/introduction.Rmd (vignette): Compile-time example added
