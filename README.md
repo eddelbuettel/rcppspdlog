@@ -114,7 +114,7 @@ void exampleRsink() {
     auto sp = spdlog::get(logname);                         // retrieve existing one
     if (sp == nullptr) sp = spdlog::r_sink_mt(logname);     // or create new one if needed
 
-    spdlog::stopwatch sw;       							// instantiate a stop watch
+    spdlog::stopwatch sw;                                   // instantiate a stop watch
 
     // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
     spdlog::set_pattern("[%H:%M:%S.%f] [%n] [%^%L%$] [thread %t] %v");
