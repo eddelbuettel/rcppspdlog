@@ -10,6 +10,8 @@
 -   Added new vignette with extensive usage examples, added compile-time
     logging switch example
 
+-   A package documentation website was added
+
 ### Version 0.0.2 (2020-09-17)
 
 -   Upgraded to upstream release 1.8.0
