@@ -1,0 +1,100 @@
+###  2020 
+
+2020-10-23  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+         * DESCRIPTION (Version, Date): Version 0.0.3 
+ 
+2020-10-19  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * README.md: Updated example 
+ 
+2020-10-08  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * vignettes/introduction.Rmd (vignette): Compile-time example added 
+ 
+2020-10-04  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * vignettes/introduction.Rmd (vignette): New (draft) vignette 
+ 
+        * DESCRIPTION (VignetteBuilder): Add knitr 
+        (Suggests): Add knitr, rmarkdown, minidown 
+ 
+        * inst/examples/exampleTwo.cpp (exampleTwo): Added cleanup at end 
+        with logger removal to permit multiple calls to example function 
+        * inst/examples/exampleThree.cpp (exampleThree): Idem 
+ 
+2020-10-01  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog/*: Upgraded to upstream release 1.8.1 
+ 
+2020-09-30  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * src/exampleRsink.cpp (exampleRsink): Use default logger instance 
+ 
+2020-09-29  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * src/exampleRsink.cpp (setLogLevel): New function 
+        * R/RcppExports.R (exampleRsink): R accessor 
+        * man/setLogLevel.Rd: Documentation 
+ 
+2020-09-28  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog/logger-inl.h: Synchronised with our PR #1685 
+        switching to REprintf() if R_R_H and USING_R defined 
+ 
+        * inst/include/RcppSpdlog: Include R.h so that R_R_H and USING_R 
+        defined, define SPDLOG_DISABLE_DEFAULT_LOGGER here 
+        * src/exampleRsink.cpp: Removed SPDLOG_DISABLE_DEFAULT_LOGGER def. 
+ 
+2020-09-17  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+         * DESCRIPTION (Version, Date): Version 0.0.2 
+ 
+        * inst/include/spdlog/*: Upgraded to upstream release 1.8.0 
+        * inst/include/spdlog/logger-inl.h: Switch to REprintf as before 
+ 
+        * .travis.yml: Use BSPM, turn os macOS 
+ 
+        * src/exampleRsink.cpp (exampleRsink): Add 'stopwatch' demo 
+ 
+2020-09-08  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+         * DESCRIPTION (Version, Date): Version 0.0.1 
+ 
+2020-08-21  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * src/exampleRsink.cpp: Renamed from exampleFour() 
+        * man/exampleRsink.Rd: Idem 
+        * src/RcppExports.cpp: Updated 
+        * R/RcppExports.R: Idem 
+ 
+        * README.md: Some more edits 
+ 
+2020-08-20  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/RcppSpdlog: Easy wrapper for spdlog and R sink 
+        * inst/include/rcpp_sink.h: A sink for R using Rcpp::Rcout 
+ 
+        * src/exampleFour.cpp: Rewritten and now R CMD check clean 
+        * inst/examples/examplesFour.cpp: Now in src/, R sink in its header 
+ 
+        * README.md: Edited, added two badges 
+ 
+        * cleanup: Added 
+        * .editorconfig: Idem 
+ 
+2020-08-19  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog/*: Using spdlog version 1.7 
+        * inst/examples/*: Four simple usage examples 
+ 
+        * .travis.yml: Added though no real tests present 
+ 
+        * src/exampleFour.cpp (exampleFour): Simple wrapper around simple 
+        Rcpp logger class which still triggers R warnings 
+        * man/exampleFour.Rd: Basic help page 
+        * src/RcppExports.cpp: Generated 
+        * src/Makevars: Added 
+        * R/RcppExports.R: Idem 
+        * NAMESPACE: Added 
+        * DESCRIPTION: Added Imports: and LinkingTo: for Rcpp 
