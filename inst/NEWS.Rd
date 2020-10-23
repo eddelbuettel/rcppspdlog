@@ -3,6 +3,19 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.3 (2020-10-23)}{
+  \itemize{
+    \item New function \code{setLogLevel} with R accessor in
+    \code{exampleRsink} example
+    \item Updated \code{exampleRsink} to use default logger instance
+    \item Upgraded to upstream release 1.8.1 which contains finalised
+    upstream use to switch to REprintf() if R compilation detected
+    \item Added new vignette with extensive usage examples, added
+    compile-time logging switch example
+    \item A package documentation website was added
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.2 (2020-09-17)}{
   \itemize{
     \item Upgraded to upstream release 1.8.0

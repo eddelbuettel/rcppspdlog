@@ -7,6 +7,7 @@
 [![Dependencies](https://tinyverse.netlify.com/badge/RcppSpdlog)](https://cran.r-project.org/package=RcppSpdlog)
 [![Downloads](https://cranlogs.r-pkg.org/badges/RcppSpdlog?color=brightgreen)](https://www.r-pkg.org/pkg/RcppSpdlog)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppspdlog)](https://github.com/eddelbuettel/rcppspdlog)
+[![Documentation](https://img.shields.io/badge/documentation-is_here-blue)](https://eddelbuettel.github.io/rcppspdlog/)
 
 
 ### About

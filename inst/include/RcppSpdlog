@@ -1,8 +1,14 @@
 //                                               Emacs make this -*- mode: C++; -*-
 // RcppSpdlog -- wrapping spdlog for use with R
 
-// include to define R_R_H and USING_R so that REprintf is used
-#include <R.h>
+// define R_R_H and USING_R so that REprintf is used, then declare ut
+// (including R.h leads to a side-effect with MinGW so minimal is better)
+#define R_R_H
+#define USING_R
+extern "C" {
+  void REprintf(const char *, ...);
+  void R_FlushConsole(void);
+}
 
 // this define is important to not include another logger pulling in stdout
 #define SPDLOG_DISABLE_DEFAULT_LOGGER 1
