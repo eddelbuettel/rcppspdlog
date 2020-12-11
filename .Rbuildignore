@@ -3,3 +3,4 @@
 ^\.editorconfig$
 ^docs-src
 ^docs
+^\.github$

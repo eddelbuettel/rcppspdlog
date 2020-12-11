@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.4 (2020-12-11)}{
+  \itemize{
+    \item Upgraded to upstream release spdlog 1.8.2
+    \item Added GitHub Actions CI using \code{run.sh} from r-ci
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.3 (2020-10-23)}{
   \itemize{
     \item New function \code{setLogLevel} with R accessor in
