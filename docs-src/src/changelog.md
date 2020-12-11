@@ -1,8 +1,19 @@
 ###  2020 
 
+2020-12-11  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.4 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.8.2 
+ 
+        * .github/workflows/ci.yaml: Add CI runner using r-ci 
+ 
 2020-10-23  Dirk Eddelbuettel  <edd@debian.org> 
  
          * DESCRIPTION (Version, Date): Version 0.0.3 
+ 
+        * docs/: Added package website 
+        * docs-src/: Added package website inputs 
  
 2020-10-19  Dirk Eddelbuettel  <edd@debian.org> 
  

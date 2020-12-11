@@ -1,3 +1,9 @@
+### Version 0.0.4 (2020-12-11)
+
+-   Upgraded to upstream release spdlog 1.8.2
+
+-   Added GitHub Actions CI using `run.sh` from r-ci
+
 ### Version 0.0.3 (2020-10-23)
 
 -   New function `setLogLevel` with R accessor in `exampleRsink` example

@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -9,11 +7,12 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+      
         <link rel="canonical" href="https://github.com/eddelbuettel/rcppspdlog/vignette/introduction/">
       
       
       <link rel="shortcut icon" href="../../assets/Rlogo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -21,13 +20,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
       
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7C&display=fallback">
         <style>body,input{font-family:"Lato",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -44,9 +47,14 @@
   </head>
   
   
-    <body dir="ltr">
-  
     
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -62,7 +70,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://github.com/eddelbuettel/rcppspdlog" title="rcppspdlog" class="md-header-nav__button md-logo" aria-label="rcppspdlog">
       
@@ -95,7 +105,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -123,8 +133,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
           
@@ -140,10 +148,10 @@
   
     <li class="md-tabs__item">
       
-        <a href="../.." class="md-tabs__link">
-          Home
-        </a>
       
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
     </li>
   
 
@@ -153,10 +161,10 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../man/RcppSpdlog-package/" class="md-tabs__link">
-          Reference
-        </a>
       
+      <a href="../../man/RcppSpdlog-package/" class="md-tabs__link">
+        Reference
+      </a>
     </li>
   
 
@@ -166,10 +174,12 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" class="md-tabs__link md-tabs__link--active">
-          Articles
-        </a>
       
+        
+      
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Articles
+      </a>
     </li>
   
 
@@ -179,10 +189,10 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../news/" class="md-tabs__link">
-          News
-        </a>
       
+      <a href="../../news/" class="md-tabs__link">
+        News
+      </a>
     </li>
   
 
@@ -192,10 +202,10 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../changelog/" class="md-tabs__link">
-          Changelog
-        </a>
       
+      <a href="../../changelog/" class="md-tabs__link">
+        Changelog
+      </a>
     </li>
   
 
@@ -212,7 +222,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://github.com/eddelbuettel/rcppspdlog" title="rcppspdlog" class="md-nav__button md-logo" aria-label="rcppspdlog">
       
@@ -231,8 +243,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -251,7 +262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Index" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Index
     </a>
   </li>
@@ -269,8 +280,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -289,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../man/RcppSpdlog-package/" title="RcppSpdlog package" class="md-nav__link">
+    <a href="../../man/RcppSpdlog-package/" class="md-nav__link">
       RcppSpdlog package
     </a>
   </li>
@@ -301,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../man/exampleRsink/" title="exampleRsink" class="md-nav__link">
+    <a href="../../man/exampleRsink/" class="md-nav__link">
       exampleRsink
     </a>
   </li>
@@ -313,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../man/setLogLevel/" title="setLogLevel" class="md-nav__link">
+    <a href="../../man/setLogLevel/" class="md-nav__link">
       setLogLevel
     </a>
   </li>
@@ -333,8 +343,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Articles
       <span class="md-nav__icon md-icon"></span>
@@ -364,7 +373,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Introduction
     </a>
     
@@ -481,8 +490,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
     <label class="md-nav__link" for="nav-4">
       News
       <span class="md-nav__icon md-icon"></span>
@@ -501,7 +509,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../news/" title="News" class="md-nav__link">
+    <a href="../../news/" class="md-nav__link">
       News
     </a>
   </li>
@@ -519,8 +527,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     <label class="md-nav__link" for="nav-5">
       Changelog
       <span class="md-nav__icon md-icon"></span>
@@ -539,7 +546,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../changelog/" title="Changelog" class="md-nav__link">
+    <a href="../../changelog/" class="md-nav__link">
       Changelog
     </a>
   </li>
@@ -667,9 +674,6 @@
               
                 
                 
-                  
-                
-                
                   <h1>Introduction</h1>
                 
                 <h2 id="introducing-rcppspdlog">Introducing RcppSpdlog</h2>
@@ -687,7 +691,7 @@ The package checks used by R test for use of <code>stdout</code> and <code>stder
 <p>This example follows the simplest and initial example in the <a href="https://github.com/gabime/spdlog">spdlog</a>.
 It is also included in the <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package as <a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/inst/examples/exampleOne.cpp">examples/exampleOne.cpp</a>.
 As discussed above, do not use this example as a starting point in an R package.</p>
-<pre><code class="c++">// based on the 'basic usage' example in the README.md at https://github.com/gabime/spdlog
+<pre><code class="language-c++">// based on the 'basic usage' example in the README.md at https://github.com/gabime/spdlog
 
 #include &quot;spdlog/spdlog.h&quot;
 
@@ -724,10 +728,9 @@ void exampleOne() {
 exampleOne()
 */
 </code></pre>
-
 <p>When built, which is easiest via <code>Rcpp::sourceCpp()</code>, the final block ensures that the created function <code>exampleOne()</code> is executed.
 In one previous run, the following output was produded:</p>
-<pre><code class="sh">R&gt; exampleOne()
+<pre><code class="language-sh">R&gt; exampleOne()
 [14:25:03.362024] [I] [thread 2453030] Welcome to spdlog!
 [14:25:03.362047] [E] [thread 2453030] Some error message with arg: 1
 [14:25:03.362051] [W] [thread 2453030] Easy padding in numbers like 00000012
@@ -738,14 +741,13 @@ In one previous run, the following output was produded:</p>
 [14:25:03.362061] [D] [thread 2453030] This message should be displayed..
 R&gt;
 </code></pre>
-
 <p>We note the easy-to-formatting in the source which benefits from the embedded <a href="https://github.com/fmtlib/fmt">fmt</a> package for easy-to-use variable expansion.
 We also notice the different logging "levels" indicated by single letters: <em>info</em>, <em>errror</em>, <em>warning</em>, <em>critical</em> and <em>debug</em>.  More on this below.</p>
 <h2 id="second-example-showcase">Second example: Showcase</h2>
 <p>This second example follows a more complete example in the <a href="https://github.com/gabime/spdlog">spdlog</a> documention and highlights numerous features of the library.
 As before, this example is also included in the <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package as <a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/inst/examples/exampleTwo.cpp">examples/exampleTwo.cpp</a>.
 And as before, do not use this example as a starting point in an R package.</p>
-<pre><code class="c++">
+<pre><code class="language-c++">
 #include &quot;spdlog/spdlog.h&quot;
 
 #include &lt;Rcpp.h&gt;
@@ -1000,13 +1002,12 @@ exampleTwo()
 */
 
 </code></pre>
-
 <p>We are not showing the output here; it can be compiled, linked, loaded and run just as above by simply passing the filename to <code>Rcpp::sourceCpp()</code>.
 Note that is will create a few demonstration logfiles so you may want to run the example from a temporary directory.</p>
 <h2 id="third-example-colour">Third example: Colour</h2>
 <p>The next example highlights a colour 'sink' for the logger.
 Again, do not use this as a starting point for your package as <code>R CMD check</code> will protest about use of <code>stdout</code>.</p>
-<pre><code class="c++">
+<pre><code class="language-c++">
 #include &quot;spdlog/spdlog.h&quot;
 #include &quot;spdlog/sinks/stdout_color_sinks.h&quot;
 
@@ -1043,11 +1044,10 @@ void exampleThree() {
 exampleThree()
 */
 </code></pre>
-
 <p>When running this example in a terminal capable of displaying colour escape sequence, the logging levels are distinguished by colour.
 This ranges from green ("info") to yellow ("warning") to red ("error") and white-on-red ("critical").
 Not that in this vignette color from standard output does how not show (in the keep-it-simple-mode we are using here).</p>
-<pre><code class="sh">R&gt; exampleThree()
+<pre><code class="language-sh">R&gt; exampleThree()
 [14:47:52.260692] [I] [thread 2502026] This an info message with custom format
 [14:47:52.260715] [I] [thread 2502026] Welcome to spdlog!
 [14:47:52.260732] [E] [thread 2502026] Some error message with arg: 1
@@ -1058,11 +1058,10 @@ Not that in this vignette color from standard output does how not show (in the k
 [14:47:52.260743] [I] [thread 2502026] left aligned
 R&gt;
 </code></pre>
-
 <h2 id="fourth-example-dedicated-r-logger">Fourth Example: Dedicated R Logger</h2>
 <p>The next example is suitable for use in R packages, and in fact included as an example in the package.
 We include the source file <a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/src/exampleRsink.cpp">src/exampleRsink.cpp</a>.</p>
-<pre><code class="c++">// this portmanteau include also defines the r_sink we use below, and which
+<pre><code class="language-c++">// this portmanteau include also defines the r_sink we use below, and which
 // diverts all logging to R via the Rcpp::Rcout replacement for std::cout
 #include &lt;RcppSpdlog&gt;
 #include &lt;spdlog/stopwatch.h&gt;           // also support stopwatch feature
@@ -1119,13 +1118,12 @@ void setLogLevel(const std::string &amp;name) {
 }
 
 </code></pre>
-
 <p>The example file contains three key aspects to highlight:
 - use of the <code>r_sink_mt()</code> class for R-specific logger sink
 - use of the very convenient <code>stopwatch</code> object
 - use of logging levels</p>
 <p>We highlight these below after first showing the relevant output:</p>
-<pre><code class="sh">R&gt; exampleRsink()
+<pre><code class="language-sh">R&gt; exampleRsink()
 [16:52:12.076751] [fromR] [I] [thread 2453030] Welcome to spdlog!
 [16:52:12.076809] [fromR] [E] [thread 2453030] Some error message with arg: 1
 [16:52:12.076823] [fromR] [I] [thread 2453030] Elapsed time: 9.6104e-05
@@ -1137,7 +1135,6 @@ void setLogLevel(const std::string &amp;name) {
 [16:52:12.076892] [fromR] [I] [thread 2453030] Elapsed time: 0.000167057
 R&gt;
 </code></pre>
-
 <h4 id="r-specific-sink">R-specific sink</h4>
 <p><a href="https://github.com/gabime/spdlog">spdlog</a> has the ability to derive and sub-class sinks for logger.
 The <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package uses this feature to implement a sink using the Rcpp conduit <code>Rcpp::Rcout</code> instead of <code>std::cout</code> as it conveniently redirects to
@@ -1152,18 +1149,17 @@ As the code example shows, simply instantianting an object, here called <code>sw
 <h4 id="log-level">Log-Level</h4>
 <p>A second utility function <code>setLogLevel()</code> is also provided.
 Usage is simple: after calling it with a given level, only message equal to it or higher are shown as the next example shows.</p>
-<pre><code class="sh">R&gt; setLogLevel(&quot;error&quot;)
+<pre><code class="language-sh">R&gt; setLogLevel(&quot;error&quot;)
 R&gt; exampleRsink()
 [16:54:12.666261] [fromR] [E] [thread 2453030] Some error message with arg: 1
 [16:54:12.666286] [fromR] [C] [thread 2453030] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
 R&gt;
 </code></pre>
-
 <p>By requestion level 'error', message of level 'info', 'warning' or 'debug' are suppressed but messages levels 'error' or 'critical' as shown as desired.</p>
 <h2 id="fifth-example-initialization">Fifth Example: Initialization</h2>
 <p>Package desiring to use <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> can initialize its facilities during startup.</p>
 <p>For that we first define a setup function</p>
-<pre><code class="c++">// this portmanteau include also defines the r_sink we use below, and which
+<pre><code class="language-c++">// this portmanteau include also defines the r_sink we use below, and which
 // diverts all logging to R via the Rcpp::Rcout replacement for std::cout
 #include &lt;RcppSpdlog&gt;
 
@@ -1178,13 +1174,11 @@ void setDefault() {
     spdlog::set_default_logger(sp);
 }
 </code></pre>
-
 <p>We can then call this function during startup:</p>
-<pre><code class="r">.onLoad &lt;- function(libname, pkgname) {
+<pre><code class="language-r">.onLoad &lt;- function(libname, pkgname) {
     setDefault();
 }
 </code></pre>
-
 <h2 id="sixth-example-compile-time-selection">Sixth Example: Compile-time Selection</h2>
 <p>Of course, <a href="https://github.com/gabime/spdlog">spdlog</a> also supports a common
 usage paradigm with loggers in which the decision of whether to log or not is
@@ -1195,7 +1189,7 @@ statements as well as a <code>#define</code> set such one and only one is
 shown. Similarly, code can contain debug or trace or info or ... statements
 which would <em>not</em> appear in the actually loaded "production code" (or CRAN
 version) if the compile-time logging level define is set high enough.</p>
-<pre><code class="c++">// this portmanteau include also defines the r_sink we use below, and which
+<pre><code class="language-c++">// this portmanteau include also defines the r_sink we use below, and which
 // diverts all logging to R via the Rcpp::Rcout replacement for std::cout
 #include &lt;RcppSpdlog&gt;
 
@@ -1214,17 +1208,15 @@ void demoInvisible() {
     SPDLOG_CRITICAL(&quot;Some critical message.. {} ,{}&quot;, 1, 3.23);
 }
 </code></pre>
-
 <p>When a piece of code with such compile-time defines is used, we see the
 expected outcome. The following example uses default logger, and as the
 preceding section showed this can be set up to be the custom R sink:</p>
-<pre><code class="r">R&gt; Rcpp::sourceCpp(&quot;/tmp/rcppspdlog.cpp&quot;)  # plus a '// [[Rcpp:depends(&quot;RcppSpdlog&quot;)'
+<pre><code class="language-r">R&gt; Rcpp::sourceCpp(&quot;/tmp/rcppspdlog.cpp&quot;)  # plus a '// [[Rcpp:depends(&quot;RcppSpdlog&quot;)'
 R&gt; demoInvisible()
 Hello from demoInvisible, just to show we're being called...
 [08:44:48.198075] [fromR] [C] [thread 2453030] Some critical message.. 1 ,3.23
 R&gt;
 </code></pre>
-
 <h2 id="conclusion">Conclusion</h2>
 <p><a href="https://github.com/gabime/spdlog">spdlog</a> and the included <a href="https://github.com/fmtlib/fmt">fmt</a> are two very powerful and widely used C++ libraries.
 The <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package adds to them to the set of packages R users can deploy.
@@ -1354,15 +1346,15 @@ It is our hope that the examples shown here are of interest to R users who are l
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
-          features: ["tabs"],
+          features: ['navigation.tabs', 'navigation.instant'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
