@@ -1,8 +1,8 @@
 Package: RcppSpdlog
 Type: Package
 Title: 'spdlog' C++ Header Library for Logging
-Version: 0.0.3
-Date: 2020-10-23
+Version: 0.0.3.1
+Date: 2020-12-11
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: The mature and widely-used C++ logging library 'spdlog' provides many desirable
