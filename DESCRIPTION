@@ -5,12 +5,14 @@ Version: 0.0.4
 Date: 2020-12-11
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
-Description: The mature and widely-used C++ logging library 'spdlog' provides many desirable
- features. This package bundles these header files for easy use by R packages via a simple
- 'LinkingTo:' inclusion.
+Description: The mature and widely-used C++ logging library 'spdlog' by Gabi Melman provides
+ many desirable features. This package bundles these header files for easy use by R packages
+ via a simple 'LinkingTo:' inclusion.
 License: GPL (>= 2)
 LinkingTo: Rcpp
 Imports: Rcpp
 Suggests: knitr, rmarkdown, minidown
+URL: https://github.com/eddelbuettel/rcppspdlog, http://dirk.eddelbuettel.com/code/rcpp.spdlog.html
+BugReports: https://github.com/eddelbuettel/rcppspdlog/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
