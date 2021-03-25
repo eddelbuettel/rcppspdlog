@@ -1,3 +1,7 @@
+2021-03-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/spdlog/*: New upstream release spdlog 1.8.4
+
 2021-03-24  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Description): Mention Gabi explicitly
