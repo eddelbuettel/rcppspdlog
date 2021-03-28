@@ -37,6 +37,7 @@ vignettes/*.pdf
 
 # Material for MkDocs
 docs-src/docs
+docs/mkdmt-src/docs
 
 # Emacs
 *~
