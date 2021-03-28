@@ -1,5 +1,4 @@
-spdlog Example using a sink for R
----------------------------------
+## spdlog Example using a sink for R
 
 ### Description
 

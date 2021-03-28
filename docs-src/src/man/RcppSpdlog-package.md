@@ -1,13 +1,10 @@
-'spdlog' C++ Header Library for Logging
----------------------------------------
+## 'spdlog' C++ Header Library for Logging
 
 ### Description
 
-The mature and widely-used C++ logging library 'spdlog' provides many
-desirable features. This package bundles these header files for easy use
-by R packages via a simple 'LinkingTo:' inclusion. 'spdlog' was written
-by Gabi Melman with contributions by many others, and includes 'fmt' by
-Victor Zverovic.
+The mature and widely-used C++ logging library 'spdlog' by Gabi Melman
+provides many desirable features. This package bundles these header
+files for easy use by R packages via a simple 'LinkingTo:' inclusion.
 
 ### Details
 

@@ -1,5 +1,27 @@
+###  2021 
+
+2021-03-27  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.5 
+ 
+2021-03-25  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.8.4 + 1.8.5 
+ 
+2021-03-24  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Description): Mention Gabi explicitly 
+        (URL): List GitHub repo and package pages 
+        (BugReports): List GitHub issues pages 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.8.3 
+ 
 ###  2020 
 
+2020-12-25  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * .github/workflows/ci.yaml: Small tweaks to CI YAML file 
+ 
 2020-12-11  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.4 

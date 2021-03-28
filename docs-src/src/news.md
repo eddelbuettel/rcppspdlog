@@ -1,3 +1,9 @@
+### Version 0.0.5 (2020-12-11)
+
+-   Upgraded to upstream release spdlog 1.8.5 (and 1.8.4 and 1.8.3)
+
+-   Small enhancements to DESCRIPTION files
+
 ### Version 0.0.4 (2020-12-11)
 
 -   Upgraded to upstream release spdlog 1.8.2

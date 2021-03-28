@@ -1,5 +1,4 @@
-spdlog Logging Lever Setter
----------------------------
+## spdlog Logging Lever Setter
 
 ### Description
 
