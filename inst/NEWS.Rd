@@ -3,6 +3,12 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.6 (2021-07-21)}{
+  \itemize{
+    \item Upgraded to upstream release spdlog 1.9.0
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.5 (2020-12-11)}{
   \itemize{
     \item Upgraded to upstream release spdlog 1.8.5 (and 1.8.4 and 1.8.3)
@@ -13,7 +19,8 @@
 \section{Changes in RcppSpdlog version 0.0.4 (2020-12-11)}{
   \itemize{
     \item Upgraded to upstream release spdlog 1.8.2
-    \item Added GitHub Actions CI using \code{run.sh} from r-ci
+    \item Added GitHub Actions CI using \code{run.sh} from
+    \href{https://eddelbuettel.github.io/r-ci/}{r-ci}
   }
 }
 
