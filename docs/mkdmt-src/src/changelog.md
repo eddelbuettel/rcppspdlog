@@ -1,5 +1,15 @@
 ###  2021 
 
+2021-07-21  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.6 
+ 
+        * inst/include/spdlog/*: spdlog 1.9.0 (with fmt 8.x) 
+ 
+2021-03-28  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * docs/mkdmt-src/: Moved mkdocs-material input 
+ 
 2021-03-27  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.5 

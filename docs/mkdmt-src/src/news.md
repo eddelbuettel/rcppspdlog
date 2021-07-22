@@ -1,3 +1,7 @@
+### Version 0.0.6 (2021-07-21)
+
+-   Upgraded to upstream release spdlog 1.9.0
+
 ### Version 0.0.5 (2020-12-11)
 
 -   Upgraded to upstream release spdlog 1.8.5 (and 1.8.4 and 1.8.3)
@@ -8,7 +12,8 @@
 
 -   Upgraded to upstream release spdlog 1.8.2
 
--   Added GitHub Actions CI using `run.sh` from r-ci
+-   Added GitHub Actions CI using `run.sh` from
+    [r-ci](https://eddelbuettel.github.io/r-ci/)
 
 ### Version 0.0.3 (2020-10-23)
 
