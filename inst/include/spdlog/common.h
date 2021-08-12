@@ -116,29 +116,26 @@ using wstring_view_t = fmt::basic_string_view<wchar_t>;
 using memory_buf_t = fmt::basic_memory_buffer<char, 250>;
 using wmemory_buf_t = fmt::basic_memory_buffer<wchar_t, 250>;
 
+template<class T>
+using remove_cvref_t = typename std::remove_cv<typename std::remove_reference<T>::type>::type;
+
+// clang doesn't like SFINAE disabled constructor in std::is_convertible<> so have to repeat the condition from basic_format_string here,
+// in addition, fmt::basic_runtime<Char> is only convertible to basic_format_string<Char> but not basic_string_view<Char>
+template<class T, class Char = char>
+struct is_convertible_to_basic_format_string
+    : std::integral_constant<bool,
+          std::is_convertible<T, fmt::basic_string_view<Char>>::value || std::is_same<remove_cvref_t<T>, fmt::basic_runtime<Char>>::value>
+{};
+
 #ifdef SPDLOG_WCHAR_TO_UTF8_SUPPORT
 #    ifndef _WIN32
 #        error SPDLOG_WCHAR_TO_UTF8_SUPPORT only supported on windows
-#    else
-template<typename T>
-struct is_convertible_to_wstring_view : std::is_convertible<T, wstring_view_t>
-{};
-template<class T>
-struct is_convertible_to_wformat_string : std::is_convertible<T, fmt::wformat_string<>>
-{};
 #    endif // _WIN32
-#else
-template<typename>
-struct is_convertible_to_wstring_view : std::false_type
-{};
-template<class>
-struct is_convertible_to_wformat_string : std::false_type
-{};
-#endif // SPDLOG_WCHAR_TO_UTF8_SUPPORT
+#endif     // SPDLOG_WCHAR_TO_UTF8_SUPPORT
 
 template<class T>
-struct is_convertible_to_basic_format_string
-    : std::integral_constant<bool, std::is_convertible<const T &, fmt::format_string<>>::value || is_convertible_to_wformat_string<T>::value>
+struct is_convertible_to_any_format_string : std::integral_constant<bool, is_convertible_to_basic_format_string<T, char>::value ||
+                                                                              is_convertible_to_basic_format_string<T, wchar_t>::value>
 {};
 
 #if defined(SPDLOG_NO_ATOMIC_LEVELS)
@@ -173,13 +170,13 @@ enum level_enum
     n_levels
 };
 
-#define SPDLOG_LEVEL_NAME_TRACE string_view_t("trace", 5)
-#define SPDLOG_LEVEL_NAME_DEBUG string_view_t("debug", 5)
-#define SPDLOG_LEVEL_NAME_INFO string_view_t("info", 4)
-#define SPDLOG_LEVEL_NAME_WARNING string_view_t("warning", 7)
-#define SPDLOG_LEVEL_NAME_ERROR string_view_t("error", 5)
-#define SPDLOG_LEVEL_NAME_CRITICAL string_view_t("critical", 8)
-#define SPDLOG_LEVEL_NAME_OFF string_view_t("off", 3)
+#define SPDLOG_LEVEL_NAME_TRACE spdlog::string_view_t("trace", 5)
+#define SPDLOG_LEVEL_NAME_DEBUG spdlog::string_view_t("debug", 5)
+#define SPDLOG_LEVEL_NAME_INFO spdlog::string_view_t("info", 4)
+#define SPDLOG_LEVEL_NAME_WARNING spdlog::string_view_t("warning", 7)
+#define SPDLOG_LEVEL_NAME_ERROR spdlog::string_view_t("error", 5)
+#define SPDLOG_LEVEL_NAME_CRITICAL spdlog::string_view_t("critical", 8)
+#define SPDLOG_LEVEL_NAME_OFF spdlog::string_view_t("off", 3)
 
 #if !defined(SPDLOG_LEVEL_NAMES)
 #    define SPDLOG_LEVEL_NAMES                                                                                                             \
