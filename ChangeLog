@@ -1,3 +1,8 @@
+2021-11-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/introduction.md: Converted from Rmd to simplermarkdown
+	* DESCRIPTION: Switched VignetteBuilder: to simplermarkdown
+
 2021-08-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll minor version

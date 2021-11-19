@@ -1,15 +1,15 @@
+<!--
+%\VignetteIndexEntry{RcppSpdlog Introduction}
+%\VignetteEngine{simplermarkdown::mdweave_to_html}
+%\VignetteEncoding{UTF-8}
+-->
 ---
 title: "Introduction to RcppSpdlog"
 author: "Dirk Eddelbuettel"
 date: "Initial version dated October 2020"
-output:
-  minidown::mini_document:
-    framework: water
-vignette: >
-  %\VignetteIndexEntry{RcppSpdlog Introduction}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
+css: "water.css"
 ---
+
 
 ## Introducing RcppSpdlog
 
