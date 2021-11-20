@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.7 (2021-xx-yy)}{
+  \itemize{
+    \item Upgraded to upstream bug fix releases spdlog 1.9.1 and 1.9.2
+    \item Switch vignette to the lighterweight \pkg{simplermarkdown}
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.6 (2021-07-21)}{
   \itemize{
     \item Upgraded to upstream release spdlog 1.9.0
