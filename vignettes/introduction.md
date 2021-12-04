@@ -1,5 +1,5 @@
 <!--
-%\VignetteIndexEntry{RcppSpdlog Introduction}
+%\VignetteIndexEntry{Introduction to RcppSpdlog}
 %\VignetteEngine{simplermarkdown::mdweave_to_html}
 %\VignetteEncoding{UTF-8}
 -->
