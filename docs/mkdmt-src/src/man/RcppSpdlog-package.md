@@ -1,3 +1,4 @@
+
 ## 'spdlog' C++ Header Library for Logging
 
 ### Description
@@ -19,7 +20,7 @@ package, including the most important functions.
 
 Dirk Eddelbuettel
 
-Maintainer: Dirk Eddelbuettel &lt;edd@debian.org&gt;
+Maintainer: Dirk Eddelbuettel \<edd@debian.org\>
 
 ### References
 
@@ -32,5 +33,8 @@ Optional links to other man pages
 
 ### Examples
 
-      ## Optional simple examples of the most important functions
-      ## Use \dontrun{} around code to be shown but not executed
+``` 
+  ## Optional simple examples of the most important functions
+  ## Use \dontrun{} around code to be shown but not executed
+```
+

@@ -1,10 +1,37 @@
 ###  2021 
 
+2021-12-05  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.7 
+ 
+2021-11-20  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * vignettes/water.css: Added css file 
+ 
+2021-11-19  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll minor version 
+ 
+        * vignettes/introduction.md: Converted from Rmd to simplermarkdown 
+        * DESCRIPTION: Switched VignetteBuilder: to simplermarkdown 
+ 
+2021-08-12  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll minor version 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.9.2 
+ 
+2021-07-27  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll minor version 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.9.1 
+ 
 2021-07-21  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.6 
  
-        * inst/include/spdlog/*: spdlog 1.9.0 (with fmt 8.x) 
+        * inst/include/spdlog/*: New upstream spdlog 1.9.0 (with fmt 8.x) 
  
 2021-03-28  Dirk Eddelbuettel  <edd@debian.org> 
  

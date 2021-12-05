@@ -1,3 +1,4 @@
+
 ## spdlog Logging Lever Setter
 
 ### Description
@@ -12,9 +13,10 @@ current logging level
 ### Arguments
 
 | Argument | Description                                                                                                                                                                                     |
-|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`   | A string with the logging level. Value understood are, in decreasing verbosity ‘trace’, ‘debug’, ‘info’, ‘warning’, ‘error’, ‘critical’, and ‘off’. Unrecognised names are equivalent to ‘off’. |
 
 ### Value
 
 Nothing is returned.
+

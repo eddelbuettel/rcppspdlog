@@ -1,3 +1,4 @@
+
 ## spdlog Example using a sink for R
 
 ### Description
@@ -21,3 +22,4 @@ None
 ### Examples
 
     exampleRsink()
+
