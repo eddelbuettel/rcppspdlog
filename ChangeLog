@@ -1,3 +1,9 @@
+2022-04-04  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.8
+
+	* inst/include/spdlog/*: New upstream release spdlog 1.10.0
+
 2021-12-05  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.7
