@@ -1,4 +1,8 @@
 <div class="container">
+<h3 id="version-0.0.8-2022-04-04">Version 0.0.8 (2022-04-04)</h3>
+<ul>
+<li><p>Upgraded to upstream releases spdlog 1.10.0</p></li>
+</ul>
 <h3 id="version-0.0.7-2021-12-05">Version 0.0.7 (2021-12-05)</h3>
 <ul>
 <li><p>Upgraded to upstream bug fix releases spdlog 1.9.1 and 1.9.2</p></li>
