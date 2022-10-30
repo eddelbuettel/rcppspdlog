@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // exampleRsink
 void exampleRsink();
 RcppExport SEXP _RcppSpdlog_exampleRsink() {
@@ -24,10 +29,121 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// log_setup
+void log_setup(const std::string& name, const std::string& level);
+RcppExport SEXP _RcppSpdlog_log_setup(SEXP nameSEXP, SEXP levelSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type name(nameSEXP);
+    Rcpp::traits::input_parameter< const std::string& >::type level(levelSEXP);
+    log_setup(name, level);
+    return R_NilValue;
+END_RCPP
+}
+// log_drop
+void log_drop(const std::string& name);
+RcppExport SEXP _RcppSpdlog_log_drop(SEXP nameSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type name(nameSEXP);
+    log_drop(name);
+    return R_NilValue;
+END_RCPP
+}
+// log_set_pattern
+void log_set_pattern(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_set_pattern(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_set_pattern(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_set_level
+void log_set_level(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_set_level(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_set_level(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_trace
+void log_trace(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_trace(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_trace(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_debug
+void log_debug(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_debug(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_debug(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_info
+void log_info(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_info(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_info(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_warn
+void log_warn(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_warn(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_warn(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_error
+void log_error(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_error(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_error(s);
+    return R_NilValue;
+END_RCPP
+}
+// log_critical
+void log_critical(const std::string& s);
+RcppExport SEXP _RcppSpdlog_log_critical(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type s(sSEXP);
+    log_critical(s);
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppSpdlog_exampleRsink", (DL_FUNC) &_RcppSpdlog_exampleRsink, 0},
     {"_RcppSpdlog_setLogLevel", (DL_FUNC) &_RcppSpdlog_setLogLevel, 1},
+    {"_RcppSpdlog_log_setup", (DL_FUNC) &_RcppSpdlog_log_setup, 2},
+    {"_RcppSpdlog_log_drop", (DL_FUNC) &_RcppSpdlog_log_drop, 1},
+    {"_RcppSpdlog_log_set_pattern", (DL_FUNC) &_RcppSpdlog_log_set_pattern, 1},
+    {"_RcppSpdlog_log_set_level", (DL_FUNC) &_RcppSpdlog_log_set_level, 1},
+    {"_RcppSpdlog_log_trace", (DL_FUNC) &_RcppSpdlog_log_trace, 1},
+    {"_RcppSpdlog_log_debug", (DL_FUNC) &_RcppSpdlog_log_debug, 1},
+    {"_RcppSpdlog_log_info", (DL_FUNC) &_RcppSpdlog_log_info, 1},
+    {"_RcppSpdlog_log_warn", (DL_FUNC) &_RcppSpdlog_log_warn, 1},
+    {"_RcppSpdlog_log_error", (DL_FUNC) &_RcppSpdlog_log_error, 1},
+    {"_RcppSpdlog_log_critical", (DL_FUNC) &_RcppSpdlog_log_critical, 1},
     {NULL, NULL, 0}
 };
 
