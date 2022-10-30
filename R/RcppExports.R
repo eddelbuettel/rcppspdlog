@@ -29,3 +29,90 @@ setLogLevel <- function(name) {
     invisible(.Call(`_RcppSpdlog_setLogLevel`, name))
 }
 
+#' R Accessor Functions for spdlog Logger
+#'
+#' Several R-level functions can access the \code{spdlog} logging facilties. As \code{spdlog}
+#' is a C++-level logging library, these are R function permit concurrent logging from both
+#' R and C++.
+#'
+#' Several functions are provided:
+#' \describe{
+#'    \item{\code{log_setup}}{Initializes a logger (which will also be called implicitly once).}
+#'    \item{\code{log_drop}}{Removes logger (which in general should not be needed).}
+#'    \item{\code{log_set_pattern}}{Changes the default logging message pattern.}
+#'    \item{\code{log_set_level}}{Sets the logging level threshold.}
+#'    \item{\code{log_trace}}{Logs a trace-level message.}
+#'    \item{\code{log_debug}}{Logs a debug-level message.}
+#'    \item{\code{log_info}}{Logs a info-level message.}
+#'    \item{\code{log_warn}}{Logs a warn-level message.}
+#'    \item{\code{log_error}}{Logs a error-level message.}
+#'    \item{\code{log_critical}}{Logs a critical-level message.}
+#' }
+#'
+#' Supported logging levels are, in order of increasing threshold values, \sQuote{trace},
+#' \sQuote{debug}, \sQuote{warn}, \sQuote{info}, \sQuote{warn}, \sQuote{error}, and
+#' \sQuote{critical}.  A message issued below the current threshold is not displayed whereas
+#' a message at or above the current threshold is displayed.  The default level is \sQuote{warn}.
+#'
+#' @param name A character variable with the logging instance name, default value is \sQuote{default}.
+#' @param level A character variable with the default logging level, default value is \sQuote{warn}.
+#' @param s A character variable with the logging pattern, level or message.
+#'
+#' @return Nothing is returned from these functions as they are invoked for their side-effects.
+#'
+#' @examples
+#' log_setup("demo")
+#' log_info("this message is NOT seen")
+#' log_set_level("debug")
+#' log_info("this message is seen")
+#' log_warn("as is this message")
+#'
+log_setup <- function(name = "default", level = "warn") {
+    invisible(.Call(`_RcppSpdlog_log_setup`, name, level))
+}
+
+#' @rdname log_setup
+log_drop <- function(name) {
+    invisible(.Call(`_RcppSpdlog_log_drop`, name))
+}
+
+#' @rdname log_setup
+log_set_pattern <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_set_pattern`, s))
+}
+
+#' @rdname log_setup
+log_set_level <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_set_level`, s))
+}
+
+#' @rdname log_setup
+log_trace <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_trace`, s))
+}
+
+#' @rdname log_setup
+log_debug <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_debug`, s))
+}
+
+#' @rdname log_setup
+log_info <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_info`, s))
+}
+
+#' @rdname log_setup
+log_warn <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_warn`, s))
+}
+
+#' @rdname log_setup
+log_error <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_error`, s))
+}
+
+#' @rdname log_setup
+log_critical <- function(s) {
+    invisible(.Call(`_RcppSpdlog_log_critical`, s))
+}
+
