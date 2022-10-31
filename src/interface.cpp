@@ -1,4 +1,7 @@
 
+
+// [[Rcpp::interfaces(r, cpp)]]
+
 // This portmanteau include also defines the r_sink we use below, and which
 // diverts all logging to R via the Rcpp::Rcout replacement for std::cout
 #include <RcppSpdlog>

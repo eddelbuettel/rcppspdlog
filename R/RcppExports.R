@@ -116,3 +116,7 @@ log_critical <- function(s) {
     invisible(.Call(`_RcppSpdlog_log_critical`, s))
 }
 
+# Register entry points for exported C++ functions
+methods::setLoadAction(function(ns) {
+    .Call('_RcppSpdlog_RcppExport_registerCCallable', PACKAGE = 'RcppSpdlog')
+})
