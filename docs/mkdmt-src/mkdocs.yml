@@ -2,6 +2,9 @@ site_name: rcppspdlog
 site_url: https://github.com/eddelbuettel/rcppspdlog
 docs_dir: src
 site_dir: docs
+copyright: Copyright &copy; 2020 - present Dirk Eddelbuettel
+repo_url: https://github.com/eddelbuettel/rcppspdlog
+edit_uri: ""
 
 theme:
   name: material
@@ -15,12 +18,16 @@ theme:
   logo: assets/Rlogo.svg
 
 extra_css:
-  - assets/extra.css
+  - stylesheets/extra.css
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/eddelbuettel/rcppspdlog
+      name: rcppspdlog on GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/eddelbuettel
+      name: eddelbuettel on Twitter
 
 nav:
   - Home:
@@ -29,6 +36,7 @@ nav:
     - man/RcppSpdlog-package.md
     - man/exampleRsink.md
     - man/setLogLevel.md
+    - man/log_setup.md
   - Articles:
      - Introduction: vignette/introduction.md
   - News:

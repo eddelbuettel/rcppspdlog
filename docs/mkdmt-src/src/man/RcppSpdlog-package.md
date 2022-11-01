@@ -1,11 +1,12 @@
 
-## 'spdlog' C++ Header Library for Logging
+## R and C++ Interfaces to 'spdlog' C++ Header Library for Logging
 
 ### Description
 
 The mature and widely-used C++ logging library 'spdlog' by Gabi Melman
 provides many desirable features. This package bundles these header
-files for easy use by R packages via a simple 'LinkingTo:' inclusion.
+files for easy use by R packages from both their R and C++ code. More
+explicit use via 'LinkingTo:' is also supported.
 
 ### Details
 
@@ -20,7 +21,7 @@ package, including the most important functions.
 
 Dirk Eddelbuettel
 
-Maintainer: Dirk Eddelbuettel \<edd@debian.org\>
+Maintainer: Dirk Eddelbuettel \<edd@debian.org>
 
 ### References
 
@@ -33,7 +34,7 @@ Optional links to other man pages
 
 ### Examples
 
-``` 
+``` R
   ## Optional simple examples of the most important functions
   ## Use \dontrun{} around code to be shown but not executed
 ```

@@ -1,4 +1,9 @@
 <div class="container">
+<h3 id="version-0.0.8.2-2022-10-31">Version 0.0.8.2 (2022-10-31)</h3>
+<ul>
+<li><p>Add both an R and an C++ interface to <code>spdlog</code></p></li>
+<li><p>Update GitHub Actions to checkout@v3</p></li>
+</ul>
 <h3 id="version-0.0.8-2022-04-04">Version 0.0.8 (2022-04-04)</h3>
 <ul>
 <li><p>Upgraded to upstream releases spdlog 1.10.0</p></li>

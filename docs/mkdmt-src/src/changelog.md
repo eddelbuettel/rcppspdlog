@@ -1,5 +1,24 @@
 ###  2022 
 
+2022-10-31  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+2022-10-30  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * src/interface.cpp: Add R interface to spdlog 
+        * man/log_setup.Rd: Documentation 
+ 
+        * .github/workflows/ci.yaml (jobs): Update to actions/checkout@v3 
+ 
+        * src/interface.cpp: Activate R and C++ interface generation 
+        * R/RcppExports.R: Updated accordingly 
+        * src/RcppExports.cpp: Idem 
+        * inst/include/RcppSpdlog.h: Generated 
+        * inst/include/RcppSpdlog_RcppExports.h: Idem 
+ 
 2022-04-04  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.8 

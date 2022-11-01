@@ -6,25 +6,23 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Bundling of spdlog for use from R and Rcpp">
       
       
+        <link rel="canonical" href="https://github.com/eddelbuettel/rcppspdlog/man/log_setup/">
       
-        <link rel="canonical" href="https://github.com/eddelbuettel/rcppspdlog/">
-      
-      <link rel="icon" href="assets/Rlogo.png">
+      <link rel="icon" href="../../assets/Rlogo.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.5">
     
     
       
-        <title>RcppSpdlog - rcppspdlog</title>
+        <title>Log setup - rcppspdlog</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.80dcb947.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -41,9 +39,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bundling-of-spdlog-for-use-from-r-and-rcpp" class="md-skip">
+        <a href="#r-accessor-functions-for-spdlog-logger" class="md-skip">
           Skip to content
         </a>
       
@@ -82,9 +80,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="rcppspdlog" class="md-header__button md-logo" aria-label="rcppspdlog" data-md-component="logo">
+    <a href="../.." title="rcppspdlog" class="md-header__button md-logo" aria-label="rcppspdlog" data-md-component="logo">
       
-  <img src="assets/Rlogo.svg" alt="logo">
+  <img src="../../assets/Rlogo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RcppSpdlog
+              Log setup
             
           </span>
         </div>
@@ -172,15 +170,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -190,13 +186,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="man/RcppSpdlog-package/" class="md-tabs__link">
+      <a href="../RcppSpdlog-package/" class="md-tabs__link md-tabs__link--active">
         Reference
       </a>
     </li>
@@ -212,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="vignette/introduction/" class="md-tabs__link">
+      <a href="../../vignette/introduction/" class="md-tabs__link">
         Articles
       </a>
     </li>
@@ -228,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="news/" class="md-tabs__link">
+      <a href="../../news/" class="md-tabs__link">
         News
       </a>
     </li>
@@ -244,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="changelog/" class="md-tabs__link">
+      <a href="../../changelog/" class="md-tabs__link">
         Changelog
       </a>
     </li>
@@ -272,9 +270,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="rcppspdlog" class="md-nav__button md-logo" aria-label="rcppspdlog" data-md-component="logo">
+    <a href="../.." title="rcppspdlog" class="md-nav__button md-logo" aria-label="rcppspdlog" data-md-component="logo">
       
-  <img src="assets/Rlogo.svg" alt="logo">
+  <img src="../../assets/Rlogo.svg" alt="logo">
 
     </a>
     rcppspdlog
@@ -300,14 +298,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -328,80 +324,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          RcppSpdlog
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         RcppSpdlog
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about" class="md-nav__link">
-    About
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-in-r-packages-and-warnings" class="md-nav__link">
-    Use in R Packages and Warnings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#author" class="md-nav__link">
-    Author
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -419,12 +346,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -447,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="man/RcppSpdlog-package/" class="md-nav__link">
+      <a href="../RcppSpdlog-package/" class="md-nav__link">
         RcppSpdlog package
       </a>
     </li>
@@ -461,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="man/exampleRsink/" class="md-nav__link">
+      <a href="../exampleRsink/" class="md-nav__link">
         exampleRsink
       </a>
     </li>
@@ -475,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="man/setLogLevel/" class="md-nav__link">
+      <a href="../setLogLevel/" class="md-nav__link">
         setLogLevel
       </a>
     </li>
@@ -487,11 +416,96 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="man/log_setup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Log setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Log setup
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#r-accessor-functions-for-spdlog-logger" class="md-nav__link">
+    R Accessor Functions for spdlog Logger
+  </a>
+  
+    <nav class="md-nav" aria-label="R Accessor Functions for spdlog Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -537,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vignette/introduction/" class="md-nav__link">
+      <a href="../../vignette/introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -585,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="news/" class="md-nav__link">
+      <a href="../../news/" class="md-nav__link">
         News
       </a>
     </li>
@@ -633,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="changelog/" class="md-nav__link">
+      <a href="../../changelog/" class="md-nav__link">
         Changelog
       </a>
     </li>
@@ -664,8 +678,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -674,37 +686,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about" class="md-nav__link">
-    About
+  <a href="#r-accessor-functions-for-spdlog-logger" class="md-nav__link">
+    R Accessor Functions for spdlog Logger
+  </a>
+  
+    <nav class="md-nav" aria-label="R Accessor Functions for spdlog Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#use-in-r-packages-and-warnings" class="md-nav__link">
-    Use in R Packages and Warnings
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#author" class="md-nav__link">
-    Author
+        
+          <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    Details
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+        
+          <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    Value
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -723,132 +755,94 @@
                   
 
 
-<h1 id="bundling-of-spdlog-for-use-from-r-and-rcpp">Bundling of spdlog for use from R and Rcpp</h1>
-<p><a href="https://github.com/eddelbuettel/rcppspdlog/actions/workflows/ci.yaml"><img alt="CI" src="https://github.com/eddelbuettel/rcppspdlog/actions/workflows/ci.yaml/badge.svg" /></a>
-<a href="https://www.gnu.org/licenses/gpl-2.0.html"><img alt="License" src="https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat" /></a>
-<a href="https://cran.r-project.org/package=RcppSpdlog"><img alt="CRAN" src="https://www.r-pkg.org/badges/version/RcppSpdlog" /></a>
-<a href="https://cran.r-project.org/package=RcppSpdlog"><img alt="Dependencies" src="https://tinyverse.netlify.com/badge/RcppSpdlog" /></a>
-<a href="https://www.r-pkg.org/pkg/RcppSpdlog"><img alt="Downloads" src="https://cranlogs.r-pkg.org/badges/RcppSpdlog?color=brightgreen" /></a>
-<a href="https://github.com/eddelbuettel/rcppspdlog"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/eddelbuettel/rcppspdlog" /></a>
-<a href="https://eddelbuettel.github.io/rcppspdlog/"><img alt="Documentation" src="https://img.shields.io/badge/documentation-is_here-blue" /></a></p>
-<h3 id="about">About</h3>
-<p>The <a href="https://github.com/gabime/spdlog">spdlog</a> library is a widely-used and very capable header-only
-C++ library for logging.  This package includes its headers as an R package to permit other R
-packages to deploy it via a simple <code>LinkingTo: RcppSpdlog</code> as described in <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies">Section 1.1.3 of
-WRE</a>.</p>
-<h3 id="example">Example</h3>
-<p>A simple first example, following the upstream examples:</p>
-<pre><code class="language-sh">edd@rob:~$ Rscript -e 'Rcpp::sourceCpp(&quot;inst/examples/exampleOne.cpp&quot;)'
+  <h1>Log setup</h1>
 
-R&gt; exampleOne()
-[07:45:57.168673] [I] [thread 1500593] Welcome to spdlog!
-[07:45:57.168704] [E] [thread 1500593] Some error message with arg: 1
-[07:45:57.168707] [W] [thread 1500593] Easy padding in numbers like 00000012
-[07:45:57.168710] [C] [thread 1500593] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
-[07:45:57.168728] [I] [thread 1500593] Support for floats 1.23
-[07:45:57.168731] [I] [thread 1500593] Positional args are supported too..
-[07:45:57.168734] [I] [thread 1500593] left aligned
-[07:45:57.168737] [D] [thread 1500593] This message should be displayed..
-edd@rob:~$
+<h2 id="r-accessor-functions-for-spdlog-logger">R Accessor Functions for spdlog Logger</h2>
+<h3 id="description">Description</h3>
+<p>Several R-level functions can access the <code>spdlog</code> logging facilties. As
+<code>spdlog</code> is a C++-level logging library, these are R function permit
+concurrent logging from both R and C++.</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="language-R">log_setup(name = &quot;default&quot;, level = &quot;warn&quot;)
+
+log_drop(name)
+
+log_set_pattern(s)
+
+log_set_level(s)
+
+log_trace(s)
+
+log_debug(s)
+
+log_info(s)
+
+log_warn(s)
+
+log_error(s)
+
+log_critical(s)
 </code></pre>
-<p>This logs the hour, minute, second, microsecond followed by a one-char code for info, error, warning
-or critical followed by the thread id and the actual loggable message. The code, apart from the
-included headers and more, is simply</p>
-<pre><code class="language-c++">// [[Rcpp::export]]
-void exampleOne() {
-
-  // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
-  spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%L] [thread %t] %v&quot;);
-
-  spdlog::info(&quot;Welcome to spdlog!&quot;);
-  spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
-
-  spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
-  spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
-  spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
-  spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
-  spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
-
-  spdlog::set_level(spdlog::level::debug); // Set global log level to debug
-  spdlog::debug(&quot;This message should be displayed..&quot;);
-
-  // Compile time log levels
-  // define SPDLOG_ACTIVE_LEVEL to desired level
-  SPDLOG_TRACE(&quot;Some trace message with param {}&quot;, {});
-  SPDLOG_DEBUG(&quot;Some debug message&quot;);
-
-}
+<h3 id="arguments">Arguments</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>A character variable with the logging instance name, default value is ‘default’.</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td>A character variable with the default logging level, default value is ‘warn’.</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>A character variable with the logging pattern, level or message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="details">Details</h3>
+<p>Several functions are provided:</p>
+<p><code>log_setup</code><br />
+Initializes a logger (which will also be called implicitly once).</p>
+<p><code>log_drop</code><br />
+Removes logger (which in general should not be needed).</p>
+<p><code>log_set_pattern</code><br />
+Changes the default logging message pattern.</p>
+<p><code>log_set_level</code><br />
+Sets the logging level threshold.</p>
+<p><code>log_trace</code><br />
+Logs a trace-level message.</p>
+<p><code>log_debug</code><br />
+Logs a debug-level message.</p>
+<p><code>log_info</code><br />
+Logs a info-level message.</p>
+<p><code>log_warn</code><br />
+Logs a warn-level message.</p>
+<p><code>log_error</code><br />
+Logs a error-level message.</p>
+<p><code>log_critical</code><br />
+Logs a critical-level message.</p>
+<p>Supported logging levels are, in order of increasing threshold values,
+‘trace’, ‘debug’, ‘warn’, ‘info’, ‘warn’, ‘error’, and ‘critical’. A
+message issued below the current threshold is not displayed whereas a
+message at or above the current threshold is displayed. The default
+level is ‘warn’.</p>
+<h3 id="value">Value</h3>
+<p>Nothing is returned from these functions as they are invoked for their
+side-effects.</p>
+<h3 id="examples">Examples</h3>
+<pre><code class="language-R">log_setup(&quot;demo&quot;)
+log_info(&quot;this message is NOT seen&quot;)
+log_set_level(&quot;debug&quot;)
+log_info(&quot;this message is seen&quot;)
+log_warn(&quot;as is this message&quot;)
 </code></pre>
-<p>Many other customizations are possible, see the <a href="https://github.com/gabime/spdlog/wiki">spdlog
-wiki</a>.</p>
-<p>Note that using <code>spdlog</code> examples directly <em>may</em> well trigger warning from R during package checking
-as <code>stdout</code> and/or <code>stderr</code> may be used. See the included example function described in the next
-section which uses a derived class to pass logging output explicitly to the R input/output stream as
-per the R coding requirements, see <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages">Section 1.3.1 (and others) of
-WRE</a>.</p>
-<h3 id="use-in-r-packages-and-warnings">Use in R Packages and Warnings</h3>
-<p>As shipped, both <a href="https://github.com/gabime/spdlog">spdlog</a> and the embedded
-<a href="https://github.com/fmtlib/fmt">fmt</a> use <code>stdout</code> and <code>stderr</code> in ways that may make it non-trivial
-to fully replace them with R input/output as required by <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-packages">Section 1.3.1 (and others) of
-WRE</a>.</p>
-<p>However, based on some initial trials and some excellent help from upstream we have defined a
-specific sink for R in the header
-<a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/inst/include/rcpp_sink.h"><code>rcpp_sink.h</code></a>,
-corrected one <code>stderr</code> use and added one <code>#define</code>.  That combination now passes as can be seen in
-checks of the package <code>RcppSpdlog</code> and the included function <code>exampleRsink()</code> whose complete source
-code is included here:</p>
-<pre><code class="language-c++">
-// this portmanteau include also defines the r_sink we use below, and which
-// diverts all logging to R via the Rcpp::Rcout replacement for std::cout
-#include &lt;RcppSpdlog&gt;
-
-//' spdlog Example using a sink for R
-//'
-//' A simple example invoking a derived R/Rcpp logger. Also demonstrates the
-//' stopwatch feature. For more features see the 'spdlog' documnetation.
-//'
-//' Note that this no longer triggers R warnings thanks to excellent help by
-//' Gabi Melman.
-//' @return None
-//' @examples
-//' exampleRsink()
-// [[Rcpp::export]]
-void exampleRsink() {
-
-    std::string logname = &quot;fromR&quot;;                          // fix a name for this logger
-    auto sp = spdlog::get(logname);                         // retrieve existing one
-    if (sp == nullptr) sp = spdlog::r_sink_mt(logname);     // or create new one if needed
-
-    spdlog::stopwatch sw;                                   // instantiate a stop watch
-
-    // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
-    spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%n] [%^%L%$] [thread %t] %v&quot;);
-
-    spdlog::info(&quot;Welcome to spdlog!&quot;);
-    spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
-    spdlog::info(&quot;Elapsed time: {}&quot;, sw);
-
-    spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
-    spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
-    spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
-    spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
-    spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
-    spdlog::info(&quot;Elapsed time: {}&quot;, sw);
-
-}
-</code></pre>
-<p>Note that it is deliberately similar in use to the example above.  A new instance of the logger is
-instantiated as a shared pointer <code>sp</code> to a <code>spdlog</code> object. Similarly, a stopwatch is instantiated
-used simply by referring to it.</p>
-<p>We may make additional package features available in the future.</p>
-<h3 id="author">Author</h3>
-<p><a href="https://github.com/gabime">Gabi Melman</a> is the main author of <a href="https://github.com/gabime/spdlog">spdlog</a>.</p>
-<p><a href="https://github.com/vitaut">Victor Zverovich</a> is the main author of the embedded <a href="https://github.com/fmtlib/fmt">fmt</a> library.</p>
-<p><a href="https://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> is author of this package and the R integration.</p>
-<h3 id="license">License</h3>
-<p><a href="https://github.com/gabime/spdlog">spdlog</a> and <a href="https://github.com/fmtlib/fmt">fmt</a> are under the
-MIT license.</p>
-<p>RcppSpdlog is released under the GNU GPL, version 2 or later, just like R and Rcpp.</p>
 
 
 
@@ -868,15 +862,30 @@ MIT license.</p>
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+        
+        <a href="../setLogLevel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: setLogLevel" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              setLogLevel
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="man/RcppSpdlog-package/" class="md-footer__link md-footer__link--next" aria-label="Next: RcppSpdlog package" rel="next">
+        <a href="../../vignette/introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              RcppSpdlog package
+              Introduction
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -926,10 +935,10 @@ MIT license.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.instant"], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
       
     
   </body>

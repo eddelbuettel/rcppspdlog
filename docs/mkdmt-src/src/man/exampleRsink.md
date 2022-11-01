@@ -8,7 +8,9 @@ stopwatch feature. For more features see the 'spdlog' documnetation.
 
 ### Usage
 
-    exampleRsink()
+``` R
+exampleRsink()
+```
 
 ### Details
 
@@ -21,5 +23,7 @@ None
 
 ### Examples
 
-    exampleRsink()
+``` R
+exampleRsink()
+```
 

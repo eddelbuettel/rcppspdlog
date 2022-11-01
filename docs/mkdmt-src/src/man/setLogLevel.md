@@ -8,13 +8,15 @@ current logging level
 
 ### Usage
 
-    setLogLevel(name)
+``` R
+setLogLevel(name)
+```
 
 ### Arguments
 
-| Argument | Description                                                                                                                                                                                     |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`   | A string with the logging level. Value understood are, in decreasing verbosity ‘trace’, ‘debug’, ‘info’, ‘warning’, ‘error’, ‘critical’, and ‘off’. Unrecognised names are equivalent to ‘off’. |
+|        |                                                                                                                                                                                                 |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `name` | A string with the logging level. Value understood are, in decreasing verbosity ‘trace’, ‘debug’, ‘info’, ‘warning’, ‘error’, ‘critical’, and ‘off’. Unrecognised names are equivalent to ‘off’. |
 
 ### Value
 
