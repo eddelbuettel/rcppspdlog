@@ -6,7 +6,7 @@
 ---
 title: "Introduction to RcppSpdlog"
 author: "Dirk Eddelbuettel"
-date: "Initial version dated October 2020"
+date: "Initial version dated October 2020. Expanded November 2022."
 css: "water.css"
 ---
 
@@ -616,6 +616,84 @@ Hello from demoInvisible, just to show we're being called...
 [08:44:48.198075] [fromR] [C] [thread 2453030] Some critical message.. 1 ,3.23
 R>
 ```
+
+## Seventh Example: Access From R
+
+As of package 0.1.0, [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog)
+supports two new modes. The first is direct logging support from R and
+described in this section; the second is access from another R package and
+described thereafter. A number of basic functions are
+exported using Rcpp. These include `log_setup(name, level)` to instantiate a
+named logger at a given level (instead of an unnamed default at level
+'warn'), a helper `log_drop(name)` to drop a named logger, two setters
+`log_set_pattern()` and `log_set_level()` to set, respectively, the displayed
+log pattern and the level. This is complemented by the actual loggers ranging
+from `log_trace()` and `log_debug()` to `log_info()`, `log_warn()`,
+`log_error()` and finally `log_critical()`.
+
+The following example (also the example in the manual page) illustrates.
+
+```r
+> library(RcppSpdlog)
+> log_setup("demo")                     # default level 'warn' is used
+> log_info("this message is NOT seen")
+> log_set_level("debug")
+> log_set_pattern("%^[%H:%M:%S.%e] [%n] [%l] %v%$")  # set a pattern w/o process id
+> log_info("this message is seen")
+[15:55:34.150] [demo] [info] this message is seen
+> log_warn("as is this message")
+[ 15:55:37.513] [demo] [warning] as is this message
+>
+```
+
+The interface expects a character value so use from either `sprintf()` or a
+string-interpolating helper such as `glue::glue` can be used:
+
+```r
+> log_info(sprintf("We can %s a %s with values %d", "build", "text", 42L))
+[16:03:37.728] [demo] [info] We can build a text with values 42
+> log_info(glue::glue("We can {a} a {b} with values {v}", a="build", b="text", v=42L))
+[16:03:46.395] [demo] [info] We can build a text with values 42
+>
+```
+
+## Eight Example: Access From Another R Package
+
+As of package 0.1.0, another package can use the C++ level functions (either
+with or without the R functions) by important the `RcppSpdlog` and ensuring
+the package is imported (so that the C-level interface functions are
+instantiated by R). This is time-honoured mechanism long-used by `lme4` to
+access (compiled) functions from `Matrix` as well as by `xts` to access code
+from `zoo`, and others.
+
+To properly import the package, add just one import, for example
+`importFrom((RcppSpdlog, log_setup)` to the `NAMESPACE` file of your
+package. The available functions are the same as the ones described in the
+previous section, but now available at the C++ level in the `RcppSpdlog`
+namespace. So for example
+
+```c++
+#include <RcppSpdlog.h>
+
+RcppSpldlog::log_setup("demoLogger", "info");	// create logger at info level
+RcppSpldlog::log_info("logger created");
+```
+
+will work.
+
+As this (auto-generated, thanks to `Rcpp`) interface is a little "wordy", we
+added a simple aliasing wrapping in a new namespace `spdl` and, given the
+protection from naming collisions offered by the namespace, shortened the
+accessor function names.  So the previous example can also be used via
+
+```c++
+#include <spdl.h>
+
+spdl::setup("demoLogger", "info");	// create logger at info level
+spdl::info("logger created");
+```
+
+
 
 ## Conclusion
 

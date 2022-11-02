@@ -1,3 +1,7 @@
+2022-11-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/introduction.md: New sections for access from R and C++
+
 2022-11-01  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll micro release version
