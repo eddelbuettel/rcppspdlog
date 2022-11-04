@@ -1,5 +1,31 @@
 ###  2022 
 
+2022-11-04  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.9 
+ 
+2022-11-03  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.11.0 
+ 
+         * vignettes/introduction.md: Small edits 
+ 
+2022-11-02  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * vignettes/introduction.md: New sections for access from R and C++ 
+ 
+2022-11-01  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * inst/include/RcppSpdlog: Ad second shorter namespace 'spdl' with 
+        shorter (inlined) function names as simpler accessors 
+ 
+         * vignettes/introduction.md: Two new sections on access from R and 
+        C++, respectively 
+ 
 2022-10-31  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Roll micro release version 

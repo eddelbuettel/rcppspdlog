@@ -19,7 +19,10 @@ description: Bundling of spdlog for use from R and Rcpp
 The [spdlog](https://github.com/gabime/spdlog) library is a widely-used and very capable header-only
 C++ library for logging.  This package includes its headers as an R package to permit other R
 packages to deploy it via a simple `LinkingTo: RcppSpdlog` as described in [Section 1.1.3 of
-WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies).
+WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies). As
+of version 0.0.9, it also provides both simple R logging functions and
+compiled functions callable by other packages as described in [Section 5.4.3
+of WRE](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Linking-to-native-routines-in-other-packages).
 
 
 ### Example

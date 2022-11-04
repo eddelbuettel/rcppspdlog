@@ -606,6 +606,105 @@ Hello from demoInvisible, just to show we're being called...
 R>
 ```
 
+## Seventh Example: Access From R
+
+As of package 0.0.9, [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog)
+supports two new modes. The first is direct logging support from R and
+described in this section; the second is access from another R package and
+described thereafter. A number of basic functions are
+exported using Rcpp. These include `log_setup(name, level)` to instantiate a
+named logger at a given level (instead of an unnamed default at level
+'warn'), a helper `log_drop(name)` to drop a named logger, two setters
+`log_set_pattern()` and `log_set_level()` to set, respectively, the displayed
+log pattern and the level. This is complemented by the actual loggers ranging
+from `log_trace()` and `log_debug()` to `log_info()`, `log_warn()`,
+`log_error()` and finally `log_critical()`.
+
+The following example (also the example in the manual page) illustrates.
+
+```r
+> library(RcppSpdlog)
+> log_setup("demo")                     # default level 'warn' is used
+> log_info("this message is NOT seen")
+> log_set_level("debug")
+> log_set_pattern("%^[%H:%M:%S.%e] [%n] [%l] %v%$")  # set a pattern w/o process id
+> log_info("this message is seen")
+[15:55:34.150] [demo] [info] this message is seen
+> log_warn("as is this message")
+[ 15:55:37.513] [demo] [warning] as is this message
+>
+```
+
+The interface expects a character value so use from either `sprintf()` or a
+string-interpolating helper such as `glue::glue` can be used:
+
+```r
+> log_info(sprintf("We can %s a %s with values %d", "build", "text", 42L))
+[16:03:37.728] [demo] [info] We can build a text with values 42
+> log_info(glue::glue("We can {a} a {b} with values {v}", a="build", b="text", v=42L))
+[16:03:46.395] [demo] [info] We can build a text with values 42
+>
+```
+
+## Eight Example: Access From Another R Package
+
+As of package 0.0.9, another package can use the C++ level functions (either
+with or without the R functions) by importing the `RcppSpdlog` while ensuring
+at least one function from the package is imported (so that the C-level
+interface functions are instantiated by R). This is time-honoured mechanism
+long-used by `lme4` to access (compiled) functions from `Matrix` as well as
+by `xts` to access code from `zoo`, and others.
+
+To properly import the package, add just one import, for example
+`importFrom((RcppSpdlog, log_setup)` to the `NAMESPACE` file of your package,
+along with the required `Imports: RcppSpdlog` in the `DESCRIPTION` file. The
+available functions are the same as the ones described in the previous
+section, but now available at the C++ level in the `RcppSpdlog` namespace. So
+for example
+
+```c++
+#include <RcppSpdlog.h>
+
+RcppSpldlog::log_setup("demoLogger", "info");	// create logger at info level
+RcppSpldlog::log_info("logger created");
+```
+
+will work.
+
+As this (auto-generated, thanks to `Rcpp`) interface is a little "wordy", we
+added a simple aliasing wrapping in a new namespace `spdl` and, given the
+protection from naming collisions offered by the namespace, shortened the
+accessor function names.  So the previous example can also be used via
+
+```c++
+#include <spdl.h>
+
+spdl::setup("demoLogger", "info");	// create logger at info level
+spdl::info("logger created");
+```
+
+The logger interface takes a simple string. Two easy options exist for
+formatting such as string.  First, one can rely on the
+[tinyformat](https://github.com/c42f/tinyformat) version included with `Rcpp`
+and use `tfm::format()` which works with standard `printf()` operators.
+Second, one can use the `fmt` library included with `spdlog`.
+
+```c++
+spdl::info(tfm::format("We can %s a %s with values %d", "build", "text", 42L))
+spdl::info(fmt::format("We can {} a {} with values {}", "build", "text", 42L))
+```
+
+Both formatters have to be called explicitly as we use a simple one-function
+signature (per logging function) to the underlying C language implementation
+without the fuller flexibility of variadic arguments.  This could be added at
+a later stage if desired.
+
+Note that when `fmt::format()` is used via the `spdl.h` header one will have
+to add another `#include <spdlog/fmt/fmt.h>` which may also required
+`LinkingTo: RcppSpdlog` for access to the header library. On the other hand,
+the simpler `tinyformat` will always be present via `Rcpp`.
+
+
 ## Conclusion
 
 [spdlog](https://github.com/gabime/spdlog) and the included [fmt](https://github.com/fmtlib/fmt) are two very powerful and widely used C++ libraries.
