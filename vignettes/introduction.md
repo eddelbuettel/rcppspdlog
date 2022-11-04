@@ -619,7 +619,7 @@ R>
 
 ## Seventh Example: Access From R
 
-As of package 0.1.0, [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog)
+As of package 0.0.9, [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog)
 supports two new modes. The first is direct logging support from R and
 described in this section; the second is access from another R package and
 described thereafter. A number of basic functions are
@@ -659,18 +659,19 @@ string-interpolating helper such as `glue::glue` can be used:
 
 ## Eight Example: Access From Another R Package
 
-As of package 0.1.0, another package can use the C++ level functions (either
-with or without the R functions) by important the `RcppSpdlog` and ensuring
-the package is imported (so that the C-level interface functions are
-instantiated by R). This is time-honoured mechanism long-used by `lme4` to
-access (compiled) functions from `Matrix` as well as by `xts` to access code
-from `zoo`, and others.
+As of package 0.0.9, another package can use the C++ level functions (either
+with or without the R functions) by importing the `RcppSpdlog` while ensuring
+at least one function from the package is imported (so that the C-level
+interface functions are instantiated by R). This is time-honoured mechanism
+long-used by `lme4` to access (compiled) functions from `Matrix` as well as
+by `xts` to access code from `zoo`, and others.
 
 To properly import the package, add just one import, for example
-`importFrom((RcppSpdlog, log_setup)` to the `NAMESPACE` file of your
-package. The available functions are the same as the ones described in the
-previous section, but now available at the C++ level in the `RcppSpdlog`
-namespace. So for example
+`importFrom((RcppSpdlog, log_setup)` to the `NAMESPACE` file of your package,
+along with the required `Imports: RcppSpdlog` in the `DESCRIPTION` file. The
+available functions are the same as the ones described in the previous
+section, but now available at the C++ level in the `RcppSpdlog` namespace. So
+for example
 
 ```c++
 #include <RcppSpdlog.h>
@@ -693,6 +694,26 @@ spdl::setup("demoLogger", "info");	// create logger at info level
 spdl::info("logger created");
 ```
 
+The logger interface takes a simple string. Two easy options exist for
+formatting such as string.  First, one can rely on the
+[tinyformat](https://github.com/c42f/tinyformat) version included with `Rcpp`
+and use `tfm::format()` which works with standard `printf()` operators.
+Second, one can use the `fmt` library included with `spdlog`.
+
+```c++
+spdl::info(tfm::format("We can %s a %s with values %d", "build", "text", 42L))
+spdl::info(fmt::format("We can {} a {} with values {}", "build", "text", 42L))
+```
+
+Both formatters have to be called explicitly as we use a simple one-function
+signature (per logging function) to the underlying C language implementation
+without the fuller flexibility of variadic arguments.  This could be added at
+a later stage if desired.
+
+Note that when `fmt::format()` is used via the `spdl.h` header one will have
+to add another `#include <spdlog/fmt/fmt.h>` which may also required
+`LinkingTo: RcppSpdlog` for access to the header library. On the other hand,
+the simpler `tinyformat` will always be present via `Rcpp`.
 
 
 ## Conclusion
