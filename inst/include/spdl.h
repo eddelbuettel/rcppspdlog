@@ -1,7 +1,7 @@
 
 #pragma once
 
-// include the auto-generated exports for the exported C++ functions
+// includes the auto-generated exports for the exported (via a C interface) underlying C++ functions
 #include <RcppSpdlog.h>
 
 // for convenience define cuter ones in another (shorter) namespace
@@ -16,4 +16,23 @@ namespace spdl {
     inline void warn(const std::string& s) { RcppSpdlog::log_warn(s); }
     inline void error(const std::string& s) { RcppSpdlog::log_error(s); }
     inline void critical(const std::string& s) { RcppSpdlog::log_critical(s); }
+
+    template <typename... Args>
+    inline void trace(const char* fmt, Args&&... args ) { RcppSpdlog::log_trace(fmt::format(fmt, std::forward<Args>(args)... ).c_str()); }
+
+    template <typename... Args>
+    inline void debug(const char* fmt, Args&&... args ) { RcppSpdlog::log_debug(fmt::format(fmt, std::forward<Args>(args)... ).c_str()); }
+
+    template <typename... Args>
+    inline void info(const char* fmt, Args&&... args ) { RcppSpdlog::log_info(fmt::format(fmt, std::forward<Args>(args)... ).c_str()); }
+
+    template <typename... Args>
+    inline void warn(const char* fmt, Args&&... args ) { RcppSpdlog::log_warn(fmt::format(fmt, std::forward<Args>(args)... ).c_str()); }
+
+    template <typename... Args>
+    inline void error(const char* fmt, Args&&... args ) { RcppSpdlog::log_error(fmt::format(fmt, std::forward<Args>(args)... ).c_str()); }
+
+    template <typename... Args>
+    inline void critical(const char* fmt, Args&&... args ) { RcppSpdlog::log_critical(fmt::format(fmt, std::forward<Args>(args)... ).c_str()); }
+
 }
