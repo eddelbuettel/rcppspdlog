@@ -665,8 +665,8 @@ for example
 ```c++
 #include <RcppSpdlog.h>
 
-RcppSpldlog::log_setup("demoLogger", "info");	// create logger at info level
-RcppSpldlog::log_info("logger created");
+RcppSpdlog::log_setup("demoLogger", "info");	// create logger at info level
+RcppSpdlog::log_info("logger created");
 ```
 
 will work.
