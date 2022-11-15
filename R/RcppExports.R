@@ -29,6 +29,26 @@ setLogLevel <- function(name) {
     invisible(.Call(`_RcppSpdlog_setLogLevel`, name))
 }
 
+#' Simple Pass-Through Formatter to \code{fmt::format()}
+#'
+#' The C-level interface of R does not make it easy to pass \code{...}  arguments.
+#' This helper function assumes it has already been called with \code{format()}
+#' on each argument (as a wrapper can do) so it just spreads out the class to
+#' \code{fmt::format{}} which, being C++, uses variadic templates to receive the
+#' arguments. The main motivation for this function to able to format string as
+#' use by the \sQuote{fmtlib::fmt} library included in \sQuote{spdlog} to write
+#' similar debug strings in both R and C++. This function permits R calls with
+#' multiple arguments of different types which (by being formatted on the R side)
+#' are handled as strings (whereas C++ logging has access to the templating logic).
+#'
+#' @param s A character variable with a format string for \sQuote{fmtlib::fmt}
+#' @param v A character vector with the logging string arguments.
+#' @return A single (formatted) string
+#' @seealso https://github.com/fmtlib/fmt
+formatter <- function(s, v) {
+    .Call(`_RcppSpdlog_formatter`, s, v)
+}
+
 #' R Accessor Functions for spdlog Logger
 #'
 #' Several R-level functions can access the \code{spdlog} logging facilties. As \code{spdlog}

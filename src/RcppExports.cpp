@@ -32,6 +32,18 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// formatter
+std::string formatter(const std::string s, std::vector<std::string> v);
+RcppExport SEXP _RcppSpdlog_formatter(SEXP sSEXP, SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string >::type s(sSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(formatter(s, v));
+    return rcpp_result_gen;
+END_RCPP
+}
 // log_setup
 void log_setup(const std::string& name, const std::string& level);
 static SEXP _RcppSpdlog_log_setup_try(SEXP nameSEXP, SEXP levelSEXP) {
@@ -401,6 +413,7 @@ RcppExport SEXP _RcppSpdlog_RcppExport_registerCCallable() {
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppSpdlog_exampleRsink", (DL_FUNC) &_RcppSpdlog_exampleRsink, 0},
     {"_RcppSpdlog_setLogLevel", (DL_FUNC) &_RcppSpdlog_setLogLevel, 1},
+    {"_RcppSpdlog_formatter", (DL_FUNC) &_RcppSpdlog_formatter, 2},
     {"_RcppSpdlog_log_setup", (DL_FUNC) &_RcppSpdlog_log_setup, 2},
     {"_RcppSpdlog_log_drop", (DL_FUNC) &_RcppSpdlog_log_drop, 1},
     {"_RcppSpdlog_log_set_pattern", (DL_FUNC) &_RcppSpdlog_log_set_pattern, 1},
