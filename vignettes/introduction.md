@@ -698,22 +698,22 @@ The logger interface takes a simple string. Two easy options exist for
 formatting such as string.  First, one can rely on the
 [tinyformat](https://github.com/c42f/tinyformat) version included with `Rcpp`
 and use `tfm::format()` which works with standard `printf()` operators.
-Second, one can use the `fmt` library included with `spdlog`.
+Second, one can use the `fmt` library included with `spdlog` via an explicit call.
 
 ```c++
-spdl::info(tfm::format("We can %s a %s with values %d", "build", "text", 42L))
-spdl::info(fmt::format("We can {} a {} with values {}", "build", "text", 42L))
+spdl::info(tfm::format("We can %s a %s with values %d", "build", "text", 42L));
+spdl::info(fmt::format("We can {} a {} with values {}", "build", "text", 42L));
 ```
 
-Both formatters have to be called explicitly as we use a simple one-function
-signature (per logging function) to the underlying C language implementation
-without the fuller flexibility of variadic arguments.  This could be added at
-a later stage if desired.
+Here both formatters have to be called explicitly as we use a simple
+one-function signature (per logging function) to the underlying C language
+implementation without the fuller flexibility of variadic arguments. As C++11
+can be assumed, we can also offers a variadic template expansion for
+`fmt::format()` and the example simply becomes
 
-Note that when `fmt::format()` is used via the `spdl.h` header one will have
-to add another `#include <spdlog/fmt/fmt.h>` which may also required
-`LinkingTo: RcppSpdlog` for access to the header library. On the other hand,
-the simpler `tinyformat` will always be present via `Rcpp`.
+```c++
+spdl::info("We can {} a {} with values {}", "build", "text", 42L);
+```
 
 
 ## Conclusion
