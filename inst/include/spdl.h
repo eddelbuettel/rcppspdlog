@@ -4,6 +4,9 @@
 // includes the auto-generated exports for the exported (via a C interface) underlying C++ functions
 #include <RcppSpdlog.h>
 
+// expose fmt::format via the courses in spdlog
+#include <spdlog/fmt/fmt.h>
+
 // for convenience define cuter ones in another (shorter) namespace
 namespace spdl {
     inline void setup(const std::string& name = "default", const std::string& level = "warn") {  RcppSpdlog::log_setup(name, level); }
