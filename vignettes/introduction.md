@@ -682,10 +682,13 @@ RcppSpdlog::log_info("logger created");
 
 will work.
 
-As this (auto-generated, thanks to `Rcpp`) interface is a little "wordy", we
-added a simple aliasing wrapping in a new namespace `spdl` and, given the
-protection from naming collisions offered by the namespace, shortened the
-accessor function names.  So the previous example can also be used via
+## Nineth Example: More compact C++ Access
+
+As the (auto-generated, thanks to `Rcpp`) interface described in the previous
+section is a little "wordy", we added a simple aliasing wrapping in a new
+namespace `spdl` and, given the protection from naming collisions offered by
+the namespace, shortened the accessor function names.  So the previous
+example can also be used via
 
 ```c++
 #include <spdl.h>
@@ -701,23 +704,47 @@ and use `tfm::format()` which works with standard `printf()` operators.
 Second, one can use the `fmt` library included with `spdlog` via an explicit call.
 
 ```c++
-spdl::info(tfm::format("We can %s a %s with values %d", "build", "text", 42L));
-spdl::info(fmt::format("We can {} a {} with values {}", "build", "text", 42L));
+# using tfm::format
+spdl::info(tfm::format("We %s values %d and %f", "log", 42, 1.23));
+# using fmt::format
+spdl::info(fmt::format("We {} values {} and {}", "log", 42, 1.23));
 ```
 
 Here both formatters have to be called explicitly as we use a simple
 one-function signature (per logging function) to the underlying C language
-implementation without the fuller flexibility of variadic arguments. As C++11
-can be assumed, we can also offers a variadic template expansion for
-`fmt::format()` and the example simply becomes
+implementation without the fuller flexibility of variadic arguments.
+
+As C++11 can be assumed, we can also offers a variadic template expansion for
+`fmt::format()` and the second example simply becomes
 
 ```c++
-spdl::info("We can {} a {} with values {}", "build", "text", 42L);
+spdl::info("We {} values {} and {}", "log", 42, 1.23);
 ```
 
+## Tenth Example: More compact R Access
+
+As the more compact access in the previous section is quite compelling we
+also created a sibbling R package [spd](https://github.com/eddelbuettel/spdl)
+providing a `spdl` namespace in R allowing _the exact same format strings too`.
+
+So
+
+```r
+spdl::info("We {} values {} and {}", "log", 42L, 1.23);
+```
+
+now also works from R using the same formatting string. We inted to upload `spdl` to CRAN too.
+
+Note that other all other formatting options are supported from R: the first argument is a character
+variable which can be constructed using `paste`, `sprintf`, or any of the string-interpolating
+packages.  But as none of those methods works like [fmt](https://github.com/fmtlib/fmt) (which we
+have come to like a lot) we added support for it too.
 
 ## Conclusion
 
-[spdlog](https://github.com/gabime/spdlog) and the included [fmt](https://github.com/fmtlib/fmt) are two very powerful and widely used C++ libraries.
-The [RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog) package adds to them to the set of packages R users can deploy.
-It is our hope that the examples shown here are of interest to R users who are looking for effortless, performant and flexible logging solutions for their compiled R extension packages.
+[spdlog](https://github.com/gabime/spdlog) and the included [fmt](https://github.com/fmtlib/fmt) are
+two very powerful and widely used C++ libraries.  The
+[RcppSpdlog](https://github.com/eddelbuettel/rcppspdlog) package adds to them to the set of packages
+R users can deploy. The [spd](https://github.com/eddelbuettel/spdl) package makes access even easier
+and more consistent. It is our hope that the examples shown here are of interest to R users who are
+looking for effortless, performant and flexible logging solutions for their R packages.
