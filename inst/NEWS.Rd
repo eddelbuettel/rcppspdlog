@@ -3,6 +3,15 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.10 (2022-11-17)}{
+  \itemize{
+    \item Support variadic templates with fmt::format
+    \item Add R formatting helper which converts arguments to character
+    taking advantage of variadic template logger: fmt logging from R
+    \item Expand vignette
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.9 (2022-11-04)}{
   \itemize{
     \item Add both an R and an C++ interface to \code{spdlog}

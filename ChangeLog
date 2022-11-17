@@ -1,3 +1,9 @@
+2022-11-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.10
+
+	* vignettes/introduction.md: More edits
+
 2022-11-15  Dirk Eddelbuettel  <edd@debian.org>
 
  	* src/formatter.cpp (formatter): Add formatting helper which passes
