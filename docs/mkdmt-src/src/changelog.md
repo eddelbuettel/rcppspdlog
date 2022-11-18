@@ -1,5 +1,27 @@
 ###  2022 
 
+2022-11-17  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.10 
+ 
+        * vignettes/introduction.md: More edits 
+ 
+2022-11-15  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+         * src/formatter.cpp (formatter): Add formatting helper which passes 
+        logging string to fmt::format() enable fmt's "format" from R 
+        * src/RcppExports.cpp: Ditto 
+        * R/RcppExports.R (formatter): Ditto 
+        * man/formatter.Rd: Docs 
+ 
+        * inst/include/spdl.h: Include fmtlib::fmt via spdlog 
+ 
+2022-11-14  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * inst/include/spdl.h: Use variadic templates to fmt::format 
+ 
 2022-11-04  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.9 
