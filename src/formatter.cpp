@@ -1,4 +1,6 @@
 
+// [[Rcpp::interfaces(r, cpp)]]
+
 #include <RcppSpdlog>
 
 //' Simple Pass-Through Formatter to \code{fmt::format()}

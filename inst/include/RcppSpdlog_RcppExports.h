@@ -24,6 +24,27 @@ namespace RcppSpdlog {
         }
     }
 
+    inline std::string formatter(const std::string s, std::vector<std::string> v) {
+        typedef SEXP(*Ptr_formatter)(SEXP,SEXP);
+        static Ptr_formatter p_formatter = NULL;
+        if (p_formatter == NULL) {
+            validateSignature("std::string(*formatter)(const std::string,std::vector<std::string>)");
+            p_formatter = (Ptr_formatter)R_GetCCallable("RcppSpdlog", "_RcppSpdlog_formatter");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_formatter(Shield<SEXP>(Rcpp::wrap(s)), Shield<SEXP>(Rcpp::wrap(v)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<std::string >(rcpp_result_gen);
+    }
+
     inline void log_setup(const std::string& name = "default", const std::string& level = "warn") {
         typedef SEXP(*Ptr_log_setup)(SEXP,SEXP);
         static Ptr_log_setup p_log_setup = NULL;

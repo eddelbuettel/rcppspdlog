@@ -34,15 +34,38 @@ END_RCPP
 }
 // formatter
 std::string formatter(const std::string s, std::vector<std::string> v);
-RcppExport SEXP _RcppSpdlog_formatter(SEXP sSEXP, SEXP vSEXP) {
+static SEXP _RcppSpdlog_formatter_try(SEXP sSEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string >::type s(sSEXP);
     Rcpp::traits::input_parameter< std::vector<std::string> >::type v(vSEXP);
     rcpp_result_gen = Rcpp::wrap(formatter(s, v));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _RcppSpdlog_formatter(SEXP sSEXP, SEXP vSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_RcppSpdlog_formatter_try(sSEXP, vSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // log_setup
 void log_setup(const std::string& name, const std::string& level);
@@ -380,6 +403,7 @@ RcppExport SEXP _RcppSpdlog_log_critical(SEXP sSEXP) {
 static int _RcppSpdlog_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
+        signatures.insert("std::string(*formatter)(const std::string,std::vector<std::string>)");
         signatures.insert("void(*log_setup)(const std::string&,const std::string&)");
         signatures.insert("void(*log_drop)(const std::string&)");
         signatures.insert("void(*log_set_pattern)(const std::string&)");
@@ -396,6 +420,7 @@ static int _RcppSpdlog_RcppExport_validate(const char* sig) {
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _RcppSpdlog_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_formatter", (DL_FUNC)_RcppSpdlog_formatter_try);
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_log_setup", (DL_FUNC)_RcppSpdlog_log_setup_try);
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_log_drop", (DL_FUNC)_RcppSpdlog_log_drop_try);
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_log_set_pattern", (DL_FUNC)_RcppSpdlog_log_set_pattern_try);
