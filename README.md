@@ -143,6 +143,12 @@ used simply by referring to it.
 
 We may make additional package features available in the future.
 
+### See Also
+
+The [spdl](https://github.com/eddelbuettel/spdl) package, now also on CRAN, wraps around this
+package to provide a _uniform and consistent_ logging interface from both R _and_ C++.  It defines a
+new C++ namespace `spdl` along with matching R functions.
+
 
 ### Author
 

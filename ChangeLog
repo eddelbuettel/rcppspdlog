@@ -1,3 +1,7 @@
+2022-12-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Mention the new spdl package
+
 2022-11-18  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/formatter.cpp: Export to C++ to make formatter() callable
