@@ -2,6 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{log_setup}
 \alias{log_setup}
+\alias{log_filesetup}
 \alias{log_drop}
 \alias{log_set_pattern}
 \alias{log_set_level}
@@ -14,6 +15,8 @@
 \title{R Accessor Functions for spdlog Logger}
 \usage{
 log_setup(name = "default", level = "warn")
+
+log_filesetup(filename, name = "default", level = "warn")
 
 log_drop(name)
 
@@ -38,6 +41,9 @@ log_critical(s)
 
 \item{level}{A character variable with the default logging level, default value is \sQuote{warn}.}
 
+\item{filename}{A character variable with the logging filename if a file-based logger is
+instantiated.}
+
 \item{s}{A character variable with the logging pattern, level or message.}
 }
 \value{
@@ -51,7 +57,8 @@ R and C++.
 \details{
 Several functions are provided:
 \describe{
-   \item{\code{log_setup}}{Initializes a logger (which will also be called implicitly once).}
+   \item{\code{log_setup}}{Initializes a logger (which becomes the default logger).}
+   \item{\code{log_filesetup}}{Initializes a file-based logger (which becomes the default).}
    \item{\code{log_drop}}{Removes logger (which in general should not be needed).}
    \item{\code{log_set_pattern}}{Changes the default logging message pattern.}
    \item{\code{log_set_level}}{Sets the logging level threshold.}

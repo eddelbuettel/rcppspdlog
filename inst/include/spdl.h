@@ -9,7 +9,11 @@
 
 // for convenience define cuter ones in another (shorter) namespace
 namespace spdl {
-    inline void setup(const std::string& name = "default", const std::string& level = "warn") {  RcppSpdlog::log_setup(name, level); }
+    inline void setup(const std::string& name = "default",
+                      const std::string& level = "warn") {  RcppSpdlog::log_setup(name, level); }
+    inline void filesetup(const std::string& filename = "default",
+                          const std::string& name = "default",
+                          const std::string& level = "warn") {  RcppSpdlog::log_filesetup(name, level); }
     inline void drop(const std::string& name) { RcppSpdlog::log_drop(name); }
     inline void set_pattern(const std::string& s) { RcppSpdlog::log_set_pattern(s); }
     inline void set_level(const std::string& s) { RcppSpdlog::log_set_level(s); }

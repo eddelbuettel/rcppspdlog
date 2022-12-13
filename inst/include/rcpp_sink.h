@@ -7,6 +7,7 @@
 
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/base_sink.h"
+#include "spdlog/sinks/basic_file_sink.h"
 
 #include <mutex>
 
