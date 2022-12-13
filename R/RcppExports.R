@@ -57,7 +57,8 @@ formatter <- function(s, v) {
 #'
 #' Several functions are provided:
 #' \describe{
-#'    \item{\code{log_setup}}{Initializes a logger (which will also be called implicitly once).}
+#'    \item{\code{log_setup}}{Initializes a logger (which becomes the default logger).}
+#'    \item{\code{log_filesetup}}{Initializes a file-based logger (which becomes the default).}
 #'    \item{\code{log_drop}}{Removes logger (which in general should not be needed).}
 #'    \item{\code{log_set_pattern}}{Changes the default logging message pattern.}
 #'    \item{\code{log_set_level}}{Sets the logging level threshold.}
@@ -77,6 +78,8 @@ formatter <- function(s, v) {
 #' @param name A character variable with the logging instance name, default value is \sQuote{default}.
 #' @param level A character variable with the default logging level, default value is \sQuote{warn}.
 #' @param s A character variable with the logging pattern, level or message.
+#' @param filename A character variable with the logging filename if a file-based logger is
+#' instantiated.
 #'
 #' @return Nothing is returned from these functions as they are invoked for their side-effects.
 #'
@@ -89,6 +92,11 @@ formatter <- function(s, v) {
 #'
 log_setup <- function(name = "default", level = "warn") {
     invisible(.Call(`_RcppSpdlog_log_setup`, name, level))
+}
+
+#' @rdname log_setup
+log_filesetup <- function(filename, name = "default", level = "warn") {
+    invisible(.Call(`_RcppSpdlog_log_filesetup`, filename, name, level))
 }
 
 #' @rdname log_setup

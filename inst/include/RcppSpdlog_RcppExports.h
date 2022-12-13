@@ -65,6 +65,26 @@ namespace RcppSpdlog {
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
     }
 
+    inline void log_filesetup(const std::string& filename, const std::string& name = "default", const std::string& level = "warn") {
+        typedef SEXP(*Ptr_log_filesetup)(SEXP,SEXP,SEXP);
+        static Ptr_log_filesetup p_log_filesetup = NULL;
+        if (p_log_filesetup == NULL) {
+            validateSignature("void(*log_filesetup)(const std::string&,const std::string&,const std::string&)");
+            p_log_filesetup = (Ptr_log_filesetup)R_GetCCallable("RcppSpdlog", "_RcppSpdlog_log_filesetup");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_log_filesetup(Shield<SEXP>(Rcpp::wrap(filename)), Shield<SEXP>(Rcpp::wrap(name)), Shield<SEXP>(Rcpp::wrap(level)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+    }
+
     inline void log_drop(const std::string& name) {
         typedef SEXP(*Ptr_log_drop)(SEXP);
         static Ptr_log_drop p_log_drop = NULL;

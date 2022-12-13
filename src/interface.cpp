@@ -19,7 +19,8 @@ const std::string default_log_pattern = "%^[%Y-%m-%d %H:%M:%S.%e] [%n] [Process:
 //'
 //' Several functions are provided:
 //' \describe{
-//'    \item{\code{log_setup}}{Initializes a logger (which will also be called implicitly once).}
+//'    \item{\code{log_setup}}{Initializes a logger (which becomes the default logger).}
+//'    \item{\code{log_filesetup}}{Initializes a file-based logger (which becomes the default).}
 //'    \item{\code{log_drop}}{Removes logger (which in general should not be needed).}
 //'    \item{\code{log_set_pattern}}{Changes the default logging message pattern.}
 //'    \item{\code{log_set_level}}{Sets the logging level threshold.}
@@ -39,6 +40,8 @@ const std::string default_log_pattern = "%^[%Y-%m-%d %H:%M:%S.%e] [%n] [Process:
 //' @param name A character variable with the logging instance name, default value is \sQuote{default}.
 //' @param level A character variable with the default logging level, default value is \sQuote{warn}.
 //' @param s A character variable with the logging pattern, level or message.
+//' @param filename A character variable with the logging filename if a file-based logger is
+//' instantiated.
 //'
 //' @return Nothing is returned from these functions as they are invoked for their side-effects.
 //'
@@ -60,6 +63,26 @@ void log_setup(const std::string& name = "default", const std::string& level = "
     logger_ = spdlog::get(name);
     if (logger_ == nullptr) {
         logger_ = spdlog::r_sink_mt(name);
+        spdlog::set_default_logger(logger_);
+    }
+
+    // Setting default pattern and chosen (or default) level
+    spdlog::set_pattern(default_log_pattern);
+    spdlog::set_level(spdlog::level::from_str(level));
+}
+
+//' @rdname log_setup
+// [[Rcpp::export]]
+void log_filesetup(const std::string& filename, const std::string &name = "default", const std::string& level = "warn") {
+    // If a logger exists and has non-default name, remove it
+    if (logger_ != nullptr && name != "default") {
+        spdlog::drop(name);
+    }
+
+    // Get the named logger, creating it if needed
+    logger_ = spdlog::get(name);
+    if (logger_ == nullptr) {
+        logger_ = spdlog::basic_logger_mt(name, filename);
         spdlog::set_default_logger(logger_);
     }
 
