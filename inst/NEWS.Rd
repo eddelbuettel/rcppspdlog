@@ -3,6 +3,14 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.11 (2022-12-13)}{
+  \itemize{
+    \item Export the formatter at C level
+    \item Mention package \pkg{spdl} in README.md
+    \item Support simple file-based logger
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.10 (2022-11-17)}{
   \itemize{
     \item Support variadic templates with fmt::format
