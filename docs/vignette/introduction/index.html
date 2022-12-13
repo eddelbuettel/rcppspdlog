@@ -1431,7 +1431,8 @@ described in this section; the second is access from another R package and
 described thereafter. A number of basic functions are
 exported using Rcpp. These include <code>log_setup(name, level)</code> to instantiate a
 named logger at a given level (instead of an unnamed default at level
-'warn'), a helper <code>log_drop(name)</code> to drop a named logger, two setters
+'warn'), <code>log_filesetup(filename, name, level)</code> (same using the named file as
+logging destination), a helper <code>log_drop(name)</code> to drop a named logger, two setters
 <code>log_set_pattern()</code> and <code>log_set_level()</code> to set, respectively, the displayed
 log pattern and the level. This is complemented by the actual loggers ranging
 from <code>log_trace()</code> and <code>log_debug()</code> to <code>log_info()</code>, <code>log_warn()</code>,
