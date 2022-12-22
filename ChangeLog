@@ -1,3 +1,15 @@
+2022-12-22  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/interface.cpp: Define and document three new functions for stopwatch
+	* R/RcppExports.R: Export new functions
+	* src/RcppExports.cpp: Idem
+	* inst/include/RcppSpdlog_RcppExports.h: Idem
+	* inst/include/RcppSpdlog_types.h: Include stopwatch, add XPtr template
+	* inst/include/RcppSpdlog: Use new header
+	* man/log_setup.Rd: Add documentation
+	* R/stopwatch.R: Add two S3 methods for stopwatch objects
+	* NAMESPACE: Export methods
+
 2022-12-13  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.11
