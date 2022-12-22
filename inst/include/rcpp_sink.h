@@ -11,7 +11,7 @@
 
 #include <mutex>
 
-#include <Rcpp.h>               // for Rcpp::Rcout
+#include <Rcpp/Lightest>        		// for Rcpp::Rcout
 
 namespace spdlog {
 namespace sinks {

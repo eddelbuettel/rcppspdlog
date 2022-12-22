@@ -10,6 +10,8 @@
 	* R/stopwatch.R: Add two S3 methods for stopwatch objects
 	* NAMESPACE: Export methods
 
+	* inst/include/rcpp_sink.h: Use lighter Rcpp interface
+
 2022-12-13  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.11
