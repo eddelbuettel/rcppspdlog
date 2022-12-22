@@ -329,27 +329,6 @@ namespace RcppSpdlog {
         return Rcpp::as<std::string >(rcpp_result_gen);
     }
 
-    inline bool new_format_stopwatch(Rcpp::XPtr<spdlog::stopwatch> sw) {
-        typedef SEXP(*Ptr_new_format_stopwatch)(SEXP);
-        static Ptr_new_format_stopwatch p_new_format_stopwatch = NULL;
-        if (p_new_format_stopwatch == NULL) {
-            validateSignature("bool(*new_format_stopwatch)(Rcpp::XPtr<spdlog::stopwatch>)");
-            p_new_format_stopwatch = (Ptr_new_format_stopwatch)R_GetCCallable("RcppSpdlog", "_RcppSpdlog_new_format_stopwatch");
-        }
-        RObject rcpp_result_gen;
-        {
-            RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_new_format_stopwatch(Shield<SEXP>(Rcpp::wrap(sw)));
-        }
-        if (rcpp_result_gen.inherits("interrupted-error"))
-            throw Rcpp::internal::InterruptedException();
-        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
-            throw Rcpp::LongjumpException(rcpp_result_gen);
-        if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<bool >(rcpp_result_gen);
-    }
-
 }
 
 #endif // RCPP_RcppSpdlog_RCPPEXPORTS_H_GEN_

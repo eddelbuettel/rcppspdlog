@@ -166,10 +166,6 @@ format_stopwatch <- function(sw) {
     .Call(`_RcppSpdlog_format_stopwatch`, sw)
 }
 
-new_format_stopwatch <- function(sw) {
-    .Call(`_RcppSpdlog_new_format_stopwatch`, sw)
-}
-
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
     .Call('_RcppSpdlog_RcppExport_registerCCallable', PACKAGE = 'RcppSpdlog')
