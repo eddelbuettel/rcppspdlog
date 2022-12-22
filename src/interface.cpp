@@ -166,6 +166,10 @@ void log_critical(const std::string& s) {
     spdlog::critical(s);
 }
 
+template <typename T> Rcpp::XPtr<T> make_xptr(T* p) {
+    return Rcpp::XPtr<T>(p);
+}
+
 //' @rdname log_setup
 // [[Rcpp::export]]
 Rcpp::XPtr<spdlog::stopwatch> get_stopwatch() {
