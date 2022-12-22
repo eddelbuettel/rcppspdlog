@@ -2,6 +2,7 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include "../inst/include/RcppSpdlog.h"
+#include "../inst/include/RcppSpdlog_types.h"
 #include <Rcpp.h>
 #include <string>
 #include <set>
@@ -433,6 +434,141 @@ RcppExport SEXP _RcppSpdlog_log_critical(SEXP sSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// get_stopwatch
+Rcpp::XPtr<spdlog::stopwatch> get_stopwatch();
+static SEXP _RcppSpdlog_get_stopwatch_try() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    rcpp_result_gen = Rcpp::wrap(get_stopwatch());
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _RcppSpdlog_get_stopwatch() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_RcppSpdlog_get_stopwatch_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// elapsed_stopwatch
+double elapsed_stopwatch(Rcpp::XPtr<spdlog::stopwatch> sw);
+static SEXP _RcppSpdlog_elapsed_stopwatch_try(SEXP swSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Rcpp::XPtr<spdlog::stopwatch> >::type sw(swSEXP);
+    rcpp_result_gen = Rcpp::wrap(elapsed_stopwatch(sw));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _RcppSpdlog_elapsed_stopwatch(SEXP swSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_RcppSpdlog_elapsed_stopwatch_try(swSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// format_stopwatch
+std::string format_stopwatch(Rcpp::XPtr<spdlog::stopwatch> sw);
+static SEXP _RcppSpdlog_format_stopwatch_try(SEXP swSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Rcpp::XPtr<spdlog::stopwatch> >::type sw(swSEXP);
+    rcpp_result_gen = Rcpp::wrap(format_stopwatch(sw));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _RcppSpdlog_format_stopwatch(SEXP swSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_RcppSpdlog_format_stopwatch_try(swSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// new_format_stopwatch
+bool new_format_stopwatch(Rcpp::XPtr<spdlog::stopwatch> sw);
+static SEXP _RcppSpdlog_new_format_stopwatch_try(SEXP swSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Rcpp::XPtr<spdlog::stopwatch> >::type sw(swSEXP);
+    rcpp_result_gen = Rcpp::wrap(new_format_stopwatch(sw));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _RcppSpdlog_new_format_stopwatch(SEXP swSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_RcppSpdlog_new_format_stopwatch_try(swSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 
 // validate (ensure exported C++ functions exist before calling them)
 static int _RcppSpdlog_RcppExport_validate(const char* sig) { 
@@ -450,6 +586,10 @@ static int _RcppSpdlog_RcppExport_validate(const char* sig) {
         signatures.insert("void(*log_warn)(const std::string&)");
         signatures.insert("void(*log_error)(const std::string&)");
         signatures.insert("void(*log_critical)(const std::string&)");
+        signatures.insert("Rcpp::XPtr<spdlog::stopwatch>(*get_stopwatch)()");
+        signatures.insert("double(*elapsed_stopwatch)(Rcpp::XPtr<spdlog::stopwatch>)");
+        signatures.insert("std::string(*format_stopwatch)(Rcpp::XPtr<spdlog::stopwatch>)");
+        signatures.insert("bool(*new_format_stopwatch)(Rcpp::XPtr<spdlog::stopwatch>)");
     }
     return signatures.find(sig) != signatures.end();
 }
@@ -468,6 +608,10 @@ RcppExport SEXP _RcppSpdlog_RcppExport_registerCCallable() {
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_log_warn", (DL_FUNC)_RcppSpdlog_log_warn_try);
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_log_error", (DL_FUNC)_RcppSpdlog_log_error_try);
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_log_critical", (DL_FUNC)_RcppSpdlog_log_critical_try);
+    R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_get_stopwatch", (DL_FUNC)_RcppSpdlog_get_stopwatch_try);
+    R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_elapsed_stopwatch", (DL_FUNC)_RcppSpdlog_elapsed_stopwatch_try);
+    R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_format_stopwatch", (DL_FUNC)_RcppSpdlog_format_stopwatch_try);
+    R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_new_format_stopwatch", (DL_FUNC)_RcppSpdlog_new_format_stopwatch_try);
     R_RegisterCCallable("RcppSpdlog", "_RcppSpdlog_RcppExport_validate", (DL_FUNC)_RcppSpdlog_RcppExport_validate);
     return R_NilValue;
 }
@@ -487,6 +631,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RcppSpdlog_log_warn", (DL_FUNC) &_RcppSpdlog_log_warn, 1},
     {"_RcppSpdlog_log_error", (DL_FUNC) &_RcppSpdlog_log_error, 1},
     {"_RcppSpdlog_log_critical", (DL_FUNC) &_RcppSpdlog_log_critical, 1},
+    {"_RcppSpdlog_get_stopwatch", (DL_FUNC) &_RcppSpdlog_get_stopwatch, 0},
+    {"_RcppSpdlog_elapsed_stopwatch", (DL_FUNC) &_RcppSpdlog_elapsed_stopwatch, 1},
+    {"_RcppSpdlog_format_stopwatch", (DL_FUNC) &_RcppSpdlog_format_stopwatch, 1},
+    {"_RcppSpdlog_new_format_stopwatch", (DL_FUNC) &_RcppSpdlog_new_format_stopwatch, 1},
     {"_RcppSpdlog_RcppExport_registerCCallable", (DL_FUNC) &_RcppSpdlog_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };

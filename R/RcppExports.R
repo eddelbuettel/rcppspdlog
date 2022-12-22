@@ -68,7 +68,11 @@ formatter <- function(s, v) {
 #'    \item{\code{log_warn}}{Logs a warn-level message.}
 #'    \item{\code{log_error}}{Logs a error-level message.}
 #'    \item{\code{log_critical}}{Logs a critical-level message.}
+#'    \item{\code{get_stopwatch}}{Returns a stopwatch object (as an S3 object).}
+#'    \item{\code{elapsed_stopwatch}}{Returns elapsed time for stopwatch in seconds.}
+#'    \item{\code{format_stopwatch}}{Returns elapsed time for stopwatch as character variable.}
 #' }
+#' The \code{stopwatch} object has \code{print} and \code{format} methods.
 #'
 #' Supported logging levels are, in order of increasing threshold values, \sQuote{trace},
 #' \sQuote{debug}, \sQuote{warn}, \sQuote{info}, \sQuote{warn}, \sQuote{error}, and
@@ -80,6 +84,9 @@ formatter <- function(s, v) {
 #' @param s A character variable with the logging pattern, level or message.
 #' @param filename A character variable with the logging filename if a file-based logger is
 #' instantiated.
+#' @param sw An S3 object of type \code{stopwatch}.
+#' @param x An S3 object of type \code{stopwatch}.
+#' @param ... Dotted argument required by generic, unused here.
 #'
 #' @return Nothing is returned from these functions as they are invoked for their side-effects.
 #'
@@ -142,6 +149,25 @@ log_error <- function(s) {
 #' @rdname log_setup
 log_critical <- function(s) {
     invisible(.Call(`_RcppSpdlog_log_critical`, s))
+}
+
+#' @rdname log_setup
+get_stopwatch <- function() {
+    .Call(`_RcppSpdlog_get_stopwatch`)
+}
+
+#' @rdname log_setup
+elapsed_stopwatch <- function(sw) {
+    .Call(`_RcppSpdlog_elapsed_stopwatch`, sw)
+}
+
+#' @rdname log_setup
+format_stopwatch <- function(sw) {
+    .Call(`_RcppSpdlog_format_stopwatch`, sw)
+}
+
+new_format_stopwatch <- function(sw) {
+    .Call(`_RcppSpdlog_new_format_stopwatch`, sw)
 }
 
 # Register entry points for exported C++ functions

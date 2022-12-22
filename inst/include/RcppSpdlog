@@ -16,5 +16,8 @@ extern "C" {
 // include main header for spdlog -- others headers needed for extra features
 #include "spdlog/spdlog.h"
 
+// pulls in stopwatch and template
+#include "RcppSpdlog_types.h"
+
 // a custom R sink using Rcpp::Rcout (and Rcpp.h is included too)
 #include "rcpp_sink.h"
