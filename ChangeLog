@@ -1,3 +1,7 @@
+2022-12-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/spdl.h: Wrap three RcppSpdlog::*_stopwatch() functions
+
 2022-12-23  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/interface.cpp: Split stopwatch documentation off

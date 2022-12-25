@@ -48,4 +48,8 @@ namespace spdl {
 
     #endif // if C++11
 
+    inline Rcpp::XPtr<spdlog::stopwatch> stopwatch() { return RcppSpdlog::get_stopwatch(); }
+    inline double elapsed(Rcpp::XPtr<spdlog::stopwatch> w) { return RcppSpdlog::elapsed_stopwatch(w); }
+    inline std::string format(Rcpp::XPtr<spdlog::stopwatch> w) { return RcppSpdlog::format_stopwatch(w); }
+
 }
