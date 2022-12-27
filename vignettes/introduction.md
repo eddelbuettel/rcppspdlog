@@ -741,6 +741,55 @@ variable which can be constructed using `paste`, `sprintf`, or any of the string
 packages.  But as none of those methods works like [fmt](https://github.com/fmtlib/fmt) (which we
 have come to like a lot) we added support for it too.
 
+## Eleventh Example: Stopwatch Support in R and C++
+
+As shown above, [spdlog](https://github.com/gabime/spdlog) supports a 'stopwatch' in C++. Usage is
+straightforward: one first instantiates an object of type `stopwatch` (make sure to first include
+the appropriate header too!) and then reports elapsed time by including the `stopwatch` object in
+the logger.
+
+We wrap this `spdlog::stopwatch` object in an external pointer to make it accessible from
+R. Moreover, by creating it as a S3 object we can add a `format()` method to make the usage pattern
+identical to the use in C++.  So in R we now have
+
+```r
+sw <- RcppSpdlog::get_stopwatch()
+Sys.sleep(0.2)
+RcppSpdlog::log_warn("Elapsed time via stopwatch: {}", sw)
+```
+
+This also works in C++.
+```c++
+auto sw = RcppSpdlog::get_stopwatch();  // returns XPtr<spdlog::stopwatch
+usleep(200);                            // from unistd.h
+RcppSpdlog::log_warn("Elapsed", RcppSpdlog::format_stopwatch(sw));
+```
+
+Note that in that last line we need to _explicitly_ call a formatter as we do not get the templated
+formatter from [spdlog](https://github.com/gabime/spdlog) as our object is an external-pointer
+wrapped object.
+
+We also export this via the `spdl.h` wrapper.  So the same C++ functionality is also available
+as
+
+```c++
+auto sw = spdl::stopwatch();  // returns XPtr<spdlog::stopwatch
+usleep(200);                  // from unistd.h
+spdl::warn("Elapsed", spdl::format(sw));
+```
+
+And because the [spdl](https://cloud.r-project.org/package=spdl) package wraps this for R, we can do
+the same in R:
+
+```r
+sw <- spdl::stopwatch()
+Sys.sleep(0.2)
+spdl::warn("Elapsed: {}", sw)
+```
+
+which once again takes advantage of the S3 class and its `format()` method.
+
+
 ## Conclusion
 
 [spdlog](https://github.com/gabime/spdlog) and the included [fmt](https://github.com/fmtlib/fmt) are
