@@ -83,3 +83,7 @@ log_info("this message is seen")
 log_warn("as is this message")
 
 }
+\seealso{
+The logging pattern format is described in at the repo in the page
+\url{https://github.com/gabime/spdlog/wiki/3.-Custom-formatting}.
+}

@@ -75,6 +75,9 @@ formatter <- function(s, v) {
 #' \sQuote{critical}.  A message issued below the current threshold is not displayed whereas
 #' a message at or above the current threshold is displayed.  The default level is \sQuote{warn}.
 #'
+#' @seealso The logging pattern format is described in at the repo in the page
+#' \url{https://github.com/gabime/spdlog/wiki/3.-Custom-formatting}.
+#'
 #' @param name A character variable with the logging instance name, default value is \sQuote{default}.
 #' @param level A character variable with the default logging level, default value is \sQuote{warn}.
 #' @param s A character variable with the logging pattern, level or message.
