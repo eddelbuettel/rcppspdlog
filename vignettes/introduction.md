@@ -778,7 +778,7 @@ usleep(200);                  // from unistd.h
 spdl::warn("Elapsed", spdl::format(sw));
 ```
 
-And because the [spdl](https://cloud.r-project.org/package=spdl) package wraps this for R, we can do
+And because the [spdl](https://cran.r-project.org/package=spdl) package wraps this for R, we can do
 the same in R:
 
 ```r
