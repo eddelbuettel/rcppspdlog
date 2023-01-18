@@ -1,3 +1,8 @@
+2023-01-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/spdlog_stopwatch.h: Define stopwatch withot fmt.h header
+	* inst/include/RcppSpdlog_types.h: Use spdlog_stopwatch if #define set
+
 2023-01-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.12
