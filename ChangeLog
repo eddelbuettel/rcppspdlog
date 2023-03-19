@@ -4,6 +4,8 @@
 
 	* src/Makevars: No longer set a C++ standard
 
+	* R/RcppExports.R (setLoadAction): Updated .Call using backticks
+
 2023-01-17  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/spdlog_stopwatch.h: Define stopwatch without fmt.h header

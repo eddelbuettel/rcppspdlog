@@ -191,5 +191,5 @@ format_stopwatch <- function(sw) {
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('_RcppSpdlog_RcppExport_registerCCallable', PACKAGE = 'RcppSpdlog')
+    .Call(`_RcppSpdlog_RcppExport_registerCCallable`)
 })
