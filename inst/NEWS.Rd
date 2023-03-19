@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.13 (2023-xx-yy)}{
+  \itemize{
+    \item No longer set a C++ compilation standard as the default choices by
+    R are sufficient for the package
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.12 (2023-01-07)}{
   \itemize{
     \item Addeed support for 'stopwatch' object allowing for simple timing
