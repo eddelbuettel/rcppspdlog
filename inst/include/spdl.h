@@ -11,6 +11,8 @@
 namespace spdl {
     inline void setup(const std::string& name = "default",
                       const std::string& level = "warn") {  RcppSpdlog::log_setup(name, level); }
+    inline void init(const std::string& level = "warn") {  RcppSpdlog::log_setup("r", level); }
+    inline void log(const std::string& level = "warn") {  RcppSpdlog::log_setup("r", level); }
     inline void filesetup(const std::string& filename = "default",
                           const std::string& name = "default",
                           const std::string& level = "warn") {  RcppSpdlog::log_filesetup(name, level); }

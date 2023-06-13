@@ -3,6 +3,8 @@
 	* src/interface.cpp (log_init): Add a simple convenience wrapper to
 	log_setup() which omits the first 'logger name' argument
 
+	* inst/include/spdl.h: Define convenience wrappers init() and log()
+
 2023-03-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll micro release version
