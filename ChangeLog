@@ -1,3 +1,8 @@
+2023-06-13  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/interface.cpp (log_init): Add a simple convenience wrapper to
+	log_setup() which omits the first 'logger name' argument
+
 2023-03-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll micro release version

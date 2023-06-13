@@ -2,6 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{log_setup}
 \alias{log_setup}
+\alias{log_init}
 \alias{log_filesetup}
 \alias{log_drop}
 \alias{log_set_pattern}
@@ -15,6 +16,8 @@
 \title{R Accessor Functions for spdlog Logger}
 \usage{
 log_setup(name = "default", level = "warn")
+
+log_init(level = "warn")
 
 log_filesetup(filename, name = "default", level = "warn")
 
@@ -76,7 +79,7 @@ Supported logging levels are, in order of increasing threshold values, \sQuote{t
 a message at or above the current threshold is displayed.  The default level is \sQuote{warn}.
 }
 \examples{
-log_setup("demo")
+log_setup("demo")  # at default level 'warn'
 log_info("this message is NOT seen")
 log_set_level("debug")
 log_info("this message is seen")

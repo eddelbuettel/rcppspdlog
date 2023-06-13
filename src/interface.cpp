@@ -50,7 +50,7 @@ const std::string default_log_pattern = "[%Y-%m-%d %H:%M:%S.%e] [%n] [Process: %
 //' @return Nothing is returned from these functions as they are invoked for their side-effects.
 //'
 //' @examples
-//' log_setup("demo")
+//' log_setup("demo")  # at default level 'warn'
 //' log_info("this message is NOT seen")
 //' log_set_level("debug")
 //' log_info("this message is seen")
@@ -73,6 +73,12 @@ void log_setup(const std::string& name = "default", const std::string& level = "
     // Setting default pattern and chosen (or default) level
     spdlog::set_pattern(default_log_pattern);
     spdlog::set_level(spdlog::level::from_str(level));
+}
+
+//' @rdname log_setup
+// [[Rcpp::export]]
+void log_init(const std::string& level = "warn") {
+    log_setup("r", level);
 }
 
 //' @rdname log_setup

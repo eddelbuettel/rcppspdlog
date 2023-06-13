@@ -66,6 +66,26 @@ namespace RcppSpdlog {
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
     }
 
+    inline void log_init(const std::string& level = "warn") {
+        typedef SEXP(*Ptr_log_init)(SEXP);
+        static Ptr_log_init p_log_init = NULL;
+        if (p_log_init == NULL) {
+            validateSignature("void(*log_init)(const std::string&)");
+            p_log_init = (Ptr_log_init)R_GetCCallable("RcppSpdlog", "_RcppSpdlog_log_init");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_log_init(Shield<SEXP>(Rcpp::wrap(level)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+    }
+
     inline void log_filesetup(const std::string& filename, const std::string& name = "default", const std::string& level = "warn") {
         typedef SEXP(*Ptr_log_filesetup)(SEXP,SEXP,SEXP);
         static Ptr_log_filesetup p_log_filesetup = NULL;

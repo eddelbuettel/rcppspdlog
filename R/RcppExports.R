@@ -87,7 +87,7 @@ formatter <- function(s, v) {
 #' @return Nothing is returned from these functions as they are invoked for their side-effects.
 #'
 #' @examples
-#' log_setup("demo")
+#' log_setup("demo")  # at default level 'warn'
 #' log_info("this message is NOT seen")
 #' log_set_level("debug")
 #' log_info("this message is seen")
@@ -95,6 +95,11 @@ formatter <- function(s, v) {
 #'
 log_setup <- function(name = "default", level = "warn") {
     invisible(.Call(`_RcppSpdlog_log_setup`, name, level))
+}
+
+#' @rdname log_setup
+log_init <- function(level = "warn") {
+    invisible(.Call(`_RcppSpdlog_log_init`, level))
 }
 
 #' @rdname log_setup
