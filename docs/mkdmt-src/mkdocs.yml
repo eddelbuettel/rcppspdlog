@@ -38,6 +38,7 @@ nav:
     - man/setLogLevel.md
     - man/log_setup.md
     - man/formatter.md
+    - man/get_stopwatch.md
   - Articles:
      - Introduction: vignette/introduction.md
   - News:

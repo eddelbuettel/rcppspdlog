@@ -491,6 +491,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     Examples
   </a>
@@ -519,6 +526,20 @@
     <li class="md-nav__item">
       <a href="../formatter/" class="md-nav__link">
         Formatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_stopwatch/" class="md-nav__link">
+        Get stopwatch
       </a>
     </li>
   
@@ -743,6 +764,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     Examples
   </a>
@@ -778,6 +806,10 @@
 concurrent logging from both R and C++.</p>
 <h3 id="usage">Usage</h3>
 <pre><code class="language-R">log_setup(name = &quot;default&quot;, level = &quot;warn&quot;)
+
+log_init(level = &quot;warn&quot;)
+
+log_filesetup(filename, name = &quot;default&quot;, level = &quot;warn&quot;)
 
 log_drop(name)
 
@@ -815,6 +847,10 @@ log_critical(s)
 <td>A character variable with the default logging level, default value is ‘warn’.</td>
 </tr>
 <tr>
+<td><code>filename</code></td>
+<td>A character variable with the logging filename if a file-based logger is instantiated.</td>
+</tr>
+<tr>
 <td><code>s</code></td>
 <td>A character variable with the logging pattern, level or message.</td>
 </tr>
@@ -823,7 +859,9 @@ log_critical(s)
 <h3 id="details">Details</h3>
 <p>Several functions are provided:</p>
 <p><code>log_setup</code><br />
-Initializes a logger (which will also be called implicitly once).</p>
+Initializes a logger (which becomes the default logger).</p>
+<p><code>log_filesetup</code><br />
+Initializes a file-based logger (which becomes the default).</p>
 <p><code>log_drop</code><br />
 Removes logger (which in general should not be needed).</p>
 <p><code>log_set_pattern</code><br />
@@ -850,8 +888,11 @@ level is ‘warn’.</p>
 <h3 id="value">Value</h3>
 <p>Nothing is returned from these functions as they are invoked for their
 side-effects.</p>
+<h3 id="see-also">See Also</h3>
+<p>The logging pattern format is described in at the repo in the page
+<a href="https://github.com/gabime/spdlog/wiki/3.-Custom-formatting">https://github.com/gabime/spdlog/wiki/3.-Custom-formatting</a>.</p>
 <h3 id="examples">Examples</h3>
-<pre><code class="language-R">log_setup(&quot;demo&quot;)
+<pre><code class="language-R">log_setup(&quot;demo&quot;)  # at default level 'warn'
 log_info(&quot;this message is NOT seen&quot;)
 log_set_level(&quot;debug&quot;)
 log_info(&quot;this message is seen&quot;)

@@ -5,8 +5,10 @@
 
 The mature and widely-used C++ logging library 'spdlog' by Gabi Melman
 provides many desirable features. This package bundles these header
-files for easy use by R packages from both their R and C++ code. More
-explicit use via 'LinkingTo:' is also supported.
+files for easy use by R packages from both their R and C or C++ code.
+Explicit use via 'LinkingTo:' is also supported. Also see the 'spdl'
+package which enhanced this package with a consistent R and C++
+interface.
 
 ### Details
 
@@ -21,7 +23,7 @@ package, including the most important functions.
 
 Dirk Eddelbuettel
 
-Maintainer: Dirk Eddelbuettel \<edd@debian.org>
+Maintainer: Dirk Eddelbuettel \<edd@debian.org\>
 
 ### References
 

@@ -12,6 +12,10 @@ concurrent logging from both R and C++.
 ``` R
 log_setup(name = "default", level = "warn")
 
+log_init(level = "warn")
+
+log_filesetup(filename, name = "default", level = "warn")
+
 log_drop(name)
 
 log_set_pattern(s)
@@ -33,18 +37,22 @@ log_critical(s)
 
 ### Arguments
 
-|         |                                                                                  |
-|---------|----------------------------------------------------------------------------------|
-| `name`  | A character variable with the logging instance name, default value is ‘default’. |
-| `level` | A character variable with the default logging level, default value is ‘warn’.    |
-| `s`     | A character variable with the logging pattern, level or message.                 |
+|            |                                                                                        |
+|------------|----------------------------------------------------------------------------------------|
+| `name`     | A character variable with the logging instance name, default value is ‘default’.       |
+| `level`    | A character variable with the default logging level, default value is ‘warn’.          |
+| `filename` | A character variable with the logging filename if a file-based logger is instantiated. |
+| `s`        | A character variable with the logging pattern, level or message.                       |
 
 ### Details
 
 Several functions are provided:
 
 `log_setup`  
-Initializes a logger (which will also be called implicitly once).
+Initializes a logger (which becomes the default logger).
+
+`log_filesetup`  
+Initializes a file-based logger (which becomes the default).
 
 `log_drop`  
 Removes logger (which in general should not be needed).
@@ -84,10 +92,15 @@ level is ‘warn’.
 Nothing is returned from these functions as they are invoked for their
 side-effects.
 
+### See Also
+
+The logging pattern format is described in at the repo in the page
+<https://github.com/gabime/spdlog/wiki/3.-Custom-formatting>.
+
 ### Examples
 
 ``` R
-log_setup("demo")
+log_setup("demo")  # at default level 'warn'
 log_info("this message is NOT seen")
 log_set_level("debug")
 log_info("this message is seen")

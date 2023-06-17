@@ -1,5 +1,71 @@
+###  2023 
+
+2023-06-17  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.13 
+ 
+2023-06-13  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * src/interface.cpp (log_init): Add a simple convenience wrapper to 
+        log_setup() which omits the first 'logger name' argument 
+ 
+        * inst/include/spdl.h: Define convenience wrappers init() and log() 
+ 
+2023-03-19  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * src/Makevars: No longer set a C++ standard 
+ 
+        * R/RcppExports.R (setLoadAction): Updated .Call using backticks 
+ 
+2023-01-17  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog_stopwatch.h: Define stopwatch without fmt.h header 
+        * inst/include/RcppSpdlog_types.h: Use spdlog_stopwatch if #define set 
+ 
+2023-01-07  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.12 
+ 
 ###  2022 
 
+2022-12-27  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * src/interface.cpp: Add documentation reference for format pattern 
+        * man/log_setup.Rd: Idem 
+        * R/RcppExports.R: Idem 
+ 
+2022-12-25  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdl.h: Wrap three RcppSpdlog::*_stopwatch() functions 
+ 
+2022-12-23  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * src/interface.cpp: Split stopwatch documentation off 
+        * man/get_stopwatch.Rd: Idem 
+        * man/log_setup.Rd: Idem 
+        * src/RcppExports.cpp: Idem 
+        * R/RcppExports.R: Idem 
+ 
+2022-12-22  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * src/interface.cpp: Define and document three new functions for stopwatch 
+        * R/RcppExports.R: Export new functions 
+        * src/RcppExports.cpp: Idem 
+        * inst/include/RcppSpdlog_RcppExports.h: Idem 
+        * inst/include/RcppSpdlog_types.h: Include stopwatch, add XPtr template 
+        * inst/include/RcppSpdlog: Use new header 
+        * man/log_setup.Rd: Add documentation 
+        * R/stopwatch.R: Add two S3 methods for stopwatch objects 
+        * NAMESPACE: Export methods 
+ 
+        * inst/include/rcpp_sink.h: Use lighter Rcpp interface 
+ 
 2022-12-13  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.11 
