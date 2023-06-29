@@ -1,3 +1,7 @@
+2023-06-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Add r-universe badge
+
 2023-06-17  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.13

@@ -4,6 +4,7 @@
 [![CI](https://github.com/eddelbuettel/rcppspdlog/actions/workflows/ci.yaml/badge.svg)](https://github.com/eddelbuettel/rcppspdlog/actions/workflows/ci.yaml)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN](https://www.r-pkg.org/badges/version/RcppSpdlog)](https://cran.r-project.org/package=RcppSpdlog)
+[![r-universe](https://eddelbuettel.r-universe.dev/badges/RcppSpdlog)](https://eddelbuettel.r-universe.dev/RcppSpdlog)
 [![Dependencies](https://tinyverse.netlify.com/badge/RcppSpdlog)](https://cran.r-project.org/package=RcppSpdlog)
 [![Downloads](https://cranlogs.r-pkg.org/badges/RcppSpdlog?color=brightgreen)](https://www.r-pkg.org/pkg/RcppSpdlog)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppspdlog)](https://github.com/eddelbuettel/rcppspdlog)
