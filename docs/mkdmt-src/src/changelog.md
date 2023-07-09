@@ -1,5 +1,19 @@
 ###  2023 
 
+2023-07-09  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.14 
+ 
+2023-07-08  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.12.0 
+ 
+2023-06-28  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * README.md: Add r-universe badge 
+ 
 2023-06-17  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.13 
