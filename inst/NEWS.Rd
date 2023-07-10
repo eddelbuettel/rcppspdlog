@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.14 (2023-07-09)}{
+  \itemize{
+    \item Added new badge to README.md
+    \item Upgraded to upstream releases spdlog 1.12.0
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.13 (2023-06-17)}{
   \itemize{
     \item Minor tweak to \code{stopwatch} setup avoids pulling in \pkg{fmt}
