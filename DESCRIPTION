@@ -1,8 +1,8 @@
 Package: RcppSpdlog
 Type: Package
 Title: R and C++ Interfaces to 'spdlog' C++ Header Library for Logging
-Version: 0.0.14
-Date: 2023-07-09
+Version: 0.0.15
+Date: 2023-11-29
 License: GPL (>= 2)
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>

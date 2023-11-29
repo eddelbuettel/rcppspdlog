@@ -3,6 +3,14 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.15 (2023-11-29)}{
+  \itemize{
+    \item Correct default package help page slighly
+    \item \code{RcppExports.cpp} has been regenerated under an updated
+    \pkg{Rcpp} to address a format string warning under R-devel
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.14 (2023-07-09)}{
   \itemize{
     \item Added new badge to README.md

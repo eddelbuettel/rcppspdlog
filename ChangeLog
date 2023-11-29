@@ -1,5 +1,7 @@
 2023-11-29  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Version 0.0.15
+
 	* src/RcppExports.cpp: Regenerated under updated Rcpp to address
 	format string issue reported by R-devel
 
