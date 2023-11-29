@@ -1,3 +1,7 @@
+2023-11-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* man/RcppSpdlog-package.Rd: Remove some empty default entries
+
 2023-07-09  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.14
