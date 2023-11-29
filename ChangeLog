@@ -1,5 +1,8 @@
 2023-11-29  Dirk Eddelbuettel  <edd@debian.org>
 
+	* src/RcppExports.cpp: Regenerated under updated Rcpp to address
+	format string issue reported by R-devel
+
 	* man/RcppSpdlog-package.Rd: Remove some empty default entries
 
 2023-07-09  Dirk Eddelbuettel  <edd@debian.org>
