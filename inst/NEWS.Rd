@@ -3,6 +3,12 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.16 (2024-01-12)}{
+  \itemize{
+    \item Upgraded to upstream releases spdlog 1.13.0
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.15 (2023-11-29)}{
   \itemize{
     \item Correct default package help page slighly
