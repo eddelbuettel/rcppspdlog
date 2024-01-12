@@ -1,5 +1,22 @@
+###  2024 
+
+2024-01-12  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.16 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.13.0 
+ 
 ###  2023 
 
+2023-11-29  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.15 
+ 
+        * src/RcppExports.cpp: Regenerated under updated Rcpp to address 
+        format string issue reported by R-devel 
+ 
+        * man/RcppSpdlog-package.Rd: Remove some empty default entries 
+ 
 2023-07-09  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.14 
