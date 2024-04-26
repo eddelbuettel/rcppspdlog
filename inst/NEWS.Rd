@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.17 (2024-04-25)}{
+  \itemize{
+    \item Minor continuous integration update
+    \item Upgraded to upstream releases spdlog 1.14.0
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.16 (2024-01-12)}{
   \itemize{
     \item Upgraded to upstream releases spdlog 1.13.0
