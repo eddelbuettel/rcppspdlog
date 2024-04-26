@@ -1,8 +1,13 @@
-<section id="NEWS" class="container">
-<h2>News for Package <code>RcppSpdlog</code></h2>
+<div class="container">
+<div role="main">
+<h3 id="version-0.0.17-2024-04-25">Version 0.0.17 (2024-04-25)</h3>
+<ul>
+<li><p>Minor continuous integration update</p></li>
+<li><p>Upgraded to upstream release spdlog 1.14.0</p></li>
+</ul>
 <h3 id="version-0.0.16-2024-01-12">Version 0.0.16 (2024-01-12)</h3>
 <ul>
-<li><p>Upgraded to upstream releases spdlog 1.13.0</p></li>
+<li><p>Upgraded to upstream release spdlog 1.13.0</p></li>
 </ul>
 <h3 id="version-0.0.15-2023-11-29">Version 0.0.15 (2023-11-29)</h3>
 <ul>
@@ -14,7 +19,7 @@ R-devel</p></li>
 <h3 id="version-0.0.14-2023-07-09">Version 0.0.14 (2023-07-09)</h3>
 <ul>
 <li><p>Added new badge to README.md</p></li>
-<li><p>Upgraded to upstream releases spdlog 1.12.0</p></li>
+<li><p>Upgraded to upstream release spdlog 1.12.0</p></li>
 </ul>
 <h3 id="version-0.0.13-2023-06-17">Version 0.0.13 (2023-06-17)</h3>
 <ul>
@@ -55,11 +60,11 @@ R</p></li>
 <code>spdlog</code></p></li>
 <li><p>Update GitHub Actions to checkout@v3</p></li>
 <li><p>Add a shorter aliased namespace for C++</p></li>
-<li><p>Upgraded to upstream releases spdlog 1.11.0</p></li>
+<li><p>Upgraded to upstream release spdlog 1.11.0</p></li>
 </ul>
 <h3 id="version-0.0.8-2022-04-04">Version 0.0.8 (2022-04-04)</h3>
 <ul>
-<li><p>Upgraded to upstream releases spdlog 1.10.0</p></li>
+<li><p>Upgraded to upstream release spdlog 1.10.0</p></li>
 </ul>
 <h3 id="version-0.0.7-2021-12-05">Version 0.0.7 (2021-12-05)</h3>
 <ul>
@@ -106,4 +111,5 @@ compile-time logging switch example</p></li>
 <ul>
 <li><p>Initial release with added R/Rcpp logging sink example</p></li>
 </ul>
-</section>
+</div>
+</div>

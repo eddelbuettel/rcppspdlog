@@ -1,5 +1,16 @@
 ###  2024 
 
+2024-04-25  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.17 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.14.0 
+ 
+2024-04-02  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * .github/workflows/ci.yaml (jobs): Update to actions/checkout@v4, 
+        add r-ci-setup actions 
+ 
 2024-01-12  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.16 
