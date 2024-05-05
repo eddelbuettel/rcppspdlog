@@ -1,3 +1,7 @@
+2024-05-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/spdlog/*: New upstream release spdlog 1.14.1
+
 2024-04-25  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.17
