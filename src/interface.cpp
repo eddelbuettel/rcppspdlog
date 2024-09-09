@@ -73,6 +73,9 @@ void log_setup(const std::string& name = "default", const std::string& level = "
     // Setting default pattern and chosen (or default) level
     spdlog::set_pattern(default_log_pattern);
     spdlog::set_level(spdlog::level::from_str(level));
+
+    // Also reflect eg ./example SPDLOG_LEVEL=my_demo=warn
+    spdlog::cfg::load_env_levels();
 }
 
 //' @rdname log_setup

@@ -1,3 +1,9 @@
+2024-09-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/interface.cpp (log_setup): Also support environment-level
+	setter via `SPDLOG_LEVEL`
+	* inst/include/RcppSpdlog: Include spdlog/cfg/env.h as now needed
+
 2024-05-17  Dirk Eddelbuettel  <edd@debian.org>
 
 	* README.md: Use tinyverse.netlify.app for dependency badge
