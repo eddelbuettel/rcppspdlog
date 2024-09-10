@@ -327,7 +327,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        RcppSpdlog
+        Bundling of spdlog for use from R and Rcpp
       </a>
     </li>
   
@@ -746,6 +746,22 @@
   <h1>Changelog</h1>
 
 <h3 id="2024">2024</h3>
+<p>2024-09-10  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * DESCRIPTION (Version, Date): Version 0.0.18
+</code></pre>
+<p>2024-09-09  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * DESCRIPTION (Version, Date): Roll micro release version
+
+    * src/interface.cpp (log_setup): Also support environment-level 
+    setter via `SPDLOG_LEVEL` 
+    * inst/include/RcppSpdlog: Include spdlog/cfg/env.h as now needed
+</code></pre>
+<p>2024-05-17  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * README.md: Use tinyverse.netlify.app for dependency badge
+</code></pre>
+<p>2024-05-05  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * inst/include/spdlog/*: New upstream release spdlog 1.14.1
+</code></pre>
 <p>2024-04-25  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
 <pre><code>    * DESCRIPTION (Version, Date): Version 0.0.17
 

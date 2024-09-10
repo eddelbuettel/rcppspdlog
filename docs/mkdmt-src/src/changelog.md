@@ -1,5 +1,25 @@
 ###  2024 
 
+2024-09-10  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.18 
+ 
+2024-09-09  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * src/interface.cpp (log_setup): Also support environment-level 
+        setter via `SPDLOG_LEVEL` 
+        * inst/include/RcppSpdlog: Include spdlog/cfg/env.h as now needed 
+ 
+2024-05-17  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * README.md: Use tinyverse.netlify.app for dependency badge 
+ 
+2024-05-05  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.14.1 
+ 
 2024-04-25  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.17 

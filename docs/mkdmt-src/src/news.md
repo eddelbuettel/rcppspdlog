@@ -1,5 +1,12 @@
 <div class="container">
 <div role="main">
+<h3 id="version-0.0.18-2024-09-10">Version 0.0.18 (2024-09-10)</h3>
+<ul>
+<li><p>Upgraded to upstream release spdlog 1.14.1</p></li>
+<li><p>Minor packaging upgrades</p></li>
+<li><p>Allow logging levels to be set via environment variable
+<code>SPDLOG_LEVEL</code></p></li>
+</ul>
 <h3 id="version-0.0.17-2024-04-25">Version 0.0.17 (2024-04-25)</h3>
 <ul>
 <li><p>Minor continuous integration update</p></li>
