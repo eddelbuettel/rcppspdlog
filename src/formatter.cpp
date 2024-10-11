@@ -3,6 +3,20 @@
 
 #include <RcppSpdlog>
 
+#ifdef SPDLOG_USE_STD_FORMAT
+
+template<std::size_t... S>
+std::format_args&& unpack_vector(const std::vector<std::string>& vec, std::index_sequence<S...>) {
+    return std::make_format_args(vec[S]...);
+}
+
+template<std::size_t size>
+std::format_args&& unpack_vector(const std::vector<std::string>& vec) {
+    return unpack_vector(vec, std::make_index_sequence<size>());
+}
+
+#endif
+
 //' Simple Pass-Through Formatter to \code{fmt::format()}
 //'
 //' The C-level interface of R does not make it easy to pass \code{...}  arguments.
@@ -20,21 +34,9 @@
 //' @return A single (formatted) string
 //' @seealso https://github.com/fmtlib/fmt
 // [[Rcpp::export]]
-
-#ifdef SPDLOG_USE_STD_FORMAT
-
-template<std::size_t... S>
-std::format_args&& unpack_vector(const std::vector<std::string>& vec, std::index_sequence<S...>) {
-    return std::make_format_args(vec[S]...);
-}
-
-template<std::size_t size>
-std::format_args&& unpack_vector(const std::vector<std::string>& vec) {
-    return unpack_vector(vec, std::make_index_sequence<size>());
-}
-
 std::string formatter(const std::string s, std::vector<std::string> v) {
     size_t n = v.size();
+    #ifdef SPDLOG_USE_STD_FORMAT
     switch (n) {
         case 0: return std::vformat(std::string_view(s), std::make_format_args());
         case 1: return std::vformat(std::string_view(s), unpack_vector<1>(v));
@@ -57,12 +59,7 @@ std::string formatter(const std::string s, std::vector<std::string> v) {
             return std::vformat(std::string_view(s), unpack_vector<12>(v));
         }
     }
-}
-
-#else
-
-std::string formatter(const std::string s, std::vector<std::string> v) {
-    size_t n = v.size();
+    #else
     switch (n) {
         case 0: return fmt::format(s);
         case 1: return fmt::format(s, std::string(v[0]));
@@ -85,6 +82,6 @@ std::string formatter(const std::string s, std::vector<std::string> v) {
             return fmt::format(s, std::string(v[0]), std::string(v[1]), std::string(v[2]), std::string(v[3]), std::string(v[4]), std::string(v[5]), std::string(v[6]), std::string(v[7]), std::string(v[8]), std::string(v[9]), std::string(v[10]), std::string(v[11]));
         }
     }
-}
-
 #endif
+}
+    
