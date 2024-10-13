@@ -18,4 +18,4 @@ LinkingTo: Rcpp
 Imports: Rcpp
 Suggests: simplermarkdown
 VignetteBuilder: simplermarkdown
-RoxygenNote: 6.0.1
+RoxygenNote: 7.3.2
