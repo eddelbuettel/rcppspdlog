@@ -34,7 +34,7 @@ const std::string default_log_pattern = "[%Y-%m-%d %H:%M:%S.%e] [%n] [Process: %
 //' }
 //'
 //' Supported logging levels are, in order of increasing threshold values, \sQuote{trace},
-//' \sQuote{debug}, \sQuote{warn}, \sQuote{info}, \sQuote{warn}, \sQuote{error}, and
+//' \sQuote{debug}, \sQuote{info}, \sQuote{warn}, \sQuote{error}, and
 //' \sQuote{critical}.  A message issued below the current threshold is not displayed whereas
 //' a message at or above the current threshold is displayed.  The default level is \sQuote{warn}.
 //'
