@@ -1,13 +1,13 @@
+2024-10-13  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro release version
+
 2024-13-10  Contantinos Giachalis  <cgiachalis@outlook.com>
 
-  * src/interface.cpp (log_setup): Documentation fix for duplicate log level
-  
-  * man/log_setup.Rd: Idem
-  
-  * R/RcppExports.R: Idem
-	
-  * DESCRIPTION (RoxygenNote): Idem
-  
+	* src/interface.cpp (log_setup): Documentation fix for duplicate log level
+	* man/log_setup.Rd: Idem
+	* R/RcppExports.R: Idem
+
 2024-09-10  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.18
