@@ -41,3 +41,6 @@ docs/mkdmt-src/docs
 
 # Emacs
 *~
+
+# VSCode
+.vscode 
