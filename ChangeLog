@@ -1,8 +1,17 @@
-2024-10-29 Xanthos Xanthopoulos <xanxanthopoulos@gmail.com>
+2024-10-29  Dirk Eddelbuettel  <edd@debian.org>
 
-	* inst/include/rcpp_sink.h: Use spdlog::memory_buf_t as string when building under C++20 with SPDLOG_USE_STD_FORMAT
-	* inst/include/RcppSpdlog_types.h: Abort compilation if SPDLOG_USE_STD_FORMAT without C++20 or greater
-	* inst/include/spdl.h: Use std::vformat if SPDLOG_USE_STD_FORMAT flag is set
+	* DESCRIPTION (Version, Date): Roll micro release version
+
+	* inst/include/rcpp_sink.h: Move C++20 or greater check here, micro edit
+
+2024-10-29  Xanthos Xanthopoulos  <xanxanthopoulos@gmail.com>
+
+	* inst/include/rcpp_sink.h: Use spdlog::memory_buf_t as string when
+	building under C++20 with SPDLOG_USE_STD_FORMAT
+	* inst/include/RcppSpdlog_types.h: Abort compilation if
+	SPDLOG_USE_STD_FORMAT without C++20 or greater
+	* inst/include/spdl.h: Use std::vformat if SPDLOG_USE_STD_FORMAT flag
+	is set
 	* src/formatter.cpp: Idem
 
 2024-10-13  Dirk Eddelbuettel  <edd@debian.org>
