@@ -1,5 +1,7 @@
 2024-11-10  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Version 0.0.19
+
 	* src/formatter.cpp: Partially revert / simplify previous PR
 
 2024-11-09  Dirk Eddelbuettel  <edd@debian.org>

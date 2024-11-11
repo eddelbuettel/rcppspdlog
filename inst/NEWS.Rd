@@ -3,6 +3,18 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.19 (2024-11-10)}{
+  \itemize{
+    \item Support use of \code{std::format} under C++20 via opt-in define
+    instead of \code{fmt} (Xanthos Xanthopoulos in \ghpr{19})
+    \item An erroneous duplicate log=level documentation level was removed
+    (Contantinos Giachalis in \ghpr{20})
+    \item Upgraded to upstream release spdlog 1.15.0 (Dirk in \ghpr{21})
+    \item Partially revert / simplify \code{src/formatter.cpp} accomodating
+    both \ghpr{19} and previous state (Dirk in \ghpr{21})
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.18 (2024-09-10)}{
   \itemize{
     \item Upgraded to upstream release spdlog 1.14.1
