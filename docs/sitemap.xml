@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/changelog/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/news/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/man/RcppSpdlog-package/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/man/exampleRsink/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/man/formatter/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/man/get_stopwatch/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/man/log_setup/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/man/setLogLevel/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/eddelbuettel/rcppspdlog/vignette/introduction/</loc>
-         <lastmod>2024-09-10</lastmod>
+         <lastmod>2024-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

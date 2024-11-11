@@ -1,5 +1,41 @@
 ###  2024 
 
+2024-11-10  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.19 
+ 
+        * src/formatter.cpp: Partially revert / simplify previous PR 
+ 
+2024-11-09  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.15.0 
+ 
+2024-10-29  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+        * inst/include/rcpp_sink.h: Move C++20 or greater check here, micro edit 
+ 
+2024-10-29  Xanthos Xanthopoulos  <xanxanthopoulos@gmail.com> 
+ 
+        * inst/include/rcpp_sink.h: Use spdlog::memory_buf_t as string when 
+        building under C++20 with SPDLOG_USE_STD_FORMAT 
+        * inst/include/RcppSpdlog_types.h: Abort compilation if 
+        SPDLOG_USE_STD_FORMAT without C++20 or greater 
+        * inst/include/spdl.h: Use std::vformat if SPDLOG_USE_STD_FORMAT flag 
+        is set 
+        * src/formatter.cpp: Idem 
+ 
+2024-10-13  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Roll micro release version 
+ 
+2024-10-13  Contantinos Giachalis  <cgiachalis@outlook.com> 
+ 
+        * src/interface.cpp (log_setup): Documentation fix for duplicate log level 
+        * man/log_setup.Rd: Idem 
+        * R/RcppExports.R: Idem 
+ 
 2024-09-10  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.18 

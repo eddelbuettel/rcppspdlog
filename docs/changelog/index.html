@@ -746,6 +746,36 @@
   <h1>Changelog</h1>
 
 <h3 id="2024">2024</h3>
+<p>2024-11-10  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * DESCRIPTION (Version, Date): Version 0.0.19
+
+    * src/formatter.cpp: Partially revert / simplify previous PR
+</code></pre>
+<p>2024-11-09  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * inst/include/spdlog/*: New upstream release spdlog 1.15.0
+</code></pre>
+<p>2024-10-29  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * DESCRIPTION (Version, Date): Roll micro release version
+
+    * inst/include/rcpp_sink.h: Move C++20 or greater check here, micro edit
+</code></pre>
+<p>2024-10-29  Xanthos Xanthopoulos  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#120;&#97;&#110;&#120;&#97;&#110;&#116;&#104;&#111;&#112;&#111;&#117;&#108;&#111;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#120;&#97;&#110;&#120;&#97;&#110;&#116;&#104;&#111;&#112;&#111;&#117;&#108;&#111;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a> </p>
+<pre><code>    * inst/include/rcpp_sink.h: Use spdlog::memory_buf_t as string when 
+    building under C++20 with SPDLOG_USE_STD_FORMAT 
+    * inst/include/RcppSpdlog_types.h: Abort compilation if 
+    SPDLOG_USE_STD_FORMAT without C++20 or greater 
+    * inst/include/spdl.h: Use std::vformat if SPDLOG_USE_STD_FORMAT flag 
+    is set 
+    * src/formatter.cpp: Idem
+</code></pre>
+<p>2024-10-13  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<pre><code>    * DESCRIPTION (Version, Date): Roll micro release version
+</code></pre>
+<p>2024-10-13  Contantinos Giachalis  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#103;&#105;&#97;&#99;&#104;&#97;&#108;&#105;&#115;&#64;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#46;&#99;&#111;&#109;">&#99;&#103;&#105;&#97;&#99;&#104;&#97;&#108;&#105;&#115;&#64;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#46;&#99;&#111;&#109;</a> </p>
+<pre><code>    * src/interface.cpp (log_setup): Documentation fix for duplicate log level 
+    * man/log_setup.Rd: Idem 
+    * R/RcppExports.R: Idem
+</code></pre>
 <p>2024-09-10  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
 <pre><code>    * DESCRIPTION (Version, Date): Version 0.0.18
 </code></pre>
