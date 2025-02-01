@@ -1,5 +1,18 @@
+###  2025 
+
+2025-02-01  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.20 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.15.1 
+ 
 ###  2024 
 
+2024-12-10  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * inst/examples/exampleFour.cpp: New multi-threaded logging example 
+        based on code by Young Geun Kim in GitHub issue #22 
+ 
 2024-11-10  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.19 

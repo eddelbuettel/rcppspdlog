@@ -1,5 +1,12 @@
 <div class="container">
 <div role="main">
+<h3 id="version-0.0.20-2025-02-01">Version 0.0.20 (2025-02-01)</h3>
+<ul>
+<li><p>New multi-threaded logging example (Young Geun Kim and Dirk via
+<a
+href="https://github.com/eddelbuettel/rcppspdlog/issues/22">#22</a>)</p></li>
+<li><p>Upgraded to upstream release spdlog 1.15.1</p></li>
+</ul>
 <h3 id="version-0.0.19-2024-11-10">Version 0.0.19 (2024-11-10)</h3>
 <ul>
 <li><p>Support use of <code>std::format</code> under C++20 via opt-in
