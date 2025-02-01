@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.20 (2025-02-01)}{
+  \itemize{
+    \item New multi-threaded logging example (Young Geun Kim and Dirk via \ghit{22})
+    \item Upgraded to upstream release spdlog 1.15.1
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.19 (2024-11-10)}{
   \itemize{
     \item Support use of \code{std::format} under C++20 via opt-in define
