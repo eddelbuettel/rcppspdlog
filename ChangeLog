@@ -1,3 +1,9 @@
+2025-03-28  Xanthos Xanthopoulos  <xanxanthopoulos@gmail.com>
+
+	* inst/include/spdl.h: Wrap runtime format strings with 
+	`fmt::runtime`
+	* src/formatter.cpp: Idem
+
 2025-02-01  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.20
