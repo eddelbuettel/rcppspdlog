@@ -1,10 +1,17 @@
 ###  2025 
 
+2025-05-09  Dirk Eddelbuettel  <edd@debian.org> 
+ 
+        * DESCRIPTION (Version, Date): Version 0.0.22 
+ 
+        * inst/include/spdlog/*: New upstream release spdlog 1.15.3 (which 
+        includes fmt 11.2.0) 
+ 
 2025-03-30  Dirk Eddelbuettel  <edd@debian.org> 
  
         * DESCRIPTION (Version, Date): Version 0.0.21 
  
-        * inst/include/spdlog/*: New upstream release spdlog 1.15.1 (which 
+        * inst/include/spdlog/*: New upstream release spdlog 1.15.2 (which 
         includes fmt 11.1.4) 
  
 2025-02-01  Dirk Eddelbuettel  <edd@debian.org> 
