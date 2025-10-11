@@ -4,3 +4,6 @@
 ^docs-src
 ^docs
 ^\.github$
+.venv_altdoc
+^docs$
+^altdoc$

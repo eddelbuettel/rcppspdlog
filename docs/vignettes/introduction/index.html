@@ -1,0 +1,1795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../../man/exampleRsink/">
+      
+      
+      <link rel="icon" href="../../Rlogo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>introduction - RcppSpdlog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introducing-rcppspdlog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RcppSpdlog" class="md-header__button md-logo" aria-label="RcppSpdlog" data-md-component="logo">
+      
+  <img src="../../Rlogo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RcppSpdlog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eddelbuettel/rcppspdlog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RcppSpdlog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Articles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../man/exampleRsink/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../NEWS/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../CHANGELOG/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../CITATION/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Citation
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RcppSpdlog" class="md-nav__button md-logo" aria-label="RcppSpdlog" data-md-component="logo">
+      
+  <img src="../../Rlogo.svg" alt="logo">
+
+    </a>
+    RcppSpdlog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eddelbuettel/rcppspdlog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RcppSpdlog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Articles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    introduction
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    introduction
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-rcppspdlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing RcppSpdlog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-example-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial example: Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-example-showcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second example: Showcase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-example-colour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third example: Colour
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourth-example-dedicated-r-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourth Example: Dedicated R Logger
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourth Example: Dedicated R Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-specific-sink" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-specific sink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopwatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopwatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log-Level
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifth-example-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fifth Example: Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sixth-example-compile-time-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sixth Example: Compile-time Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seventh-example-access-from-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seventh Example: Access From R
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eight-example-access-from-another-r-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eight Example: Access From Another R Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nineth-example-more-compact-c-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nineth Example: More compact C++ Access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenth-example-more-compact-r-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenth Example: More compact R Access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eleventh-example-stopwatch-support-in-r-and-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eleventh Example: Stopwatch Support in R and C++
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../man/exampleRsink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    exampleRsink
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../man/formatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    formatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../man/get_stopwatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    get_stopwatch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../man/log_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    log_setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../man/RcppSpdlog-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RcppSpdlog-package
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../man/setLogLevel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    setLogLevel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NEWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    News
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CITATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Citation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-rcppspdlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing RcppSpdlog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-example-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial example: Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-example-showcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second example: Showcase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-example-colour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third example: Colour
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourth-example-dedicated-r-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourth Example: Dedicated R Logger
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourth Example: Dedicated R Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-specific-sink" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-specific sink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopwatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopwatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log-Level
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifth-example-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fifth Example: Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sixth-example-compile-time-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sixth Example: Compile-time Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seventh-example-access-from-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seventh Example: Access From R
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eight-example-access-from-another-r-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eight Example: Access From Another R Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nineth-example-more-compact-c-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nineth Example: More compact C++ Access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenth-example-more-compact-r-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenth Example: More compact R Access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eleventh-example-stopwatch-support-in-r-and-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eleventh Example: Stopwatch Support in R and C++
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>introduction</h1>
+
+<!--
+%\VignetteIndexEntry{Introduction to RcppSpdlog}
+%\VignetteEngine{simplermarkdown::mdweave_to_html}
+%\VignetteEncoding{UTF-8}
+-->
+<hr />
+<p>title: "Introduction to RcppSpdlog"
+author: "Dirk Eddelbuettel"
+date: "Initial version dated October 2020. Expanded November 2022."
+css: "water.css"</p>
+<hr />
+<h2 id="introducing-rcppspdlog">Introducing RcppSpdlog</h2>
+<p><a href="https://github.com/gabime/spdlog">spdlog</a> is a widely-used and very capable header-only C++ library for logging.
+The <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package provides R users with easy-to-use customized access to the <a href="https://github.com/gabime/spdlog">spdlog</a> logging library by including its headers in an R package which permit other R packages to deploy it via a simple <code>LinkingTo: RcppSpdlog</code> as described in <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies">Section 1.1.3 of WRE</a>.</p>
+<p><a href="https://github.com/gabime/spdlog">spdlog</a> is mature and widely deployed.
+It also has a very rich set of features described at <a href="https://github.com/gabime/spdlog/wiki">the repository wiki</a>.
+This vignette will highlight a few first use cases.</p>
+<p>Note that in order to use <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> in an R package that might get distributed to <a href="https://cran.r-project.org">CRAN</a>, the code should follow the example
+R and C++ code in function <code>exampleRsink()</code> as described below.</p>
+<p>We will however start with some simpler examples.
+<em>Do not copy those into your R package.</em>
+The package checks used by R test for use of <code>stdout</code> and <code>stderr</code> which is why the customized setup described later is preferable.</p>
+<h2 id="initial-example-basics">Initial example: Basics</h2>
+<p>This example follows the simplest and initial example in the <a href="https://github.com/gabime/spdlog">spdlog</a>.
+It is also included in the <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package as <a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/inst/examples/exampleOne.cpp">examples/exampleOne.cpp</a>.
+As discussed above, do not use this example as a starting point in an R package.</p>
+<pre><code class="language-c++">// based on the 'basic usage' example in the README.md at https://github.com/gabime/spdlog
+
+#include &quot;spdlog/spdlog.h&quot;
+
+#include &lt;Rcpp.h&gt;
+
+// [[Rcpp::depends(RcppSpdlog)]]
+
+// [[Rcpp::export]]
+void exampleOne() {
+
+  // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
+  spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%L] [thread %t] %v&quot;);
+
+  spdlog::info(&quot;Welcome to spdlog!&quot;);
+  spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
+
+  spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
+  spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
+  spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
+  spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
+  spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
+
+  spdlog::set_level(spdlog::level::debug); // Set global log level to debug
+  spdlog::debug(&quot;This message should be displayed..&quot;);
+
+  // Compile time log levels
+  // define SPDLOG_ACTIVE_LEVEL to desired level
+  SPDLOG_TRACE(&quot;Some trace message with param {}&quot;, {});
+  SPDLOG_DEBUG(&quot;Some debug message&quot;);
+
+}
+
+/*** R
+exampleOne()
+*/
+</code></pre>
+<p>When built, which is easiest via <code>Rcpp::sourceCpp()</code>, the final block ensures that the created function <code>exampleOne()</code> is executed.
+In one previous run, the following output was produded:</p>
+<pre><code class="language-sh">R&gt; exampleOne()
+[14:25:03.362024] [I] [thread 2453030] Welcome to spdlog!
+[14:25:03.362047] [E] [thread 2453030] Some error message with arg: 1
+[14:25:03.362051] [W] [thread 2453030] Easy padding in numbers like 00000012
+[14:25:03.362053] [C] [thread 2453030] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
+[14:25:03.362056] [I] [thread 2453030] Support for floats 1.23
+[14:25:03.362058] [I] [thread 2453030] Positional args are supported too..
+[14:25:03.362060] [I] [thread 2453030] left aligned
+[14:25:03.362061] [D] [thread 2453030] This message should be displayed..
+R&gt;
+</code></pre>
+<p>We note the easy-to-formatting in the source which benefits from the embedded <a href="https://github.com/fmtlib/fmt">fmt</a> package for easy-to-use variable expansion.
+We also notice the different logging "levels" indicated by single letters: <em>info</em>, <em>errror</em>, <em>warning</em>, <em>critical</em> and <em>debug</em>.  More on this below.</p>
+<h2 id="second-example-showcase">Second example: Showcase</h2>
+<p>This second example follows a more complete example in the <a href="https://github.com/gabime/spdlog">spdlog</a> documention and highlights numerous features of the library.
+As before, this example is also included in the <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package as <a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/inst/examples/exampleTwo.cpp">examples/exampleTwo.cpp</a>.
+And as before, do not use this example as a starting point in an R package.</p>
+<pre><code class="language-c++">
+#include &quot;spdlog/spdlog.h&quot;
+
+#include &lt;Rcpp.h&gt;
+
+void stdout_logger_example();
+void basic_example();
+void rotating_example();
+void daily_example();
+void async_example();
+void binary_example();
+void trace_example();
+void multi_sink_example();
+void user_defined_example();
+void err_handler_example();
+void syslog_example();
+void clone_example();
+
+#include &quot;spdlog/spdlog.h&quot;
+
+// [[Rcpp::depends(RcppSpdlog)]]
+
+// [[Rcpp::export]]
+void exampleTwo() {
+
+    spdlog::info(&quot;Welcome to spdlog version {}.{}.{} !&quot;,
+                 SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR, SPDLOG_VER_PATCH);
+    spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
+    spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
+    spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
+    spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
+    spdlog::info(&quot;{:&gt;8} aligned, {:&lt;8} aligned&quot;, &quot;right&quot;, &quot;left&quot;);
+
+    // Runtime log levels
+    spdlog::set_level(spdlog::level::info); // Set global log level to info
+    spdlog::debug(&quot;This message should not be displayed!&quot;);
+    spdlog::set_level(spdlog::level::trace); // Set specific logger's log level
+    spdlog::debug(&quot;This message should be displayed..&quot;);
+
+    // Customize msg format for all loggers
+    spdlog::set_pattern(&quot;[%H:%M:%S %z] [%^%L%$] [thread %t] %v&quot;);
+    spdlog::info(&quot;This an info message with custom format&quot;);
+    spdlog::set_pattern(&quot;%+&quot;); // back to default format
+
+    try
+    {
+        stdout_logger_example();
+        basic_example();
+        rotating_example();
+        daily_example();
+        clone_example();
+        async_example();
+        binary_example();
+        multi_sink_example();
+        user_defined_example();
+        err_handler_example();
+        trace_example();
+
+        // Flush all *registered* loggers using a worker thread every 3 seconds.
+        // note: registered loggers *must* be thread safe for this to work correctly!
+        spdlog::flush_every(std::chrono::seconds(3));
+
+        // Apply some function on all registered loggers
+        spdlog::apply_all([&amp;](std::shared_ptr&lt;spdlog::logger&gt; l) { l-&gt;info(&quot;End of example.&quot;); });
+
+        // Release all spdlog resources, and drop all loggers in the registry.
+        // This is optional (only mandatory if using windows + async log).
+        //spdlog::shutdown();
+    }
+
+    // Exceptions will only be thrown upon failed logger or sink construction (not during logging).
+    catch (const spdlog::spdlog_ex &amp;ex)
+    {
+        std::printf(&quot;Log initialization failed: %s\n&quot;, ex.what());
+        return;
+    }
+
+    // added to this example file allow multiple runs of function
+    spdlog::drop(&quot;console&quot;);
+    spdlog::drop(&quot;file_logger&quot;);
+    spdlog::drop(&quot;some_logger_name&quot;);
+    spdlog::drop(&quot;daily_logger&quot;);
+    spdlog::drop(&quot;async_file_logger&quot;);
+}
+
+
+#include &quot;spdlog/sinks/stdout_color_sinks.h&quot;
+// or #include &quot;spdlog/sinks/stdout_sinks.h&quot; if no colors needed.
+void stdout_logger_example()
+{
+    // Create color multi threaded logger.
+    auto console = spdlog::stdout_color_mt(&quot;console&quot;);
+    // or for stderr:
+    // auto console = spdlog::stderr_color_mt(&quot;error-logger&quot;);
+}
+
+#include &quot;spdlog/sinks/basic_file_sink.h&quot;
+void basic_example()
+{
+    // Create basic file logger (not rotated).
+    auto my_logger = spdlog::basic_logger_mt(&quot;file_logger&quot;, &quot;logs/basic-log.txt&quot;);
+}
+
+#include &quot;spdlog/sinks/rotating_file_sink.h&quot;
+void rotating_example()
+{
+    // Create a file rotating logger with 5mb size max and 3 rotated files.
+    auto rotating_logger =
+        spdlog::rotating_logger_mt(&quot;some_logger_name&quot;, &quot;logs/rotating.txt&quot;, 1048576 * 5, 3);
+}
+
+#include &quot;spdlog/sinks/daily_file_sink.h&quot;
+void daily_example()
+{
+    // Create a daily logger - a new file is created every day on 2:30am.
+    auto daily_logger = spdlog::daily_logger_mt(&quot;daily_logger&quot;, &quot;logs/daily.txt&quot;, 2, 30);
+}
+
+// Clone a logger and give it new name.
+// Useful for creating component/subsystem loggers from some &quot;root&quot; logger.
+void clone_example()
+{
+    auto network_logger = spdlog::default_logger()-&gt;clone(&quot;network&quot;);
+    network_logger-&gt;info(&quot;Logging network stuff..&quot;);
+}
+
+#include &quot;spdlog/async.h&quot;
+void async_example()
+{
+    // Default thread pool settings can be modified *before* creating the async logger:
+    // spdlog::init_thread_pool(32768, 1); // queue with max 32k items 1 backing thread.
+    auto async_file =
+        spdlog::basic_logger_mt&lt;spdlog::async_factory&gt;(&quot;async_file_logger&quot;, &quot;logs/async_log.txt&quot;);
+    // alternatively:
+    // auto async_file =
+    //     spdlog::create_async&lt;spdlog::sinks::basic_file_sink_mt&gt;(&quot;async_file_logger&quot;,
+    //     &quot;logs/async_log.txt&quot;);
+
+    for (int i = 1; i &lt; 101; ++i)
+    {
+        async_file-&gt;info(&quot;Async message #{}&quot;, i);
+    }
+}
+
+// Log binary data as hex.
+// Many types of std::container&lt;char&gt; types can be used.
+// Iterator ranges are supported too.
+// Format flags:
+// {:X} - print in uppercase.
+// {:s} - don't separate each byte with space.
+// {:p} - don't print the position on each line start.
+// {:n} - don't split the output to lines.
+
+#include &quot;spdlog/fmt/bin_to_hex.h&quot;
+void binary_example()
+{
+    std::vector&lt;char&gt; buf;
+    for (int i = 0; i &lt; 80; i++)
+    {
+        buf.push_back(static_cast&lt;char&gt;(i &amp; 0xff));
+    }
+    spdlog::info(&quot;Binary example: {}&quot;, spdlog::to_hex(buf));
+    spdlog::info(&quot;Another binary example:{:n}&quot;,
+                 spdlog::to_hex(std::begin(buf), std::begin(buf) + 10));
+    // more examples:
+    // logger-&gt;info(&quot;uppercase: {:X}&quot;, spdlog::to_hex(buf));
+    // logger-&gt;info(&quot;uppercase, no delimiters: {:Xs}&quot;, spdlog::to_hex(buf));
+    // logger-&gt;info(&quot;uppercase, no delimiters, no position info: {:Xsp}&quot;, spdlog::to_hex(buf));
+}
+
+// Compile time log levels.
+// define SPDLOG_ACTIVE_LEVEL to required level (e.g. SPDLOG_LEVEL_TRACE)
+void trace_example()
+{
+    // trace from default logger
+    SPDLOG_TRACE(&quot;Some trace message.. {} ,{}&quot;, 1, 3.23);
+    // debug from default logger
+    SPDLOG_DEBUG(&quot;Some debug message.. {} ,{}&quot;, 1, 3.23);
+
+    // trace from logger object
+    auto logger = spdlog::get(&quot;file_logger&quot;);
+    SPDLOG_LOGGER_TRACE(logger, &quot;another trace message&quot;);
+}
+
+// A logger with multiple sinks (stdout and file) - each with a different format and log level.
+void multi_sink_example()
+{
+    auto console_sink = std::make_shared&lt;spdlog::sinks::stdout_color_sink_mt&gt;();
+    console_sink-&gt;set_level(spdlog::level::warn);
+    console_sink-&gt;set_pattern(&quot;[multi_sink_example] [%^%l%$] %v&quot;);
+
+    auto file_sink =
+        std::make_shared&lt;spdlog::sinks::basic_file_sink_mt&gt;(&quot;logs/multisink.txt&quot;, true);
+    file_sink-&gt;set_level(spdlog::level::trace);
+
+    spdlog::logger logger(&quot;multi_sink&quot;, {console_sink, file_sink});
+    logger.set_level(spdlog::level::debug);
+    logger.warn(&quot;this should appear in both console and file&quot;);
+    logger.info(&quot;this message should not appear in the console, only in the file&quot;);
+}
+
+// User defined types logging by implementing operator&lt;&lt;
+#include &quot;spdlog/fmt/ostr.h&quot; // must be included
+struct my_type
+{
+    int i;
+    template&lt;typename OStream&gt;
+    friend OStream &amp;operator&lt;&lt;(OStream &amp;os, const my_type &amp;c)
+    {
+        return os &lt;&lt; &quot;[my_type i=&quot; &lt;&lt; c.i &lt;&lt; &quot;]&quot;;
+    }
+};
+
+void user_defined_example()
+{
+    spdlog::info(&quot;user defined type: {}&quot;, my_type{14});
+}
+
+// Custom error handler. Will be triggered on log failure.
+void err_handler_example()
+{
+    // can be set globally or per logger(logger-&gt;set_error_handler(..))
+    spdlog::set_error_handler([](const std::string &amp;msg) {
+         printf(&quot;*** Custom log error handler: %s ***\n&quot;, msg.c_str()); });
+}
+
+// syslog example (linux/osx/freebsd)
+#ifndef _WIN32
+#include &quot;spdlog/sinks/syslog_sink.h&quot;
+void syslog_example()
+{
+    std::string ident = &quot;spdlog-example&quot;;
+    auto syslog_logger = spdlog::syslog_logger_mt(&quot;syslog&quot;, ident, LOG_PID);
+    syslog_logger-&gt;warn(&quot;This is warning that will end up in syslog.&quot;);
+}
+#endif
+
+// Android example.
+#if defined(__ANDROID__)
+#include &quot;spdlog/sinks/android_sink.h&quot;
+void android_example()
+{
+    std::string tag = &quot;spdlog-android&quot;;
+    auto android_logger = spdlog::android_logger_mt(&quot;android&quot;, tag);
+    android_logger-&gt;critical(&quot;Use \&quot;adb shell logcat\&quot; to view this message.&quot;);
+}
+
+#endif
+
+
+/*** R
+exampleTwo()
+*/
+
+</code></pre>
+<p>We are not showing the output here; it can be compiled, linked, loaded and run just as above by simply passing the filename to <code>Rcpp::sourceCpp()</code>.
+Note that is will create a few demonstration logfiles so you may want to run the example from a temporary directory.</p>
+<h2 id="third-example-colour">Third example: Colour</h2>
+<p>The next example highlights a colour 'sink' for the logger.
+Again, do not use this as a starting point for your package as <code>R CMD check</code> will protest about use of <code>stdout</code>.</p>
+<pre><code class="language-c++">
+#include &quot;spdlog/spdlog.h&quot;
+#include &quot;spdlog/sinks/stdout_color_sinks.h&quot;
+
+#include &lt;Rcpp.h&gt;
+
+// [[Rcpp::depends(RcppSpdlog)]]
+
+// [[Rcpp::export]]
+void exampleThree() {
+
+  auto console = spdlog::stdout_color_mt(&quot;console&quot;);
+
+  // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
+  spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%^%L%$] [thread %t] %v&quot;);
+  spdlog::info(&quot;This an info message with custom format&quot;);
+  //spdlog::set_pattern(&quot;%+&quot;); // back to default format
+
+  spdlog::info(&quot;Welcome to spdlog!&quot;);
+  spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
+
+  spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
+  spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
+  spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
+  spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
+  spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
+
+
+  // added to this example file allow multiple runs of different package functions
+  spdlog::drop(&quot;console&quot;);
+
+}
+
+/*** R
+exampleThree()
+*/
+</code></pre>
+<p>When running this example in a terminal capable of displaying colour escape sequence, the logging levels are distinguished by colour.
+This ranges from green ("info") to yellow ("warning") to red ("error") and white-on-red ("critical").
+Not that in this vignette color from standard output does how not show (in the keep-it-simple-mode we are using here).</p>
+<pre><code class="language-sh">R&gt; exampleThree()
+[14:47:52.260692] [I] [thread 2502026] This an info message with custom format
+[14:47:52.260715] [I] [thread 2502026] Welcome to spdlog!
+[14:47:52.260732] [E] [thread 2502026] Some error message with arg: 1
+[14:47:52.260734] [W] [thread 2502026] Easy padding in numbers like 00000012
+[14:47:52.260736] [C] [thread 2502026] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
+[14:47:52.260739] [I] [thread 2502026] Support for floats 1.23
+[14:47:52.260741] [I] [thread 2502026] Positional args are supported too..
+[14:47:52.260743] [I] [thread 2502026] left aligned
+R&gt;
+</code></pre>
+<h2 id="fourth-example-dedicated-r-logger">Fourth Example: Dedicated R Logger</h2>
+<p>The next example is suitable for use in R packages, and in fact included as an example in the package.
+We include the source file <a href="https://github.com/eddelbuettel/rcppspdlog/blob/master/src/exampleRsink.cpp">src/exampleRsink.cpp</a>.</p>
+<pre><code class="language-c++">// this portmanteau include also defines the r_sink we use below, and which
+// diverts all logging to R via the Rcpp::Rcout replacement for std::cout
+#include &lt;RcppSpdlog&gt;
+#include &lt;spdlog/stopwatch.h&gt;           // also support stopwatch feature
+
+//' spdlog Example using a sink for R
+//'
+//' A simple example invoking a derived R/Rcpp logger. Also demonstrates the
+//' stopwatch feature. For more features see the 'spdlog' documnetation.
+//'
+//' Note that this no longer triggers R warnings thanks to excellent help by
+//' Gabi Melman.
+//' @return None
+//' @examples
+//' exampleRsink()
+// [[Rcpp::export]]
+void exampleRsink() {
+
+    std::string logname = &quot;fromR&quot;;                          // fix a name for this logger
+    auto sp = spdlog::get(logname);                         // retrieve existing one
+    if (sp == nullptr) sp = spdlog::r_sink_mt(logname);     // or create new one if needed
+    spdlog::set_default_logger(sp);                         // and set as default
+
+    spdlog::stopwatch sw;                                   // instantiate a stop watch
+
+    // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
+    spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%n] [%^%L%$] [thread %t] %v&quot;);
+
+    spdlog::info(&quot;Welcome to spdlog!&quot;);
+    spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
+    spdlog::info(&quot;Elapsed time: {}&quot;, sw);
+
+    spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
+    spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
+    spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
+    spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
+    spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
+    spdlog::info(&quot;Elapsed time: {}&quot;, sw);
+
+}
+
+//' spdlog Logging Lever Setter
+//'
+//' A helper function to turn a logging level given as string
+//' into the current logging level
+//'
+//' @param name A string with the logging level. Value understood are,
+//' in decreasing verbosity \sQuote{trace}, \sQuote{debug}, \sQuote{info},
+//' \sQuote{warning}, \sQuote{error}, \sQuote{critical}, and \sQuote{off}.
+//' Unrecognised names are equivalent to \sQuote{off}.
+//' @return Nothing is returned.
+// [[Rcpp::export]]
+void setLogLevel(const std::string &amp;name) {
+    spdlog::set_level(spdlog::level::from_str(name));
+}
+
+</code></pre>
+<p>The example file contains three key aspects to highlight:
+- use of the <code>r_sink_mt()</code> class for R-specific logger sink
+- use of the very convenient <code>stopwatch</code> object
+- use of logging levels</p>
+<p>We highlight these below after first showing the relevant output:</p>
+<pre><code class="language-sh">R&gt; exampleRsink()
+[16:52:12.076751] [fromR] [I] [thread 2453030] Welcome to spdlog!
+[16:52:12.076809] [fromR] [E] [thread 2453030] Some error message with arg: 1
+[16:52:12.076823] [fromR] [I] [thread 2453030] Elapsed time: 9.6104e-05
+[16:52:12.076833] [fromR] [W] [thread 2453030] Easy padding in numbers like 00000012
+[16:52:12.076844] [fromR] [C] [thread 2453030] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
+[16:52:12.076853] [fromR] [I] [thread 2453030] Support for floats 1.23
+[16:52:12.076871] [fromR] [I] [thread 2453030] Positional args are supported too..
+[16:52:12.076879] [fromR] [I] [thread 2453030] left aligned
+[16:52:12.076892] [fromR] [I] [thread 2453030] Elapsed time: 0.000167057
+R&gt;
+</code></pre>
+<h4 id="r-specific-sink">R-specific sink</h4>
+<p><a href="https://github.com/gabime/spdlog">spdlog</a> has the ability to derive and sub-class sinks for logger.
+The <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package uses this feature to implement a sink using the Rcpp conduit <code>Rcpp::Rcout</code> instead of <code>std::cout</code> as it conveniently redirects to
+the R output stream.
+This class should be the default one for any R packages wanting to use <a href="https://github.com/gabime/spdlog">spdlog</a>  while also passing <code>R CMD check</code>.</p>
+<p>A second important aspect of the initial code in function <code>exampleRsink()</code> is how a named logging instance is requested.
+If none is found, a new one is instantiated.
+Next, this logger is made the default logger permitting convenient programmatic access via <code>spdlog::</code>.</p>
+<h4 id="stopwatch">Stopwatch</h4>
+<p>A powerful (recent) feature of the include <a href="https://github.com/fmtlib/fmt">fmt</a> library is the automatic formatting of timestamps and interval.
+As the code example shows, simply instantianting an object, here called <code>sw</code>, and referring to it later is all that takes.</p>
+<h4 id="log-level">Log-Level</h4>
+<p>A second utility function <code>setLogLevel()</code> is also provided.
+Usage is simple: after calling it with a given level, only message equal to it or higher are shown as the next example shows.</p>
+<pre><code class="language-sh">R&gt; setLogLevel(&quot;error&quot;)
+R&gt; exampleRsink()
+[16:54:12.666261] [fromR] [E] [thread 2453030] Some error message with arg: 1
+[16:54:12.666286] [fromR] [C] [thread 2453030] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
+R&gt;
+</code></pre>
+<p>By requestion level 'error', message of level 'info', 'warning' or 'debug' are suppressed but messages levels 'error' or 'critical' as shown as desired.</p>
+<h2 id="fifth-example-initialization">Fifth Example: Initialization</h2>
+<p>Package desiring to use <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> can initialize its facilities during startup.</p>
+<p>For that we first define a setup function</p>
+<pre><code class="language-c++">// this portmanteau include also defines the r_sink we use below, and which
+// diverts all logging to R via the Rcpp::Rcout replacement for std::cout
+#include &lt;RcppSpdlog&gt;
+
+//' Set a new default logger for R
+//'
+// [[Rcpp::export]]
+void setDefault() {
+    std::string logname = &quot;fromR&quot;;                          // fix a name for this logger
+    auto sp = spdlog::get(logname);                         // retrieve existing one
+    if (sp == nullptr) sp = spdlog::r_sink_mt(logname);     // or create new one if needed
+    sp-&gt;set_pattern(&quot;[%H:%M:%S.%f] [%^%L%$] %v&quot;);
+    spdlog::set_default_logger(sp);
+}
+</code></pre>
+<p>We can then call this function during startup:</p>
+<pre><code class="language-r">.onLoad &lt;- function(libname, pkgname) {
+    setDefault();
+}
+</code></pre>
+<h2 id="sixth-example-compile-time-selection">Sixth Example: Compile-time Selection</h2>
+<p>Of course, <a href="https://github.com/gabime/spdlog">spdlog</a> also supports a common
+usage paradigm with loggers in which the decision of whether to log or not is
+<em>compile-time</em> rather than run time.  As this is typically implemented via
+macros, usage is via upper-case macros as well.</p>
+<p>The following example shows a function with three different logging-level
+statements as well as a <code>#define</code> set such one and only one is
+shown. Similarly, code can contain debug or trace or info or ... statements
+which would <em>not</em> appear in the actually loaded "production code" (or CRAN
+version) if the compile-time logging level define is set high enough.</p>
+<pre><code class="language-c++">// this portmanteau include also defines the r_sink we use below, and which
+// diverts all logging to R via the Rcpp::Rcout replacement for std::cout
+#include &lt;RcppSpdlog&gt;
+
+// A define such as this could also be set in src/Makevars via a -D flag
+#define SPDLOG_LOG_LEVEL  SPDLOG_LEVEL_CRITICAL
+
+// [[Rcpp::export]]
+void demoInvisible() {
+    Rcpp::Rcout &lt;&lt; &quot;Hello from demoInvisible, just to show we're being called...\n&quot;;
+
+    // trace message via default logger
+    SPDLOG_TRACE(&quot;Some trace message.. {} ,{}&quot;, 1, 3.23);
+    // debug message via default logger
+    SPDLOG_DEBUG(&quot;Some debug message.. {} ,{}&quot;, 1, 3.23);
+    // debug message via default logger
+    SPDLOG_CRITICAL(&quot;Some critical message.. {} ,{}&quot;, 1, 3.23);
+}
+</code></pre>
+<p>When a piece of code with such compile-time defines is used, we see the
+expected outcome. The following example uses default logger, and as the
+preceding section showed this can be set up to be the custom R sink:</p>
+<pre><code class="language-r">R&gt; Rcpp::sourceCpp(&quot;/tmp/rcppspdlog.cpp&quot;)  # plus a '// [[Rcpp:depends(&quot;RcppSpdlog&quot;)'
+R&gt; demoInvisible()
+Hello from demoInvisible, just to show we're being called...
+[08:44:48.198075] [fromR] [C] [thread 2453030] Some critical message.. 1 ,3.23
+R&gt;
+</code></pre>
+<h2 id="seventh-example-access-from-r">Seventh Example: Access From R</h2>
+<p>As of package 0.0.9, <a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a>
+supports two new modes. The first is direct logging support from R and
+described in this section; the second is access from another R package and
+described thereafter. A number of basic functions are
+exported using Rcpp. These include <code>log_setup(name, level)</code> to instantiate a
+named logger at a given level (instead of an unnamed default at level
+'warn'), <code>log_filesetup(filename, name, level)</code> (same using the named file as
+logging destination), a helper <code>log_drop(name)</code> to drop a named logger, two setters
+<code>log_set_pattern()</code> and <code>log_set_level()</code> to set, respectively, the displayed
+log pattern and the level. This is complemented by the actual loggers ranging
+from <code>log_trace()</code> and <code>log_debug()</code> to <code>log_info()</code>, <code>log_warn()</code>,
+<code>log_error()</code> and finally <code>log_critical()</code>.</p>
+<p>The following example (also the example in the manual page) illustrates.</p>
+<pre><code class="language-r">&gt; library(RcppSpdlog)
+&gt; log_setup(&quot;demo&quot;)                     # default level 'warn' is used
+&gt; log_info(&quot;this message is NOT seen&quot;)
+&gt; log_set_level(&quot;debug&quot;)
+&gt; log_set_pattern(&quot;%^[%H:%M:%S.%e] [%n] [%l] %v%$&quot;)  # set a pattern w/o process id
+&gt; log_info(&quot;this message is seen&quot;)
+[15:55:34.150] [demo] [info] this message is seen
+&gt; log_warn(&quot;as is this message&quot;)
+[ 15:55:37.513] [demo] [warning] as is this message
+&gt;
+</code></pre>
+<p>The interface expects a character value so use from either <code>sprintf()</code> or a
+string-interpolating helper such as <code>glue::glue</code> can be used:</p>
+<pre><code class="language-r">&gt; log_info(sprintf(&quot;We can %s a %s with values %d&quot;, &quot;build&quot;, &quot;text&quot;, 42L))
+[16:03:37.728] [demo] [info] We can build a text with values 42
+&gt; log_info(glue::glue(&quot;We can {a} a {b} with values {v}&quot;, a=&quot;build&quot;, b=&quot;text&quot;, v=42L))
+[16:03:46.395] [demo] [info] We can build a text with values 42
+&gt;
+</code></pre>
+<h2 id="eight-example-access-from-another-r-package">Eight Example: Access From Another R Package</h2>
+<p>As of package 0.0.9, another package can use the C++ level functions (either
+with or without the R functions) by importing the <code>RcppSpdlog</code> while ensuring
+at least one function from the package is imported (so that the C-level
+interface functions are instantiated by R). This is time-honoured mechanism
+long-used by <code>lme4</code> to access (compiled) functions from <code>Matrix</code> as well as
+by <code>xts</code> to access code from <code>zoo</code>, and others.</p>
+<p>To properly import the package, add just one import, for example
+<code>importFrom((RcppSpdlog, log_setup)</code> to the <code>NAMESPACE</code> file of your package,
+along with the required <code>Imports: RcppSpdlog</code> in the <code>DESCRIPTION</code> file. The
+available functions are the same as the ones described in the previous
+section, but now available at the C++ level in the <code>RcppSpdlog</code> namespace. So
+for example</p>
+<pre><code class="language-c++">#include &lt;RcppSpdlog.h&gt;
+
+RcppSpdlog::log_setup(&quot;demoLogger&quot;, &quot;info&quot;);    // create logger at info level
+RcppSpdlog::log_info(&quot;logger created&quot;);
+</code></pre>
+<p>will work.</p>
+<h2 id="nineth-example-more-compact-c-access">Nineth Example: More compact C++ Access</h2>
+<p>As the (auto-generated, thanks to <code>Rcpp</code>) interface described in the previous
+section is a little "wordy", we added a simple aliasing wrapping in a new
+namespace <code>spdl</code> and, given the protection from naming collisions offered by
+the namespace, shortened the accessor function names.  So the previous
+example can also be used via</p>
+<pre><code class="language-c++">#include &lt;spdl.h&gt;
+
+spdl::setup(&quot;demoLogger&quot;, &quot;info&quot;);  // create logger at info level
+spdl::info(&quot;logger created&quot;);
+</code></pre>
+<p>The logger interface takes a simple string. Two easy options exist for
+formatting such as string.  First, one can rely on the
+<a href="https://github.com/c42f/tinyformat">tinyformat</a> version included with <code>Rcpp</code>
+and use <code>tfm::format()</code> which works with standard <code>printf()</code> operators.
+Second, one can use the <code>fmt</code> library included with <code>spdlog</code> via an explicit call.</p>
+<pre><code class="language-c++"># using tfm::format
+spdl::info(tfm::format(&quot;We %s values %d and %f&quot;, &quot;log&quot;, 42, 1.23));
+# using fmt::format
+spdl::info(fmt::format(&quot;We {} values {} and {}&quot;, &quot;log&quot;, 42, 1.23));
+</code></pre>
+<p>Here both formatters have to be called explicitly as we use a simple
+one-function signature (per logging function) to the underlying C language
+implementation without the fuller flexibility of variadic arguments.</p>
+<p>As C++11 can be assumed, we can also offers a variadic template expansion for
+<code>fmt::format()</code> and the second example simply becomes</p>
+<pre><code class="language-c++">spdl::info(&quot;We {} values {} and {}&quot;, &quot;log&quot;, 42, 1.23);
+</code></pre>
+<h2 id="tenth-example-more-compact-r-access">Tenth Example: More compact R Access</h2>
+<p>As the more compact access in the previous section is quite compelling we
+also created a sibbling R package <a href="https://github.com/eddelbuettel/spdl">spd</a>
+providing a <code>spdl</code> namespace in R allowing _the exact same format strings too`.</p>
+<p>So</p>
+<pre><code class="language-r">spdl::info(&quot;We {} values {} and {}&quot;, &quot;log&quot;, 42L, 1.23);
+</code></pre>
+<p>now also works from R using the same formatting string. We inted to upload <code>spdl</code> to CRAN too.</p>
+<p>Note that other all other formatting options are supported from R: the first argument is a character
+variable which can be constructed using <code>paste</code>, <code>sprintf</code>, or any of the string-interpolating
+packages.  But as none of those methods works like <a href="https://github.com/fmtlib/fmt">fmt</a> (which we
+have come to like a lot) we added support for it too.</p>
+<h2 id="eleventh-example-stopwatch-support-in-r-and-c">Eleventh Example: Stopwatch Support in R and C++</h2>
+<p>As shown above, <a href="https://github.com/gabime/spdlog">spdlog</a> supports a 'stopwatch' in C++. Usage is
+straightforward: one first instantiates an object of type <code>stopwatch</code> (make sure to first include
+the appropriate header too!) and then reports elapsed time by including the <code>stopwatch</code> object in
+the logger.</p>
+<p>We wrap this <code>spdlog::stopwatch</code> object in an external pointer to make it accessible from
+R. Moreover, by creating it as a S3 object we can add a <code>format()</code> method to make the usage pattern
+identical to the use in C++.  So in R we now have</p>
+<pre><code class="language-r">sw &lt;- RcppSpdlog::get_stopwatch()
+Sys.sleep(0.2)
+RcppSpdlog::log_warn(&quot;Elapsed time via stopwatch: {}&quot;, sw)
+</code></pre>
+<p>This also works in C++.</p>
+<pre><code class="language-c++">auto sw = RcppSpdlog::get_stopwatch();  // returns XPtr&lt;spdlog::stopwatch
+usleep(200);                            // from unistd.h
+RcppSpdlog::log_warn(&quot;Elapsed&quot;, RcppSpdlog::format_stopwatch(sw));
+</code></pre>
+<p>Note that in that last line we need to <em>explicitly</em> call a formatter as we do not get the templated
+formatter from <a href="https://github.com/gabime/spdlog">spdlog</a> as our object is an external-pointer
+wrapped object.</p>
+<p>We also export this via the <code>spdl.h</code> wrapper.  So the same C++ functionality is also available
+as</p>
+<pre><code class="language-c++">auto sw = spdl::stopwatch();  // returns XPtr&lt;spdlog::stopwatch
+usleep(200);                  // from unistd.h
+spdl::warn(&quot;Elapsed&quot;, spdl::format(sw));
+</code></pre>
+<p>And because the <a href="https://cran.r-project.org/package=spdl">spdl</a> package wraps this for R, we can do
+the same in R:</p>
+<pre><code class="language-r">sw &lt;- spdl::stopwatch()
+Sys.sleep(0.2)
+spdl::warn(&quot;Elapsed: {}&quot;, sw)
+</code></pre>
+<p>which once again takes advantage of the S3 class and its <code>format()</code> method.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p><a href="https://github.com/gabime/spdlog">spdlog</a> and the included <a href="https://github.com/fmtlib/fmt">fmt</a> are
+two very powerful and widely used C++ libraries.  The
+<a href="https://github.com/eddelbuettel/rcppspdlog">RcppSpdlog</a> package adds to them to the set of packages
+R users can deploy. The <a href="https://github.com/eddelbuettel/spdl">spd</a> package makes access even easier
+and more consistent. It is our hope that the examples shown here are of interest to R users who are
+looking for effortless, performant and flexible logging solutions for their R packages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020-current Dirk Eddelbuettel
+    </div>
+  
+  
+    Made with
+    <a href="https://altdoc.etiennebacher.com/#/" target="_blank">altdoc</a>
+    and
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener"> Material for MkDocs</a>.
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/eddelbuettel/" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/eddelbuettel.com" target="_blank" rel="noopener" title="Bsky" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

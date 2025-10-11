@@ -12,7 +12,7 @@ Description: The mature and widely-used C++ logging library 'spdlog' by Gabi Mel
  many desirable features. This package bundles these header files for easy use by R packages
  from both their R and C or C++ code. Explicit use via 'LinkingTo:' is also supported. Also
  see the 'spdl' package which enhanced this package with a consistent R and C++ interface.
-URL: https://github.com/eddelbuettel/rcppspdlog, https://dirk.eddelbuettel.com/code/rcpp.spdlog.html
+URL: https://github.com/eddelbuettel/rcppspdlog, https://eddelbuettel.github.io/rcppspdlog/, https://dirk.eddelbuettel.com/code/rcpp.spdlog.html
 BugReports: https://github.com/eddelbuettel/rcppspdlog/issues
 LinkingTo: Rcpp
 Imports: Rcpp
