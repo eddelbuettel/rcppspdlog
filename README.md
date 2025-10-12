@@ -1,5 +1,5 @@
 
-## RcppSpdlog: Bundling of spdlog for use from R and Rcpp
+# RcppSpdlog: Bundling of spdlog for R and Rcpp use
 
 [![CI](https://github.com/eddelbuettel/rcppspdlog/actions/workflows/ci.yaml/badge.svg)](https://github.com/eddelbuettel/rcppspdlog/actions/workflows/ci.yaml)
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
