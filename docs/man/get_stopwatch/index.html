@@ -922,18 +922,18 @@ Returns elapsed time for stopwatch as character variable.
 external pointer in an S3 class, the elapsed time in seconds as a
 double, or formatted as a character variable.</p>
 <h2 id="examples">Examples</h2>
-<pre><code class="language-r">library(&quot;RcppSpdlog&quot;)
-
-w &lt;- get_stopwatch()
-Sys.sleep(0.2)
-elapsed_stopwatch(w)
-</code></pre>
-<pre><code>[1] 0.2009362
-</code></pre>
-<pre><code class="language-r">format_stopwatch(w)
-</code></pre>
-<pre><code>[1] "0.201288"
-</code></pre>
+<div class="language-r highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="s">&quot;RcppSpdlog&quot;</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_stopwatch</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">Sys.sleep</span><span class="p">(</span><span class="m">0.2</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nf">elapsed_stopwatch</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[1] 0.2009362
+</code></pre></div>
+<div class="language-r highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">format_stopwatch</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[1] &quot;0.201288&quot;
+</code></pre></div>
 
 
 

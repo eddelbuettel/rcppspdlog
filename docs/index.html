@@ -754,47 +754,47 @@ compiled functions callable by other packages as described in <a href="https://c
 of WRE</a>.</p>
 <h3 id="example">Example</h3>
 <p>A simple first example, following the upstream examples:</p>
-<pre><code class="language-sh">edd@rob:~$ Rscript -e 'Rcpp::sourceCpp(&quot;inst/examples/exampleOne.cpp&quot;)'
-
-R&gt; exampleOne()
-[07:45:57.168673] [I] [thread 1500593] Welcome to spdlog!
-[07:45:57.168704] [E] [thread 1500593] Some error message with arg: 1
-[07:45:57.168707] [W] [thread 1500593] Easy padding in numbers like 00000012
-[07:45:57.168710] [C] [thread 1500593] Support for int: 42;  hex: 2a;  oct: 52; bin: 101010
-[07:45:57.168728] [I] [thread 1500593] Support for floats 1.23
-[07:45:57.168731] [I] [thread 1500593] Positional args are supported too..
-[07:45:57.168734] [I] [thread 1500593] left aligned
-[07:45:57.168737] [D] [thread 1500593] This message should be displayed..
-edd@rob:~$
-</code></pre>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>edd@rob:~$<span class="w"> </span>Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;Rcpp::sourceCpp(&quot;inst/examples/exampleOne.cpp&quot;)&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>R&gt;<span class="w"> </span>exampleOne<span class="o">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="o">[</span><span class="m">07</span>:45:57.168673<span class="o">]</span><span class="w"> </span><span class="o">[</span>I<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>Welcome<span class="w"> </span>to<span class="w"> </span>spdlog!
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="o">[</span><span class="m">07</span>:45:57.168704<span class="o">]</span><span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>Some<span class="w"> </span>error<span class="w"> </span>message<span class="w"> </span>with<span class="w"> </span>arg:<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="o">[</span><span class="m">07</span>:45:57.168707<span class="o">]</span><span class="w"> </span><span class="o">[</span>W<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>Easy<span class="w"> </span>padding<span class="w"> </span><span class="k">in</span><span class="w"> </span>numbers<span class="w"> </span>like<span class="w"> </span><span class="m">00000012</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="o">[</span><span class="m">07</span>:45:57.168710<span class="o">]</span><span class="w"> </span><span class="o">[</span>C<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>Support<span class="w"> </span><span class="k">for</span><span class="w"> </span>int:<span class="w"> </span><span class="m">42</span><span class="p">;</span><span class="w">  </span>hex:<span class="w"> </span>2a<span class="p">;</span><span class="w">  </span>oct:<span class="w"> </span><span class="m">52</span><span class="p">;</span><span class="w"> </span>bin:<span class="w"> </span><span class="m">101010</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="o">[</span><span class="m">07</span>:45:57.168728<span class="o">]</span><span class="w"> </span><span class="o">[</span>I<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>Support<span class="w"> </span><span class="k">for</span><span class="w"> </span>floats<span class="w"> </span><span class="m">1</span>.23
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="o">[</span><span class="m">07</span>:45:57.168731<span class="o">]</span><span class="w"> </span><span class="o">[</span>I<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>Positional<span class="w"> </span>args<span class="w"> </span>are<span class="w"> </span>supported<span class="w"> </span>too..
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="o">[</span><span class="m">07</span>:45:57.168734<span class="o">]</span><span class="w"> </span><span class="o">[</span>I<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>left<span class="w"> </span>aligned
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">[</span><span class="m">07</span>:45:57.168737<span class="o">]</span><span class="w"> </span><span class="o">[</span>D<span class="o">]</span><span class="w"> </span><span class="o">[</span>thread<span class="w"> </span><span class="m">1500593</span><span class="o">]</span><span class="w"> </span>This<span class="w"> </span>message<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>displayed..
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>edd@rob:~$
+</span></code></pre></div>
 <p>This logs the hour, minute, second, microsecond followed by a one-char code for info, error, warning
 or critical followed by the thread id and the actual loggable message. The code, apart from the
 included headers and more, is simply</p>
-<pre><code class="language-c++">// [[Rcpp::export]]
-void exampleOne() {
-
-  // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
-  spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%L] [thread %t] %v&quot;);
-
-  spdlog::info(&quot;Welcome to spdlog!&quot;);
-  spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
-
-  spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
-  spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
-  spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
-  spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
-  spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
-
-  spdlog::set_level(spdlog::level::debug); // Set global log level to debug
-  spdlog::debug(&quot;This message should be displayed..&quot;);
-
-  // Compile time log levels
-  // define SPDLOG_ACTIVE_LEVEL to desired level
-  SPDLOG_TRACE(&quot;Some trace message with param {}&quot;, {});
-  SPDLOG_DEBUG(&quot;Some debug message&quot;);
-
-}
-</code></pre>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// [[Rcpp::export]]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">exampleOne</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="c1">// change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_pattern</span><span class="p">(</span><span class="s">&quot;[%H:%M:%S.%f] [%L] [thread %t] %v&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Welcome to spdlog!&quot;</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Some error message with arg: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Easy padding in numbers like {:08d}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">critical</span><span class="p">(</span><span class="s">&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Support for floats {:03.2f}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.23456</span><span class="p">);</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Positional args are {1} {0}..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;too&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;supported&quot;</span><span class="p">);</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;{:&lt;30}&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;left aligned&quot;</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_level</span><span class="p">(</span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">debug</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set global log level to debug</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="n">spdlog</span><span class="o">::</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;This message should be displayed..&quot;</span><span class="p">);</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="c1">// Compile time log levels</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="c1">// define SPDLOG_ACTIVE_LEVEL to desired level</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="n">SPDLOG_TRACE</span><span class="p">(</span><span class="s">&quot;Some trace message with param {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="n">SPDLOG_DEBUG</span><span class="p">(</span><span class="s">&quot;Some debug message&quot;</span><span class="p">);</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Many other customizations are possible, see the <a href="https://github.com/gabime/spdlog/wiki">spdlog
 wiki</a>.</p>
 <p>Note that using <code>spdlog</code> examples directly <em>may</em> well trigger warning from R during package checking
@@ -813,46 +813,45 @@ specific sink for R in the header
 corrected one <code>stderr</code> use and added one <code>#define</code>.  That combination now passes as can be seen in
 checks of the package <code>RcppSpdlog</code> and the included function <code>exampleRsink()</code> whose complete source
 code is included here:</p>
-<pre><code class="language-c++">
-// this portmanteau include also defines the r_sink we use below, and which
-// diverts all logging to R via the Rcpp::Rcout replacement for std::cout
-#include &lt;RcppSpdlog&gt;
-
-//' spdlog Example using a sink for R
-//'
-//' A simple example invoking a derived R/Rcpp logger. Also demonstrates the
-//' stopwatch feature. For more features see the 'spdlog' documnetation.
-//'
-//' Note that this no longer triggers R warnings thanks to excellent help by
-//' Gabi Melman.
-//' @return None
-//' @examples
-//' exampleRsink()
-// [[Rcpp::export]]
-void exampleRsink() {
-
-    std::string logname = &quot;fromR&quot;;                          // fix a name for this logger
-    auto sp = spdlog::get(logname);                         // retrieve existing one
-    if (sp == nullptr) sp = spdlog::r_sink_mt(logname);     // or create new one if needed
-
-    spdlog::stopwatch sw;                                   // instantiate a stop watch
-
-    // change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )
-    spdlog::set_pattern(&quot;[%H:%M:%S.%f] [%n] [%^%L%$] [thread %t] %v&quot;);
-
-    spdlog::info(&quot;Welcome to spdlog!&quot;);
-    spdlog::error(&quot;Some error message with arg: {}&quot;, 1);
-    spdlog::info(&quot;Elapsed time: {}&quot;, sw);
-
-    spdlog::warn(&quot;Easy padding in numbers like {:08d}&quot;, 12);
-    spdlog::critical(&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;, 42);
-    spdlog::info(&quot;Support for floats {:03.2f}&quot;, 1.23456);
-    spdlog::info(&quot;Positional args are {1} {0}..&quot;, &quot;too&quot;, &quot;supported&quot;);
-    spdlog::info(&quot;{:&lt;30}&quot;, &quot;left aligned&quot;);
-    spdlog::info(&quot;Elapsed time: {}&quot;, sw);
-
-}
-</code></pre>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// this portmanteau include also defines the r_sink we use below, and which</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">// diverts all logging to R via the Rcpp::Rcout replacement for std::cout</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;RcppSpdlog&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">//&#39; spdlog Example using a sink for R</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">//&#39;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">//&#39; A simple example invoking a derived R/Rcpp logger. Also demonstrates the</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">//&#39; stopwatch feature. For more features see the &#39;spdlog&#39; documnetation.</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">//&#39;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">//&#39; Note that this no longer triggers R warnings thanks to excellent help by</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">//&#39; Gabi Melman.</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">//&#39; @return None</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">//&#39; @examples</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1">//&#39; exampleRsink()</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1">// [[Rcpp::export]]</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="kt">void</span><span class="w"> </span><span class="nf">exampleRsink</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">logname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fromR&quot;</span><span class="p">;</span><span class="w">                          </span><span class="c1">// fix a name for this logger</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">logname</span><span class="p">);</span><span class="w">                         </span><span class="c1">// retrieve existing one</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="n">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">r_sink_mt</span><span class="p">(</span><span class="n">logname</span><span class="p">);</span><span class="w">     </span><span class="c1">// or create new one if needed</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">stopwatch</span><span class="w"> </span><span class="n">sw</span><span class="p">;</span><span class="w">                                   </span><span class="c1">// instantiate a stop watch</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="c1">// change log pattern (changed from [%H:%M:%S %z] [%n] [%^---%L---%$] )</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_pattern</span><span class="p">(</span><span class="s">&quot;[%H:%M:%S.%f] [%n] [%^%L%$] [thread %t] %v&quot;</span><span class="p">);</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Welcome to spdlog!&quot;</span><span class="p">);</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Some error message with arg: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Elapsed time: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sw</span><span class="p">);</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Easy padding in numbers like {:08d}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">critical</span><span class="p">(</span><span class="s">&quot;Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Support for floats {:03.2f}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.23456</span><span class="p">);</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Positional args are {1} {0}..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;too&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;supported&quot;</span><span class="p">);</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;{:&lt;30}&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;left aligned&quot;</span><span class="p">);</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Elapsed time: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sw</span><span class="p">);</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Note that it is deliberately similar in use to the example above.  A new instance of the logger is
 instantiated as a shared pointer <code>sp</code> to a <code>spdlog</code> object. Similarly, a stopwatch is instantiated
 used simply by referring to it.</p>

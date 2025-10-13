@@ -1,3 +1,11 @@
+2025-10-13  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docs/*: Refreshed with syntax highlighting enabled
+
+2025-10-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docs/*: Refreshed under updated altdoc
+
 2025-10-11  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.23
