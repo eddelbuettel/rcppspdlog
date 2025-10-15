@@ -1,3 +1,7 @@
+2025-10-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docs/*: Refreshed with ChangeLog years tweak
+
 2025-10-13  Dirk Eddelbuettel  <edd@debian.org>
 
 	* docs/*: Refreshed with syntax highlighting enabled
