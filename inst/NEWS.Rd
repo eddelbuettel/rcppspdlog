@@ -3,6 +3,12 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.24 (2026-01-07)}{
+  \itemize{
+    \item Upgraded to upstream release spdlog 1.17.0 (including fmt 12.1.0)
+   }
+}
+
 \section{Changes in RcppSpdlog version 0.0.23 (2025-10-11)}{
   \itemize{
     \item Upgraded to upstream release spdlog 1.16.0 (including fmt 12.0)
