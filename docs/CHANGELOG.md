@@ -1,3 +1,12 @@
+2026-01-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.24
+
+2026-01-04  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/spdlog/*: New upstream release spdlog 1.17.0 (which
+	includes fmt 12.1.0)
+
 2025-10-15  Dirk Eddelbuettel  <edd@debian.org>
 
 	* docs/*: Refreshed with ChangeLog years tweak
