@@ -1,3 +1,7 @@
+2026-01-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/RcppSpdlog: Add two '#undef' to avoid compilation noise
+
 2026-01-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.24
