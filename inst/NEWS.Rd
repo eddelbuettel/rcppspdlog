@@ -3,10 +3,17 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.25 (2026-01-15)}{
+  \itemize{
+    \item Ensure \code{#define} signaling R build (needed with spdlog) is unset
+    before including R headers to not falsely triggering message from Rcpp
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.24 (2026-01-07)}{
   \itemize{
     \item Upgraded to upstream release spdlog 1.17.0 (including fmt 12.1.0)
-   }
+  }
 }
 
 \section{Changes in RcppSpdlog version 0.0.23 (2025-10-11)}{
