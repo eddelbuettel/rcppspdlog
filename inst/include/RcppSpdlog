@@ -13,6 +13,16 @@ extern "C" {
 // this define is important to not include another logger pulling in stdout
 #define SPDLOG_DISABLE_DEFAULT_LOGGER 1
 
+// under C++20 now default to using FMT (as CRAN was nagging)
+// but also provide an opt-out
+#if __cplusplus >= 202002L
+  #if !defined(RCPPSPDLOG_DO_NOT_USE_FMT)
+     #if !defined(SPDLOG_USE_STD_FORMAT)
+        #define SPDLOG_USE_STD_FORMAT 1
+     #endif
+  #endif
+#endif
+
 // include main header for spdlog -- others headers needed for extra features
 #include "spdlog/spdlog.h"
 #include "spdlog/cfg/env.h"
