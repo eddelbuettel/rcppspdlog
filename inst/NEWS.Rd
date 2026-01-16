@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.26 (2026-01-16)}{
+  \itemize{
+    \item Under C++20 or later, switch to using \code{std::format} to avoid a
+    compiler nag that CRAN now complains about
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.25 (2026-01-15)}{
   \itemize{
     \item Ensure \code{#define} signaling R build (needed with spdlog) is unset
