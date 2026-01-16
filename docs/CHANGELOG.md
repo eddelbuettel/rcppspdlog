@@ -1,3 +1,10 @@
+2026-01-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.26
+
+	* inst/include/RcppSpdlog: Under C++20 or later, switch to
+	SPDLOG_USE_STD_FORMAT (unless opted-out), avoiding CRAN nag
+
 2026-01-15  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.25
