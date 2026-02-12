@@ -40,6 +40,7 @@ std::string formatter(const std::string s, std::vector<std::string> v) {
     size_t n = v.size();
     switch (n) {
 #if defined(SPDLOG_USE_STD_FORMAT) && __cplusplus >= 202002L
+        // As of 2026-02 we do _not_ set SPDLOG_USE_STD_FORMAT so this section is unused
         case 0: return std::vformat(std::string_view(s), std::make_format_args());
         case 1: return std::vformat(std::string_view(s), unpack_vector<1>(v));
         case 2: return std::vformat(std::string_view(s), unpack_vector<2>(v));
@@ -61,6 +62,7 @@ std::string formatter(const std::string s, std::vector<std::string> v) {
             return std::vformat(std::string_view(s), unpack_vector<12>(v));
         }
 #elif __cplusplus >= 202002L
+        // This section is now the default under C++20 or later
         case 0: return fmt::format(fmt::runtime(s));
         case 1: return fmt::format(fmt::runtime(s), std::string(v[0]));
         case 2: return fmt::format(fmt::runtime(s), std::string(v[0]), std::string(v[1]));

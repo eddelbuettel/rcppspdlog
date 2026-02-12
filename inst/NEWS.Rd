@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.27 (2026-02-11)}{
+  \itemize{
+    \item Under C++20 or later, keep relying on \code{fmt::format} until issues
+    experienced using \code{std::format} can be identified and resolved
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.26 (2026-01-16)}{
   \itemize{
     \item Under C++20 or later, switch to using \code{std::format} to avoid a
