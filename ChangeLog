@@ -8,6 +8,7 @@
 
 	* inst/include/RcppSpdlog: Disallow use of std::format under C++20;
 	intended to be temporary while a better solutions is worked out
+	* src/formatter.cpp: Switch back to fmt::format under C++20
 
 2026-01-27  Dirk Eddelbuettel  <edd@debian.org>
 
