@@ -1,6 +1,17 @@
 ## News for Package <span class="pkg">RcppSpdlog</span> {.unnumbered}
 
 
+### Changes in RcppSpdlog version 0.0.27 (2026-02-11)
+
+
+<ul>
+<li> Under C++20 or later, keep relying on <code>fmt::format</code> until issues
+experienced using <code>std::format</code> can be identified and resolved
+
+</li></ul>
+
+
+
 ### Changes in RcppSpdlog version 0.0.26 (2026-01-16)
 
 
