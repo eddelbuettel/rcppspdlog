@@ -30,7 +30,7 @@ jobs:
           backend: 'RAPT'
 
       - name: Dependencies
-        run: ./run.sh install_all
+        run: ./run.sh install_deps
 
       - name: Test
         run: ./run.sh run_tests

@@ -1,3 +1,7 @@
+2026-03-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml: Use install_deps instead of install_all
+
 2026-03-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.28
