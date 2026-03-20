@@ -2,6 +2,18 @@
 
 # News for Package <span class="pkg">RcppSpdlog</span>
 
+## Changes in RcppSpdlog version 0.0.28 (2026-03-19)
+
+<ul>
+<li>
+
+Regenerate <code>RcppExports.cpp</code> to switch to
+<code>(Rf_error)</code> aiding in <span class="pkg">Rcpp</span>
+transition to <code>Rcpp::stop()</code>
+
+</li>
+</ul>
+
 ## Changes in RcppSpdlog version 0.0.27 (2026-02-11)
 
 <ul>

@@ -1,3 +1,15 @@
+2026-03-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.28
+
+2026-03-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro release version
+
+	* src/RcppExports.cpp: Regenerated under current Rcpp switching to (Rf_error)
+
+	* .github/workflows/ci.yaml: Switch to dev version with rapt use
+
 2026-02-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.27
