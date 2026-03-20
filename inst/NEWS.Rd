@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.28 (2026-03-19)}{
+  \itemize{
+    \item Regenerate \code{RcppExports.cpp} to switch to \code{(Rf_error)}
+    aiding in \pkg{Rcpp} transition to \code{Rcpp::stop()}
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.27 (2026-02-11)}{
   \itemize{
     \item Under C++20 or later, keep relying on \code{fmt::format} until issues
