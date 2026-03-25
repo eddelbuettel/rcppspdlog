@@ -1,3 +1,7 @@
+2026-03-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml (jobs): r-ci default version can use rapt
+
 2026-03-20  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml: Use install_deps instead of install_all

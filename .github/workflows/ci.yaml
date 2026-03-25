@@ -26,7 +26,6 @@ jobs:
       - name: Setup
         uses: eddelbuettel/github-actions/r-ci@master
         with:
-          dev_version: 'TRUE'
           backend: 'RAPT'
 
       - name: Dependencies
