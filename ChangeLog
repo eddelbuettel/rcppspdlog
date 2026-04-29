@@ -1,5 +1,7 @@
 2026-04-29  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Roll micro release version
+
 	* src/formatter.cpp: Rewritten using recursive 'vector to args...'
 
 2026-03-25  Dirk Eddelbuettel  <edd@debian.org>
