@@ -1,3 +1,7 @@
+2026-04-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/formatter.cpp: Rewritten using recursive 'vector to args...'
+
 2026-03-25  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml (jobs): r-ci default version can use rapt
