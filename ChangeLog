@@ -1,6 +1,7 @@
 2026-05-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/RcppSpdlog: Use std::format if C++20 and not opted out
+	* src/formatter.cpp (forward_to_format): Use make_format_args(args...)
 
 2026-04-29  Dirk Eddelbuettel  <edd@debian.org>
 
