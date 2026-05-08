@@ -12,7 +12,7 @@ std::string forward_to_format(const std::string s,
     if (v.size() == sizeof...(args)) {
 #if defined(SPDLOG_USE_STD_FORMAT) && __cplusplus >= 202002L
         // As of 2026-02 we do _not_ set SPDLOG_USE_STD_FORMAT so this section is unused
-        return std::vformat(std::string_view(s), args...);
+        return std::vformat(std::string_view(s), std::make_format_args(args...));
 #elif __cplusplus >= 202002L
         // This section is now the default under C++20 or later
         return fmt::format(fmt::runtime(s), args...);

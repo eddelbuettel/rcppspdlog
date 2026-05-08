@@ -1,0 +1,5 @@
+
+@CXX_STD@
+
+## We need the spdlog headers
+PKG_CPPFLAGS =	-I../inst/include/
