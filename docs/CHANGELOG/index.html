@@ -745,6 +745,29 @@
   <h1>ChangeLog</h1>
 
 <h3 id="2026">2026</h3>
+<p>2026-05-08  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<div class="language-text highlight"><pre><span></span><code>    * DESCRIPTION (Version, Date): Version 0.0.29
+</code></pre></div>
+<p>2026-05-07  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<div class="language-text highlight"><pre><span></span><code>    * inst/include/RcppSpdlog: Use std::format if C++20 and not opted out 
+    * src/formatter.cpp (forward_to_format): Use make_format_args(args...)
+
+    * configure: Check for macos-x86_64 and if found fall back to C++17 
+    * src/Makevars.in: Add @CXX_STD@ tag to be used on macos-x86_64 
+    * src/Makevars.win: Add constant version 
+    * cleanup: Remove src/Makevars too
+</code></pre></div>
+<p>2026-04-29  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<div class="language-text highlight"><pre><span></span><code>    * DESCRIPTION (Version, Date): Roll micro release version
+
+    * src/formatter.cpp: Rewritten using recursive &#39;vector to args...&#39;
+</code></pre></div>
+<p>2026-03-25  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<div class="language-text highlight"><pre><span></span><code>    * .github/workflows/ci.yaml (jobs): r-ci default version can use rapt
+</code></pre></div>
+<p>2026-03-20  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
+<div class="language-text highlight"><pre><span></span><code>    * .github/workflows/ci.yaml: Use install_deps instead of install_all
+</code></pre></div>
 <p>2026-03-19  Dirk Eddelbuettel  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;">&#101;&#100;&#100;&#64;&#100;&#101;&#98;&#105;&#97;&#110;&#46;&#111;&#114;&#103;</a> </p>
 <div class="language-text highlight"><pre><span></span><code>    * DESCRIPTION (Version, Date): Version 0.0.28
 </code></pre></div>

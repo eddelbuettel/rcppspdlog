@@ -1,3 +1,31 @@
+2026-05-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.29
+
+2026-05-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/RcppSpdlog: Use std::format if C++20 and not opted out
+	* src/formatter.cpp (forward_to_format): Use make_format_args(args...)
+
+	* configure: Check for macos-x86_64 and if found fall back to C++17
+	* src/Makevars.in: Add @CXX_STD@ tag to be used on macos-x86_64
+	* src/Makevars.win: Add constant version
+	* cleanup: Remove src/Makevars too
+
+2026-04-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro release version
+
+	* src/formatter.cpp: Rewritten using recursive 'vector to args...'
+
+2026-03-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml (jobs): r-ci default version can use rapt
+
+2026-03-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml: Use install_deps instead of install_all
+
 2026-03-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.28
