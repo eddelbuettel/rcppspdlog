@@ -3,6 +3,16 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppspdlog/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppspdlog/issues/#1}{##1}}
 
+\section{Changes in RcppSpdlog version 0.0.29 (2026-05-08)}{
+  \itemize{
+    \item Some small continuous integration updates
+    \item The internal formatter was rewritten as a recursive generator of
+    variadic templates.
+    \item Switch back to \code{std::format} with C++20, but force inferior
+    macos-release-x86_64 to use C++17 rather than default C++20 which fails
+  }
+}
+
 \section{Changes in RcppSpdlog version 0.0.28 (2026-03-19)}{
   \itemize{
     \item Regenerate \code{RcppExports.cpp} to switch to \code{(Rf_error)}

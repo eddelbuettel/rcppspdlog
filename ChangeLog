@@ -1,3 +1,7 @@
+2026-05-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Version 0.0.29
+
 2026-05-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/include/RcppSpdlog: Use std::format if C++20 and not opted out
