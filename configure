@@ -33,11 +33,10 @@ res=$?
 rm -f fmttest$$.*
 cd ${cwd}
 
-echo -n "** checking for C++20 and std::format: "
 if [ "${res}" -eq 0 ]; then
-   echo "good"
+   echo "** checking for C++20 and std::format: good"
    sed -e 's|@CXX_STD@||' src/Makevars.in > src/Makevars
 else
-   echo "insufficient, falling back to C++17"
+   echo "** checking for C++20 and std::format: insufficient, using C++17"
    sed -e 's|@CXX_STD@|CXX_STD=CXX17|' src/Makevars.in > src/Makevars
 fi
