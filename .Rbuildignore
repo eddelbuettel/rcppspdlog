@@ -7,3 +7,4 @@
 .venv_altdoc
 ^docs$
 ^altdoc$
+^local

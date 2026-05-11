@@ -1,3 +1,8 @@
+2026-05-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* configure: Modified to test a std::format compilation under C++20
+	and reset to C++17 if this fails
+
 2026-05-08  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Version 0.0.29

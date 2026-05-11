@@ -43,6 +43,9 @@ docs/mkdmt-src/docs
 *~
 
 # VSCode
-.vscode 
+.vscode
 .venv_altdoc
 altdoc/freeze.rds
+
+# Local
+local/
